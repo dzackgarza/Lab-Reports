@@ -1,0 +1,261 @@
+\documentclass[twocolumn,english]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{booktabs}
+\newcolumntype{W}{>{\centering\arraybackslash}m{25mm}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{15mm}}
+
+
+\hypersetup{
+ pdftitle=  {Lab 5: Speed of Sound},
+ pdfauthor= {Zack Garza},
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % protect \markboth against an old bug reintroduced in babel >= 3.8g
+ \let\oldforeign@language\foreign@language
+ \DeclareRobustCommand{\foreign@language}[1]{%
+   \lowercase{\oldforeign@language{#1}}}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\makeatother
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\theoremname}{Theorem}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+\usepackage{float}
+\begin{document}
+
+\title{Speed of Sound}
+
+
+\author{Zack Garza}
+
+
+\IEEEspecialpapernotice
+{Physics 215L \\
+Effective Date of Report: }
+
+
+\markboth{Speed of Sound}{Zack Garza}
+\maketitle
+\begin{abstract}
+Placeholder
+\end{abstract}
+\tableofcontents
+
+\section{Introduction}
+\IEEEPARstart{I}{n} this four part experiment, some interesting and important behaviors of waves will be studied and used to measure the speed of sound in three different media: air, helium, and brass.
+In addition to the information covered in Chapter 14 of the text, here is an outline of this study of waves:
+
+\begin{enumerate}
+ \item Investigate the speed of waves on a string and compare the value obtained from the tension and linear density to the value derived from the frequency and wavelength.
+ \item Measure the speed of sound in air and helium from time-of-flight data obtained electronically.
+ \item Measure the speed of sound in air from measurements made on a standing wave in an air colum with one end open.
+ An audible sound source will generate the standing wave.
+ \item Measure the speed of sound in brass using a Kundt's Tube.
+\end{enumerate}
+
+\section{Theory}
+%Explain each of the following.
+\subsection*{Characteristics and properties of transverse and longitudinal waves.}
+%Draw a representation of each to add clarification.
+
+\subsection*{The relationship between the frequency and speed of a wave and its corresponding wavelength.}
+%Define all symbols.
+
+\subsection*{The relationship for the speed of a wave on a string as a function of the string's tension and linear density.}
+
+\subsection*{The Superposition Principle}
+
+\subsection*{The requirements for a standing wave on a string with closed boundaries.}
+%Show a drawing.
+
+\subsection*{The requirements for a standing wave in an air column open at one end.}
+%Include a drawing
+%Are the nodes pressure or displacement nodes?
+
+\subsection*{The speed of sound in a gas as a function of its properties.}
+%Which properties?
+
+\subsection*{The speed of sound in a solid as a function of its properties.}
+%Which?
+
+\section{Methodology}
+\subsection*{Part 1: Waves on a String}
+\begin{enumerate}
+ \item The system was set up as shown in Figure %TODO
+ \item The generator frequency was steadily increased until a standing wave was produced.
+ %This is the fundamental, n=1
+ \item Frequency was adjusted to give the maximum amplitude, and this frequency was recorded.
+ \item The number of wavelengths observed in the standing wave was recorded.
+ \item The frequency was increased until a second harmonic resulted, adjusted for maximum amplitude, and recorded.
+ %n=2
+ \item The previous step was repeated for a third harmonic.
+ \item The distance $l$ from the generator to the pulley was measured.
+ \item The tension mass $M_T$ was measured.
+ \item The tension and length of a separate piece of string were measured.
+\end{enumerate}
+\subsection*{Part 2: Speed of Sound in Air and Helium}
+\begin{enumerate}
+ \item The oscilloscope was powered on and calibrated.
+ \item A square wave generator was activated.
+ \item The number of major divisions from the graticule of the scope corresponding to the time $t$ shown in the diagram were measured, along with the time base setting, and values were recorded.
+ \item $L$ was measured using a two meter stick equipped with caliper jaws, where $L$ is defined on the gas tube with lines drawn at both ends.
+ \item The generator was turned off, and $H_e$ gas was obtained and confined to  a beach ball fitted with surgical tubing and a hose clamp.
+ \item The end of the tubing was connected to the gas inlet tube, the generator was turned on  with the same signal, the clamp was opened on the tubing and the beach ball was squeezed to force $H_e$ gas into the gas tube.
+ %What happens to to the signal on the scope?
+ \item Step 3 was repeated.
+ \item The ambient temperature was measured.
+\end{enumerate}
+
+\subsection*{Part 3: Speed of Sound from a Standing Wave}
+\begin{enumerate}
+ \item The level control was unclamped and raised until the water level was close to the top of the column, and then reclamped.
+ \item The amplitude knob on the generator was adjusted to its lowest setting.
+ \item The generator was turned on and set to a frequency of 426 Hz.
+ \item The frequency was turned up until the sound produced was audible with a low intensity.
+ \item The generator was fine tuned by striking a 426.6 Hz tuning fork, listening for beats, and adjusting the generator frequency until the beats disappeared.
+ \item The water level was lowered to produce an increase in sound intensity, and adjusted until the intensity was at a maximum. The water level was then recorded for $L_1$.
+ \item The last step was repeated for $L_2$.
+ \item The room temperature was measured and recorded.
+\end{enumerate}
+
+\subsection*{Part 4: Speed of Sound in Brass}
+\begin{enumerate}
+ \item The dust in the Kundt's tube was redistributed evenly along the tube, without touching the brass rod.
+ \item The brass rod was clamped at its midpoint. %TODO: Why?
+ \item The rosin cloth was wrapped around the brass rod to the left of the clamp, with the rosin side contacting the brass.
+ \item The cloth was gripped and pulled along the brass rod to produce a high pitched sound.
+ \item This was continued until the cork dust settled into a pattern that did not change between pulls.
+ \item A reference point was selected at one end of the tube, and a corresponding point matching the dust pattern was selected on the other end of the tube.
+ \item The two points were marked with a felt tip marker and the distance between them was recorded with a meter stick.
+ \item The number of wavelengths over this distance was counted and recorded.
+ \item The distance between the left end of the brass rod and the point of contact between the clamp and the rod was measured.
+ \item The room temperature was measured and recorded.
+\end{enumerate}
+
+
+\section{Data}
+  \subsection*{\textbf{Part 1}}
+  \begin{table}[h]
+  \centering{}
+  \begin{tabular}{|l|l|l|}
+  \hline
+  n & Frequency (Hz) 	& \# Wavelengths 	\\ \hline
+  1 & $n$               & $n$                	\\ \hline
+  2 & $n$               & $n$               	\\ \hline
+  3 & $n$               & $n$              	\\ \hline
+  \end{tabular}
+  \end{table}
+
+  \begin{align*}
+   I   &= \text{\underline{$n$}}		&L = \text{\underline{$n$}} \\
+   M_s &= \text{\underline{$n$}} 		&M_T = \text{\underline{$n$}}
+  \end{align*}
+
+  \subsection*{\textbf{Part 2}}
+  \begin{align*}
+   &\text{\textbf{Air:}}	&\text{\# of divisions: \underline{$n$} }	& &\text{\# s/div: \underline{$n$}} \\
+   &\text{\textbf{He:}}		&\text{\# of divisions: \underline{$n$} }	& &\text{\# s/div: \underline{$n$}}
+  \end{align*}
+  \begin{align*}
+   &L = \text{\underline{$n$}}	&T = \text{\underline{$n$}}
+  \end{align*}
+
+
+  \subsection*{\textbf{Part 3}}
+  \begin{align*}
+   &\text{Frequency: \underline{$n$}} 		&\text{$L_1 =\,$\underline{$n$}} \\
+   &\text{Temperature: \underline{$n\,^{\circ}$C}}		&\text{$L_2 =\,$\underline{$n$}}
+  \end{align*}
+
+  \subsection*{\textbf{Part 4}}
+  \begin{align*}
+   &\text{Length of Cork Dust Pattern:} &\text{\underline{$n$ m}} \\
+   &\text{Number of Wavelengths:} 	&\text{\underline{$n$}} \\
+   &\text{Length of Brass Rod:} 	&\text{\underline{$n$ m}} \\
+   &\text{Room Temperature:} 		&\text{\underline{$n\,^{\circ}$ C}}
+  \end{align*}
+
+\section{Results}
+\subsection*{Part 1}
+\begin{align*}
+ &\text{Speed of String Wave (Standing Wave): } &\text{\underline{$n$ m/s}} \\
+ &\text{Speed of String Wave (Properties): }	&\text{\underline{$n$ m/s}} \\
+ &\text{Percent Error: } 			&\text{\underline{$n$\%}}
+\end{align*}
+
+\subsection*{Part 2}
+\begin{align*}
+ &					&\text{\textbf{He}}	&	&\text{\textbf{Air}}	\\
+ &\text{Speed of Sound (Calculated)} 	&\text{\underline{$n$}} &	&\text{\underline{$n$}} \\
+ &\text{Speed of Sound (Accepted)} 	&\text{\underline{$n$}} &	&\text{\underline{$n$}} \\
+ &\text{Percent Error}			&\text{\underline{$n$}}	&	&\text{\underline{$n$}}
+\end{align*}
+
+\subsection*{Part 3}
+\begin{align*}
+ &\text{Speed of Sound in Air (Calculated):}	&\text{\underline{$n$}} \\
+ &\text{Speed of Sound in Air (Accepted):}	&\text{\underline{$n$}} \\
+ &\text{Percent Error:}				&\text{\underline{$n$}}
+\end{align*}
+
+\subsection*{Part 4}
+\begin{align*}
+ &\text{Speed of Sound in Brass:}	&\text{\underline{$n$}} \\
+ &\text{Speed of Sound, Accepted:}	&\text{\underline{$n$}} \\ %Cite Source
+ &\text{Percent Error}			&\text{\underline{$n$}}
+\end{align*}
+
+\section{Conclusion}
+\textbf{Questions}
+\begin{enumerate}
+ \item \textit{Why does the brass respond to the rosin cloth by producing sound?}
+ \item \textit{What is the significance of the clamp?}
+ \item \textit{Why does the brass rod have to be clamped at its midpoint?}
+ \item \textit{Why does the cork dust pile up?}
+ \item \textit{How do the measurements made lead to the speed of sound in brass?}
+\end{enumerate}
+
+\appendices{}
+
+\section{Derivation}\label{append:deriv}
+
+
+%\bibliographystyle{plain}
+%\bibliography{physbib}
+
+\end{document}
