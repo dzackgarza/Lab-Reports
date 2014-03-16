@@ -76,8 +76,6 @@ Effective Date of Report: March 18, 2014}
 
 \tableofcontents
 
-\section{Theory}
-
 \section{Methodology}
 \begin{enumerate}
  \item The signal generator was initialized with the frequency given in Table~\ref{tb:given_parameters} and connected to channel 1 of the oscilloscope.
@@ -86,7 +84,17 @@ Effective Date of Report: March 18, 2014}
  \item Using the auto-measuring display, the data in Table~\ref{tb:data}.
 \end{enumerate}
 
-\begin{table}[h]
+\begin{figure}[h!]
+  \begin{centering}
+  \begin{center}
+  \includegraphics[width=\linewidth]{./given_circuit.png}
+  \label{fig:circuit}
+  \caption{Theoretical Circuit Model}
+  \end{center}
+  \par\end{centering}
+  \end{figure}
+
+\begin{table}[h!]
 \centering{}
 \caption{Given Lab Parameters}
 \label{tb:given_parameters}
@@ -95,21 +103,42 @@ Effective Date of Report: March 18, 2014}
 \textbf{Wave Type}                                                       & Sine      	\\ \hline
 \textbf{Frequency}                                                       & 100 kHz   	\\ \hline
 \textbf{\begin{tabular}[c]{@{}c@{}}Peak to Peak \\ Voltage\end{tabular}} & 12 V      	\\ \hline
-\textbf{Resistance}                                                      & 12k$\Omega$ 	\\ \hline
-\textbf{Inductance}                                                      & 17 mH     	\\ \hline
-\textbf{Capacitance}                                                     & 220$\mu$F  	\\ \hline
+\textbf{Resistance}                                             & 12k$\Omega$ 	\\ \hline
+\textbf{Inductance}                                             & 17 mH     	\\ \hline
+\textbf{Capacitance}                                            & 220$\mu$F  	\\ \hline
 \textbf{DC Offset}							 & 0 V		\\ \hline
 \end{tabular}
 \end{table}
 
+\begin{table}[h!]
+\centering{}
+\caption{Actual Measured Values}
+\label{tb:parameter_error}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Parameter}	&\textbf{Measured Value}	&\textbf{Percent Error}	\\ \hline
+Frequency		& (100 $\pm 0.2$) kHz		&0.2\%		\\ \hline
+{Resistance}		& 12.12 k$\Omega$  		&1.0\% 		\\ \hline
+{Inductance}		& 17.1 $\mu$H   		&0.6\% 		\\ \hline
+{Capacitance}		& 222 $\mu$F  			&0.9\%		\\ \hline
+\end{tabular}
+\end{table}
+
 \section{Data}
-\subsection{Parameter Variations}
+\subsection{Oscilloscope Parameter Variations}
+The following settings on the oscilloscope were adjusted, and the observed effects are explained below.
 
-\textbf{AC / DC Coupling: }
+\noindent\textbf{AC / DC Coupling: }
 
-\textbf{1x / 10x Probe: }
+Changing the coupling mode for this circuit did not exhibit a large change in the oscilloscope reading. This is largely due to the fact that the AC power source used did not have a DC offset. In DC coupling mode, the waveform will tend to oscillate about some positive voltage, i.e, the DC offset. By using AC coupling, the DC portion of the signal is blocked, and the waveform is shown oscillating about 0 volts instead. This can be useful for measuring small perturbations in AC measurements, as it serves as a noise gate that filters the signal and allows for more precise measurements at high magnifications.
 
-\textbf{Invert On / Off}
+\noindent\textbf{1x / 10x Probe: }
+
+Setting the probe's physical switch to 10x made all voltages $1/10$ of their original values by making the impedance 10 times larger. The oscilloscope must then be set to display 10 times the voltage read from the probe in order to get a correct reading. This setting can be used to minimize the amount of error caused by the probe's resistance, especially if it is on the same order of magnitude as the resistance being measured. The oscilloscope has probe multiplier settings ranging from 500x to 100,000x, which allows for the measurement of a wide range of circuit elements.
+
+\noindent\textbf{Invert On / Off}
+
+Activating this setting on a given channel mirrors the waveform about the x-axis, effectively reversing the sign of the voltages on the channel.
 
 \subsection{Auto Measuring}
 \begin{align*}
@@ -124,25 +153,36 @@ Effective Date of Report: March 18, 2014}
  \text{Triggering Mode:}&	&\text{\underline{Auto}}
 \end{align*}
 
+The trigger level dictates at what point the oscilloscope begins measuring a signal. It can be set so that measurement does not begin until some condition is met, such as the presence of a specific level of voltage. This allows for finer control of capturing data. In Edge mode, the trigger is set to activate at the edge of a signal -- in this case, when the sine wave rises or falls. The trigger can be set to activate when the voltage condition is met and is either increasing or decreasing. The voltage level at which this occurs can be set via a knob on the scope, and the signal source can be set via the menu system.
+
+It is possible for a circuit to never meet the initial trigger conditions -- in this case, the AUTO triggering setting forces the oscilloscope to automatically trigger after a certain amount of time, even if the input conditions are not met. This ensures that a minimum amount of measurements per second will be taken.
+
 \subsection{Dual Signals}
-The component from the circuit chosen for measurement on Channel 2 was the $17$ mH capacitor. In order to exhibit a discernible response in the capacitor, the frequency was adjusted. The following measurements were taken with a $28.850$ Hz sine wave.
+The component from the circuit chosen for measurement on Channel 2 was the $17$ mH capacitor. The frequency was lowered in order to exhibit a discernible response in the capacitor, and the following measurements were taken with a $35.2$ Hz sine wave. \\
+
 
 \noindent Peak to Peak measurements for both channels:
 \begin{align*}
- &\text{Ch.1 Peak to Peak: }	&\text{\underline{$11.4$ V}}	\\
- &\text{Ch.2 Peak to Peak: }	&\text{\underline{$9.76$ mV}}
+ &\text{Ch.1 Peak to Peak (Source): }		&\text{\underline{$12.0$ V}}	\\
+ &\text{Ch.2 Peak to Peak (Capacitor): }	&\text{\underline{$23.4$ mV}}	\\
+ &\text{Period}		&\text{\underline{28.44 ms}}
 \end{align*}
-\noindent Additional measurements taken:
-\begin{align*}
- T_S \text{(Peak to Peak, Source): }	&\text{\underline{34.40 ms}} \\
- T_C \text{(Peak to Peak, Capacitor): }	&\text{\underline{34.80 ms}}
-\end{align*}
+
+\begin{figure}[h!]
+  \begin{centering}
+  \begin{center}
+  \includegraphics[width=\linewidth]{./cam.png}
+  \label{fig:source_voltage}
+  \caption{Display of Source Waveform}
+  \end{center}
+  \par\end{centering}
+  \end{figure}
 
 \noindent Phase shift between both channels:
 \begin{align*}
- &\Delta t = 8.400\text{ms}	&\theta = 1.534\text{ rad} = 87.9^{\circ}
+ &\Delta t = 7.000\text{ms}	&\theta \approx 1.546\text{ rad} = 88.58^{\circ}
 \end{align*}
-Where $\theta$ is given by  $2\pi\frac{\Delta t}{T}$ or $2\pi f \Delta t$ in radians or $360\frac{\Delta t}{T}$ in degrees, $\Delta t$ is the distance in the time domain between two identical points on the adjacent waves, $T$ is the period (time in seconds it takes for a single wave to repeat), and $f$ is the frequency of the generator..
+Where $\theta$ is given by  $2\pi\frac{\Delta t}{T}$ or $2\pi f \Delta t$ in radians ($360\frac{\Delta t}{T}$ in degrees), $\Delta t$ is the distance in the time domain between two identical points on the adjacent waves, $T$ is the period (time in seconds between identical points on a waveform), and $f$ is the frequency of the generator..
 
 \section{Analysis}
 Inductive Reactance: $X_L = 2\pi f L$.
@@ -151,10 +191,42 @@ Capacitive Reactance: $X_C = 1/2\pi f C$.
 
 Resonant Frequency: $f_0 = 1/2\pi\sqrt{LC}$
 %Comment on phase shift and voltage level.
+
+\begin{figure}[h!]
+  \begin{centering}
+  \begin{center}
+  \includegraphics[width=\linewidth]{./waveform.png}
+  \label{fig:theory_wave}
+  \caption{Theoretical Capacitor Voltage, Modeled in CircuitMaker}
+  \end{center}
+  \par\end{centering}
+  \end{figure}
+
+\begin{table}[h!]
+\centering{}
+\caption{Measured vs. Theoretical Results from Capacitor Voltage Measurements}
+\label{tb:meas_err}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Parameter}	&\textbf{Measured Value}		&\textbf{Theoretical Value}	&\textbf{Percent Difference}	\\ \hline
+$V$ Peak to Peak	&23.4 mV				&21.14mV 			&10\%				\\ \hline
+Period			&28.44 ms				&28.33 mS  			&0.39\% 			\\ \hline
+\end{tabular}
+\end{table}
+
 \appendices{}
 
-\section{Derivation}\label{append:deriv}
+\section{Circuit}\label{append:deriv}
 
+\begin{figure}[h!]
+  \begin{centering}
+  \begin{center}
+  \includegraphics[width=\linewidth]{./real_circuit.png}
+  \label{fig:real_circuit}
+  \caption{Photograph of Circuit Used}
+  \end{center}
+  \par\end{centering}
+  \end{figure}
 
 %\bibliographystyle{plain}
 %\bibliography{physbib}
