@@ -81,7 +81,7 @@ Effective Date of Report: March 18, 2014}
  \item The signal generator was initialized with the frequency given in Table~\ref{tb:given_parameters} and connected to channel 1 of the oscilloscope.
  \item The self-calibration function on the oscilloscope was activated. The probes were then calibrated as well.
  \item The circuit shown in~\ref{fig:circuit} was constructed, with the initial values described in Table~\ref{tb:given_parameters}. Several settings were modified, and the changes and effects were recorded.
- \item Using the auto-measuring display, the data in Table~\ref{tb:data}.
+ \item Using the auto-measuring display, the values in Table~\ref{tb:parameter_error} were recorded.
 \end{enumerate}
 
 \begin{figure}[h!]
@@ -89,14 +89,14 @@ Effective Date of Report: March 18, 2014}
   \begin{center}
   \includegraphics[width=\linewidth]{./given_circuit.png}
   \label{fig:circuit}
-  \caption{Theoretical Circuit Model}
+  \caption{Theoretical circuit model.}
   \end{center}
   \par\end{centering}
   \end{figure}
 
 \begin{table}[h!]
 \centering{}
-\caption{Given Lab Parameters}
+\caption{Lab Parameters (Given)}
 \label{tb:given_parameters}
 \begin{tabular}{|c|c|}
 \hline
@@ -112,7 +112,7 @@ Effective Date of Report: March 18, 2014}
 
 \begin{table}[h!]
 \centering{}
-\caption{Actual Measured Values}
+\caption{Measured Values}
 \label{tb:parameter_error}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -124,7 +124,7 @@ Frequency		& (100 $\pm 0.2$) kHz		&0.2\%		\\ \hline
 \end{tabular}
 \end{table}
 
-\section{Data}
+\section{Data and Analysis}
 \subsection{Oscilloscope Parameter Variations}
 The following settings on the oscilloscope were adjusted, and the observed effects are explained below.
 
@@ -157,7 +157,7 @@ The trigger level dictates at what point the oscilloscope begins measuring a sig
 
 It is possible for a circuit to never meet the initial trigger conditions -- in this case, the AUTO triggering setting forces the oscilloscope to automatically trigger after a certain amount of time, even if the input conditions are not met. This ensures that a minimum amount of measurements per second will be taken.
 
-\subsection{Dual Signals}
+\subsection{Signals From Two Channels}
 The component from the circuit chosen for measurement on Channel 2 was the $17$ mH capacitor. The frequency was lowered in order to exhibit a discernible response in the capacitor, and the following measurements were taken with a $35.2$ Hz sine wave. \\
 
 
@@ -173,7 +173,7 @@ The component from the circuit chosen for measurement on Channel 2 was the $17$ 
   \begin{center}
   \includegraphics[width=\linewidth]{./cam.png}
   \label{fig:source_voltage}
-  \caption{Display of Source Waveform}
+  \caption{Display of source waveform on the oscilloscope.}
   \end{center}
   \par\end{centering}
   \end{figure}
@@ -182,26 +182,29 @@ The component from the circuit chosen for measurement on Channel 2 was the $17$ 
 \begin{align*}
  &\Delta t = 7.000\text{ms}	&\theta \approx 1.546\text{ rad} = 88.58^{\circ}
 \end{align*}
-Where $\theta$ is given by  $2\pi\frac{\Delta t}{T}$ or $2\pi f \Delta t$ in radians ($360\frac{\Delta t}{T}$ in degrees), $\Delta t$ is the distance in the time domain between two identical points on the adjacent waves, $T$ is the period (time in seconds between identical points on a waveform), and $f$ is the frequency of the generator..
-
-\section{Analysis}
-Inductive Reactance: $X_L = 2\pi f L$.
-
-Capacitive Reactance: $X_C = 1/2\pi f C$.
-
-Resonant Frequency: $f_0 = 1/2\pi\sqrt{LC}$
-%Comment on phase shift and voltage level.
+Where $\theta$ is given by  $2\pi\frac{\Delta t}{T}$ or $2\pi f \Delta t$ in radians ($360\frac{\Delta t}{T}$ in degrees), $\Delta t$ is the distance in the time domain between two identical points on the adjacent waves, $T$ is the period (time in seconds between identical points on a waveform), and $f$ is the frequency of the generator.
 
 \begin{figure}[h!]
   \begin{centering}
   \begin{center}
-  \includegraphics[width=\linewidth]{./waveform.png}
-  \label{fig:theory_wave}
-  \caption{Theoretical Capacitor Voltage, Modeled in CircuitMaker}
+  \includegraphics[width=\linewidth]{./comparison.png}
+  \label{fig:parallel_diagram}
+  \caption{Comparison between waveforms of source voltage and capacitor voltage, scaled up to show phase difference.}
   \end{center}
   \par\end{centering}
   \end{figure}
 
+  \begin{figure}[h!]
+  \begin{centering}
+  \begin{center}
+  \includegraphics[width=\linewidth]{./waveform.png}
+  \label{fig:theory_wave}
+  \caption{Theoretical capacitor voltage, as modeled in Circuit Maker 6.0}
+  \end{center}
+  \par\end{centering}
+  \end{figure}
+
+\section{Results}
 \begin{table}[h!]
 \centering{}
 \caption{Measured vs. Theoretical Results from Capacitor Voltage Measurements}
@@ -214,9 +217,16 @@ Period			&28.44 ms				&28.33 mS  			&0.39\% 			\\ \hline
 \end{tabular}
 \end{table}
 
+Inductive Reactance: $X_L = 2\pi f L$.
+
+Capacitive Reactance: $X_C = 1/2\pi f C$.
+
+Resonant Frequency: $f_0 = 1/2\pi\sqrt{LC}$
+%Comment on phase shift and voltage level.
+
 \appendices{}
 
-\section{Circuit}\label{append:deriv}
+\section{Circuit Photograph}\label{append:deriv}
 
 \begin{figure}[h!]
   \begin{centering}
