@@ -60,7 +60,7 @@
 \title{Digital Oscilloscope Memo}
 
 
-\author{Zack Garza, Shawn Azam, Nick Lonsdale}
+\author{Shawn Azam, Nick Lonsdale, Zack Garza}
 
 
 \IEEEspecialpapernotice
@@ -134,11 +134,13 @@ Changing the coupling mode for this circuit did not exhibit a large change in th
 
 \noindent\textbf{1x / 10x Probe: }
 
-Setting the probe's physical switch to 10x made all voltages $1/10$ of their original values by making the impedance 10 times larger. The oscilloscope must then be set to display 10 times the voltage read from the probe in order to get a correct reading. This setting can be used to minimize the amount of error caused by the probe's resistance, especially if it is on the same order of magnitude as the resistance being measured. The oscilloscope has probe multiplier settings ranging from 500x to 100,000x, which allows for the measurement of a wide range of circuit elements.
+The probe is a device that allows the user to connect straight to the actual circuit, much like a multimeter, and measure the voltage across an element on the same screen as the oscilloscope. The probe used in this lab had a switch located on the handle that went from 1x to 10x. This switch makes the probes impedance on the circuit greater by 10 which in return decreases the voltage that the oscilloscope picks up by 10.
+
+This capability is extremely useful when trying to minimize the amount of error caused by the probes resistance, especially if it is on the same order of magnitude as the resistances used in the circuit. There are many probes out there that have ranges greater than this one and those can be used in specific cases to lessen the errors caused by the probe.
 
 \noindent\textbf{Invert On / Off}
 
-Activating this setting on a given channel mirrors the waveform about the x-axis, effectively reversing the sign of the voltages on the channel.
+On the oscilloscope there is a setting that allows the user to invert the wave about the x-axis. This would effectively reverse the sign of the voltages on a given channel, meaning positive voltages are negative and vice-versa. This setting can be used for comparing certain signals to see if they are exactly $180^{\circ}$ out of phase. If invert was used on this instance then the waves would line up exactly.
 
 \subsection{Auto Measuring}
 \begin{align*}
@@ -217,11 +219,9 @@ Period			&28.44 ms				&28.33 mS  			&0.39\% 			\\ \hline
 \end{tabular}
 \end{table}
 
-Inductive Reactance: $X_L = 2\pi f L$.
+Although the resonant frequency for this circuit, given by $f_0 = 1/2\pi\sqrt{LC}$, was approximately 82.3 Hz, sweeping the circuit through a range of frequencies did not produce resonance or noticeable change the phase shift between the source and the capacitor voltages. Variation of other parameters, such as peak to peak voltage and wave type, likewise did not have an effect on the phase shift.
 
-Capacitive Reactance: $X_C = 1/2\pi f C$.
-
-Resonant Frequency: $f_0 = 1/2\pi\sqrt{LC}$
+However, it was expected that the capacitor voltage would lag the source voltage by $90^{\circ}$, and the results were within 1.5\% of theory. The expression for the voltage across the capacitor, $(X_c/Z)V_{\text{max}}\sin(\omega t- \pi/2)$, shows that while the amplitude is frequency-dependent, the phase shift is not, which helps explain the aforementioned results.
 %Comment on phase shift and voltage level.
 
 \appendices{}
