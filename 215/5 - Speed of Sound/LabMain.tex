@@ -143,18 +143,63 @@ Applying Newton's 2nd Law for circular motion and solving for $v$ yields
 
 \subsection*{The Superposition Principle}
 
+When two waves interact within a medium, they can combine either constructively or destructively, resulting in a new waveform. The superposition principle states that the resultant wave function can be expressed as the algebraic sum of the individual waves, and applies to any wave that behaves in a linear fashion. This allows to waves to occupy the same position in space and continue their motion without effecting each other. However, any particles in the medium will experience the combined effect of both waves at that spot. In mathematical terms, the superposition principle allows two displacement functions to be added together and simplified into a single function.
+
 \subsection*{The requirements for a standing wave on a string with closed boundaries.}
 %Show a drawing.
+\begin{figure}[h!]
+  \begin{centering}
+  \begin{center}
+  \includegraphics[width=\linewidth]{./standing_wave.png}
+  \label{fig:standing_wave}
+  \caption{Diagram of a standing wave.}
+  \end{center}
+  \par\end{centering}
+  \end{figure}
+When the boundaries of the string are closed, the ends form nodes at which the amplitude of oscillation is necessarily zero. Because the spacing between two adjacent nodes must be an odd multiple of $\lambda/2$, any standing wave present on the string must have a wavelength that is an integral multiple of $2L$, where $L$ is the length of the string.
 
 \subsection*{The requirements for a standing wave in an air column open at one end.}
 %Include a drawing
+\begin{figure}[h!]
+  \begin{centering}
+  \begin{center}
+  \includegraphics[width=\linewidth]{./closed_open.png}
+  \label{fig:closed_open}
+  \caption{An air column that is closed on one end and open at the other.}
+  \end{center}
+  \par\end{centering}
+  \end{figure}
 %Are the nodes pressure or displacement nodes?
+In an air column such as that depicted in Figure~\ref{fig:closed_open}, the closed boundary creates a displacement node (or a pressure antinode) and the open boundary creates a displacement anti-node (or a pressure node). Since the distance between a node and an antinode must necessarily be $\lambda/4$ for a standing wave to occur, the wavelength of the resulting wave must be $4L$ where $L$ is the length of the air column.
 
 \subsection*{The speed of sound in a gas as a function of its properties.}
 %Which properties?
+When a sound wave is created, it is propagated through gas mediums via longitudinal pressure waves. The speed at which such waves move depends on how compressible the gas is and now dense it is, or in a more general sense, the speed is proportional to some elastic and some inertial property of the medium. In the case of gases, the speed of a sound wave through the gas is given by
+\begin{equation}
+ v=\sqrt{\frac{\beta}{\rho}}
+\end{equation}
+where $\beta$ is the bulk modulus of the gas and $\rho$ is its density.
+
+The speed of the wave can also be affected by the temperature of the medium. For sound in air, the speed can be calculated as
+\begin{equation}
+ v=(331\text{ m/s})\sqrt{1+\frac{T_C}{273^{\circ}\text{C}}}
+\end{equation}
+where $T_C$ is the temperature of the gas in degrees Celsius.
+
 
 \subsection*{The speed of sound in a solid as a function of its properties.}
 %Which?
+Similarly, the speed of sound in solids is also proportional to some elastic property and some inertial property. For all mechanical waves, the speed can be expressed as
+\begin{equation}
+ v = \sqrt{\frac{\text{elastic property}}{\text{inertial property}}}
+\end{equation}
+
+In the case of solids, the density $\rho$ is still used as the inertial property. However, the elastic property that used is Young's modulus $Y$, which represents the relationship between strain and stress on the material and in a sense also describes how ``compressible'' the material is and how it responds to mechanical disturbances. This gives the following expression for the speed of sound in a solid:
+\begin{equation}
+ v=\sqrt{\frac{Y}{\rho}}
+\end{equation}
+
+
 
 \section{Methodology}
 \subsection*{Part 1: Waves on a String}
@@ -224,8 +269,8 @@ Applying Newton's 2nd Law for circular motion and solving for $v$ yields
   \end{table}
 
   \begin{align*}
-   I   &= \text{\underline{$99.05$ cm}}	&	L&= \text{\underline{$?$}} \\
-   M_s &= \text{\underline{$n$}} 	&	M_T&= \text{\underline{$553.31$ g}}
+   l   &= \text{\underline{$307.0$ cm}}	&	L&= \text{\underline{$89.3$ cm}} \\
+   M_s &= \text{\underline{$1.07$ g}} 	&	M_T&= \text{\underline{$553.31$ g}}
   \end{align*}
 
   \subsection*{\textbf{Part 2}}
@@ -272,8 +317,8 @@ Applying Newton's 2nd Law for circular motion and solving for $v$ yields
 
 \textbf{Linear Density: }
 
-$\mu = \frac{M_{\text{String}}}{L} = \frac{nnnn\text{ kg}}{.9905\text{ m}} = $
-\underline{ nnnn{ kg/m}} %TODO
+$\mu = \frac{M_{\text{String}}}{L} = \frac{.00107\text{ kg}}{3.070\text{ m}} = $
+\underline{ .000349{ kg/m}}
 
 \textbf{String Tension: }
 
@@ -281,14 +326,14 @@ $T = (.55331\text{ kg})(9.80\text{ m/s}) =$ \underline{5.42 N}
 
 \textbf{Wave Speed: }
 
-$v = \sqrt{\frac{T}{\mu}} = \sqrt{\frac{5.42\text{ N}}{nnnn \text{ kg/m}}} =$
-\underline{ nnnnn m/s} \\%TODO
+$v = \sqrt{\frac{T}{\mu}} = \sqrt{\frac{5.42\text{ N}}{.000349 \text{ kg/m}}} =$
+\underline{124.70 m/s} \\%TODO
 
 \noindent\hrulefill
 \begin{align*}
  &\text{Speed of String Wave (Standing Wave): } &\text{\underline{$113$ m/s}} \\
- &\text{Speed of String Wave (Properties): }	&\text{\underline{$n$ m/s}} \\
- &\text{Percent Error: } 			&\text{\underline{$n$\%}}
+ &\text{Speed of String Wave (Properties): }	&\text{\underline{$125$ m/s}} \\
+ &\text{Percent Error: } 			&\text{\underline{$9.6$\%}}
 \end{align*}
 \noindent\hrulefill
 
