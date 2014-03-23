@@ -2,7 +2,7 @@ QtiPlot 0.9.8 project file
 <scripting-lang>	muParser
 <windows>	2
 <table>
-Table1	30	2	3/18/14 1:55 PM
+Table1	53	2	3/22/14 3:57 PM
 geometry	0	0	445	220	
 header	1[X]	2[Y]
 ColWidth	100	100	
@@ -14,11 +14,56 @@ HiddenColumn	0	0
 Comments			
 WindowLabel		2
 <data>
+0	7.2	0.08
+1	7.2	0.1
+2	7.2	0.18
+3	7.2	0.3
+4	7.2	0.36
+5	7.2	0.51
+6	7.2	0.55
+7	7.2	0.65
+8	7.2	0.71
+9	7.19	0.89
+10	7.19	1.01
+11	7.19	1.18
+12	7.19	1.42
+13	7.18	1.77
+14	7.16	2.35
+15	7.12	2.82
+16	7.11	2.94
+17	7.18	3.07
+18	7.09	3.2
+19	7.06	3.52
+20	7.04	3.69
+21	7.03	3.9
+22	7.01	4.12
+23	6.82	4.49
+24	6.37	4.96
+25	5.64	5.56
+26	5.38	5.81
+27	5	6.13
+28	4.6	6.46
+29	4.2	6.82
+30	3.68	7.27
+31	3.14	7.75
+40	2.55	8.3
+41	1.86	8.91
+42	1	9.68
+43	0.763	9.89
+44	0.544	10.09
+45	0.28	10.32
+46	0.117	10.46
+47	0.0569	10.51
+48	0.0476	10.52
+49	0.0332	10.53
+50	0.0244	10.54
+51	0.0146	10.55
+52	0.0014	10.56
 </data>
 </table>
 <multiLayer>
-Graph1	1	1	3/18/14 1:55 PM
-geometry	445	0	531	456	active
+Graph1	1	1	3/22/14 3:58 PM
+geometry	445	0	503	456	active
 WindowLabel		2
 Margins	5	5	5	5
 Spacing	5	5
@@ -27,9 +72,9 @@ Alignement	0	0
 <AlignPolicy>0</AlignPolicy>
 <CommonAxes>0</CommonAxes>
 <graph>
-ggeometry	5	5	515	394
-<PageGeometry>0.00952381	0.0122249	0.980952	0.963325</PageGeometry>
-PlotTitle	Zener Diode Current vs. Voltage	#000000	4
+ggeometry	2	0	487	394
+<PageGeometry>0.00402414	0	0.979879	0.963325</PageGeometry>
+PlotTitle	Current and Voltage Measurements of Load Resistor <br>in Voltage Regulator Circuit	#000000	4
 <Antialiasing>1</Antialiasing>
 <Autoscaling>1</Autoscaling>
 <ScaleFonts>1</ScaleFonts>
@@ -38,9 +83,9 @@ PlotTitle	Zener Diode Current vs. Voltage	#000000	4
 Background	#ffffff	0
 Margin	0
 Border	0	#000000
-grid	1	1	1	1	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+grid	1	1	1	1	#0000ff	0	0.3	#a0a0a4	2	0.2	#0000ff	0	0.3	#a0a0a4	2	0.2	0	0	2	0	1
 EnabledAxes	1	0	1	0	
-AxesTitles	Voltage	Current		%(?Y)	
+AxesTitles	Voltage (V)	Current (mA)		%(?Y)	
 AxesTitleColors	#000000	#000000	#000000	#000000	
 AxesTitleAlignment	5124	4	5124	4
 AxesTitleDistance	2	-1	2	-1
@@ -59,10 +104,11 @@ AxesNumberColors	#000000	#d4d2cf	#000000	#d4d2cf
 AxesBaseline	0	0	0	0	
 CanvasFrame	1	#000000
 CanvasBackground	#ffffff	0
-scale	0	0	1000	0	6	5	0	0
-scale	1	0	1000	0	6	5	0	0
-scale	2	0	1000	0	6	5	0	0
-scale	3	0	1000	0	6	5	0	0
+curve	Table1_1	Table1_2	1	0	#000000	0	1	7	1	#000000	#000000	0	#000000	14	1	2	0	0	52	1
+scale	0	0	12	0	7	5	0	0
+scale	1	0	12	0	7	5	0	0
+scale	2	-1	8	0	10	5	0	0
+scale	3	-1	8	0	10	5	0	0
 LabelsFormat	0	6	0	6	0	6	0	6
 AxisType	0	0	0	0	
 MajorTicks	1	1	1	1
@@ -76,20 +122,21 @@ LabelsSuffix
 TickLabelsSpace	4	4	4	4
 ShowTicksPolicy	0	0	0	0
 EnabledTickLabels	1	1	1	1
+<line>	7.19495412844037	12.5082508250825	7.21559633027523	-2.18481848184818	1	#000000	SolidLine	0	0	4	45	1	1</line>
 <Legend>
 <Frame>1</Frame>
 <Color>#000000</Color>
 <FrameWidth>1</FrameWidth>
 <LineStyle>0</LineStyle>
-<x>20.253164556962</x>
-<y>972.8813559322</y>
-<right>270.886075949367</right>
-<bottom>874.576271186441</bottom>
+<x>-1.0206422018349</x>
+<y>7.980198019802</y>
+<right>1.80733944954128</right>
+<bottom>6.77887788778878</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>
 <Text>
-
+\l(1) Data Points
 </Text>
 <Font>Liberation Sans	9	50	0	0	0</Font>
 <TextColor>#000000</TextColor>
@@ -97,6 +144,29 @@ EnabledTickLabels	1	1	1	1
 <Alpha>0</Alpha>
 <Angle>0</Angle>
 <AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>4.3876146788991</x>
+<y>11.960396039604</y>
+<right>7.13302752293578</right>
+<bottom>10.9306930693069</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+Ideal Voltage Source
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
 <TeXOutput>0</TeXOutput>
 </Legend>
 </graph>
