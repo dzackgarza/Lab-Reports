@@ -1,0 +1,56 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\title{Differential Equations and Linear Algebra Spring 2014 Notes}
+\author{Zack Garza}
+\maketitle
+\tableofcontents
+
+\chapter{Vector Spaces}
+Next Exam: April 9th?
+
+\section{Inner Product Spaces (4.11)}
+\textit{March 24, 2014}\\
+
+\subsection{Axioms}
+\noindent4 Axioms of an Inner Product
+\begin{enumerate}
+  \item $V_1 \cdot V_1 >= 0$ and $V_1\cdot V_1$ iff $V_1 = 0$
+
+    Check that the scalar result is positive or zero.\\
+    Show that $\langle A,A\rangle = 0$ forces the coefficients to be zero.
+  \item $V_1 \cdot V_2 = V_2 \cdot V_1$
+  \item $(cV_1)\cdot V_2 = c(V_1\cdot V_2)$
+  \item $V_1 \cdot (V_2 + V_3) = V_1 V_2 + V_1 V_3$
+\end{enumerate}
+
+\subsection{Orthogonality}
+$\langle p,q\rangle =0 \Rightarrow$ Orthogonality.
+
+\subsection{Examples}
+\subsubsection*{1.}
+Let $A, B. C \in M_2 (\mathbb{R})$. Define $\langle A,B\rangle = a_{11}b_{11}+2a_{12}b{12}+3a_{21}b_{21}$. Does this define an inner product on $M_2 (\mathbb{R})$?
+
+\subsubsection{2.}
+Instead, let $\langle A,B\rangle = a_{11} + b_{22}$. Does this define an inner product on $M_2(\mathbb{R})$?
+
+\subsubsection{3.}
+Let $p=a_0 + a_1 x + a_2 x^2$ and $q=b_0 + b_1 x + b_2 x^2$.
+
+Define $\langle p,q\rangle = \sum_{i=0}^{2}(i+1)a_i b_i$. Does this define an inner product on $P_2$?
+
+\subsubsection{4.}
+Let $f,g \in C((-\infty, \infty))$. Define
+
+\begin{equation*}
+\langle f,g\rangle = \int_a^b f(x)g(x)dx.
+\end{equation*}
+
+\section{Gram}
+
+\end{document}
