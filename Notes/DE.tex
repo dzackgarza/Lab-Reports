@@ -12,7 +12,44 @@
 \tableofcontents
 
 \chapter{Vector Spaces}
-Next Exam: April 9th?
+Next Exam: April 2nd. Covers 4.6$\rightarrow$5.1.
+
+\section{Bases}
+\subsection{Determining a Basis}
+A set $S$ that forms a basis for a vector space $V$ must satisfy two conditions:
+
+\begin{enumerate}
+ \item $S$ is set of linearly independent vectors.
+ \item $S$ spans $V$.
+\end{enumerate}
+
+\textbf{Does a set $S$ form a basis for a vector space $V$?}
+
+First, check for linear independence. If dim[$V$]=$n$ and $S$ contains $n$ linearly independent vectors, $S$ is guaranteed to form a basis for $V$.
+
+Note: dim[$P_n$]$=n+1$.
+
+\textbf{Example 1}
+
+Determine a basis for
+\begin{align*}
+ S = \left\{a_0 + a_1 x + a_2 x^2\mid a_0,a_1,a_2 \in \mathbb{R} \land a_0 - a_1 -2a_2 =0\right\}.
+\end{align*}
+
+Let $a_2=t, a_1=s, a_0=s+2t$, then
+\begin{align*}
+ S 	&= \left\{ (s+2t) + (sx+tx^2)\mid s,t\in\mathbb{R} \right\} \\
+	&= \left\{ (s+sx) + (2t+tx^2)\mid s,t\in\mathbb{R} \right\} \\
+	&= \left\{ s(1+x) + t(2+x^2)\mid s,t\in\mathbb{R} \right\} \\
+	&= \text{span}\left\{(1+x),(2+x^2)\right\}
+\end{align*}
+and a basis for $S$ is
+\begin{align*}
+ \left\{(1+x), (2+x^2)\right\}
+\end{align*}
+
+
+
 
 \section{Inner Product Spaces (4.11)}
 \textit{March 24, 2014}\\
@@ -31,6 +68,36 @@ Next Exam: April 9th?
 
 \subsection{Orthogonality}
 $\langle p,q\rangle =0 \Rightarrow$ Orthogonality.
+
+\subsection{The Gram-Schmidt Procedure}
+Given a set of vectors
+\begin{align*}
+ S = \left\{\mathbf{v_1, v_2, \cdots v_n}\right\},
+\end{align*}
+the Gram-Schmidt procedure produces a corresponding orthogonal set
+\begin{align*}
+ S' = \left\{\mathbf{u_1, u_2, \cdots u_n}\right\}
+\end{align*}
+the is a basis for the same vector space as $S$.
+
+Given the set $S$, $S'$ is found using the following pattern:
+\begin{align*}
+ \mathbf{u_1} &= \mathbf{v_1} \\
+ \mathbf{u_2} &= \mathbf{v_2} - \text{proj}_{\mathbf{u_1}} \mathbf{v_2}\\
+ \mathbf{u_3} &= \mathbf{v_3} - \text{proj}_{\mathbf{u_1}} \mathbf{v_3} - \text{proj}_{\mathbf{u_2}} \mathbf{v_3}\\
+\end{align*}
+where
+\begin{align*}
+ \text{proj}_{\mathbf{u}} \mathbf{v} = (\text{scal}_{\mathbf{u}} \mathbf{v})\frac{\mathbf{u}}{\mathbf{u}}
+\end{align*}
+
+
+
+A few definitions are needed:
+\begin{align*}
+ \text{scal}_{u1}
+\end{align*}
+
 
 \subsection{Examples}
 \subsubsection*{1.}
