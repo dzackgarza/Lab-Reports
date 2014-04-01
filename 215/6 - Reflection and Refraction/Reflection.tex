@@ -1,0 +1,128 @@
+\documentclass[twocolumn,english]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{calc}
+\newcolumntype{W}{>{\centering\arraybackslash}m{25mm}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{15mm}}
+
+
+\hypersetup{
+ pdftitle=  {Lab 6: Reflection and Refraction},
+ pdfauthor= {Zack Garza},
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % protect \markboth against an old bug reintroduced in babel >= 3.8g
+ \let\oldforeign@language\foreign@language
+ \DeclareRobustCommand{\foreign@language}[1]{%
+   \lowercase{\oldforeign@language{#1}}}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\makeatother
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\theoremname}{Theorem}
+\sisetup{detect-weight=true, detect-family=true}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+\usepackage{float}
+\begin{document}
+
+\title{Reflection and Refraction}
+
+
+\author{Zack Garza}
+
+
+\IEEEspecialpapernotice
+{Physics 215L \\
+Effective Date of Report: April 2, 2014}
+
+
+\markboth{Reflection and Refraction}{Zack Garza}
+\maketitle
+\begin{abstract}
+\IEEEPARstart{T}{his} is an abstract.
+\end{abstract}
+\tableofcontents
+
+
+\section{Theory}
+
+%State and explain the laws of reflection and refraction (Snell's Law).
+%Use diagrams to add clarification.
+%Show how the speed of light in a medium (such as glass) relates to the speed of light in a vacuum.
+
+\section{Methodology}
+
+\subsection*{Part 1: Reflection}
+
+\textbf{Introduction to parallax}
+\begin{enumerate}
+ \item A pencil was held vertically at arm's length. A second pencil was held abut 15 cm closer than the first.
+ \item The pencil's were held in place, while the observer moved their head from side to side.
+ \item The pencils were moved closer together, and the apparent relative motion was observed.
+ \item The pencils were adjusted until there was no apparent relative motion between them. All observations were recorded.
+\end{enumerate}
+
+\textbf{Locating an image in a plane mirror}
+\begin{enumerate}
+ \item A piece of paper was placed on a large piece of cork board, and a plane mirror was placed vertically in the center of the page.
+ \item The location of the mirror on the paper was traced with a pencil.
+ \item A pin was placed about 10 cm in front of the mirror.
+ \item A second pin was placed behind the mirror, and its position was adjusted until no parallax was observable between the second pin and the image of the first pin.
+ \item The distance between each pin and the plane of the mirror was measured and recorded.
+\end{enumerate}
+
+\textbf{Locating an image using raytracing}
+
+
+
+\section{Results}
+  \subsection*{\textbf{Part 1: }}
+
+
+
+  \textbf{Summary}
+
+
+\appendices{}
+
+\section{Derivation}\label{append:deriv}
+
+
+%\bibliographystyle{plain}
+%\bibliography{physbib}
+
+\end{document}
