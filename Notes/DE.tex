@@ -29,6 +29,8 @@
 \chapter{Vector Spaces}
 Next Exam: April 2nd. Covers 4.6$\rightarrow$5.1.
 
+Remember: To show a set spans a space, show that an arbitrary element in that space can be expressed as a linear combination of the vectors in your set. This usually results in a linear system of equations -- as long as you can solve this system in terms of your vectors, it will be consistent.
+
 \section{Bases}
 \subsection{Determining a Basis}
 A set $S$ that forms a basis for a vector space $V$ must satisfy two conditions:
@@ -46,12 +48,16 @@ If the dimension is known, it is equal to the minimum number of vectors needed t
 
 First, check for linear independence. If dim[$V$]=$n$ and $S$ contains $n$ linearly independent vectors, $S$ is guaranteed to form a basis for $V$.
 
+This means that given a set of vectors, we only have to shown linear dependence and that the number of elements matches the dimension of the space! So we only need to know their \textbf{linear independence} and the space's \textbf{dimension}. In other words, $n$ linearly independent vectors in $n$-dimensional space means, for free, we have a basis.
+
 Note: dim[$P_n$]$=n+1$.
+
+\textbf{}
 
 \subsubsection{For the subspaces of a given matrix}
 \textbf{Null space:}
 
-Suppose we are given a matrix, and want to examine the properties of its null space. Recall that the null space is given by $\left\{ \mathbf{x}: A\mathbf{x} = \mathbf{0}\right\}$%TODO:Check!
+Suppose we are given a matrix, and want to examine the properties of its null space. Recall that the null space of a matrix $A$ is given by $\left\{ \mathbf{x}: A\mathbf{x} = \mathbf{0}\right\}$, and its dimension is equal to the number of free variables in ref(A).
 
 This is generally found by augmenting the matrix with $\mathbf{0}$ is using ERO to obtain its REF. Once a relationship between the free variables is found, construct a solution set of the form
 \begin{align*}
@@ -80,16 +86,21 @@ A basis for the column space of a matrix $A$ consists of the column vectors with
     \noindent4 Axioms of an Inner Product
     \begin{enumerate}
       \item
-	$\ip{\vb{V_1}}{\vb{V_2}} >= 0$ and $\ip{\vb{V_1}}{\vb{V_1}}=0\iff\vb{V_1} = 0$
+		$\ip{\vb{V_1}}{\vb{V_1}} >= 0$ and $\ip{\vb{V_1}}{\vb{V_1}}=0\iff\vb{V_1} = 0$
 
-	Check that the scalar result is positive or zero.\\
-	Show that $\ip{\vb{A}}{\vb{A}} = 0$ forces the coefficients to be zero.
+		Check that the scalar result is positive or zero, and show that $\ip{\vb{A}}{\vb{A}} = 0$ forces the coefficients to be zero.
       \item
-	$\ip{\vb{V_1}}{\vb{V_2}} = \ip{\vb{V_2}}{\vb{V_1}}$
+		Commutativity of $\bigodot$
+
+		$\ip{\vb{V_1}}{\vb{V_2}} = \ip{\vb{V_2}}{\vb{V_1}}$
       \item
-	$\ip{c\vb{V_1}}{\vb{V_2}} = c\ip{\vb{V_1}}{\vb{V_2}}$
+		Associativity of scalar multiplication over $\bigodot$
+
+		$\ip{c\vb{V_1}}{\vb{V_2}} = c\ip{\vb{V_1}}{\vb{V_2}}$
       \item
-	$\ip{\vb{V_1}}{\vb{V_2} + \vb{V_3}} = \ip{\vb{V_1}}{\vb{V_2}} + \ip{\vb{V_1}}{\vb{V_3}}$
+		Associativity of $\bigoplus$ over $\bigodot$
+
+		$\ip{\vb{V_1}}{\vb{V_2} + \vb{V_3}} = \ip{\vb{V_1}}{\vb{V_2}} + \ip{\vb{V_1}}{\vb{V_3}}$
     \end{enumerate}
 
   \subsection{Orthogonality}
@@ -146,14 +157,27 @@ A basis for the column space of a matrix $A$ consists of the column vectors with
     \begin{align*}
     \ip{\vb{v_i}}{\vb{v_j}} = \delta_{ij}
     \end{align*}
+\subsection{Types of Questions}
+\begin{enumerate}
+	\item
+		\textit{Is a given set of vectors an orthogonal set?}
 
-\section{Rank-Nullity and Stuff}
+		This is only the case if the inner product of every vector with every other vector is zero.
+
+	\item
+		\textit{Show a set of vectors is orthonormal (or force it to be)}
+
+		Take the norm of the vector (i.e., the square root of its own inner product). If it is 1, it is a unit vector. Otherwise, divide the vector by its norm to create a an orthonormal set.
+\end{enumerate}
+
+
+\section{Dimension Counting: The Rank-Nullity Theorem}
   Let $A$ be an $m\times n$ matrix, then
   \begin{align*}
     \text{rank}(A) + \text{nullity}(A) = n \text{ (Number of columns)}
   \end{align*}
 
-  Similarly?
+  Similarly,
   \begin{align*}
    \text{dim[rowspace}(A)] = \text{dim[colspace}(A)] = \text{rank}(A)
   \end{align*}
