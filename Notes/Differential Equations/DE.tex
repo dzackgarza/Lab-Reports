@@ -72,7 +72,7 @@ A basis for the row space of a matrix $A$ is nothing more than the number of non
 
 \textbf{Column space:}
 
-A basis for the column space of a matrix $A$ consists of the column vectors with leading 1s in rref($A$).
+A basis for the column space of a matrix $A$ consists of the column vectors with leading oness in rref($A$).
 
 
 
@@ -196,8 +196,135 @@ A basis for the column space of a matrix $A$ consists of the column vectors with
 
 \textbf{Definition: } Let $T: V\mapsto W$ be a linear transformation from one vector space to another, then
 \begin{align*}
- \text{kernel}(T)=\left\{\vb{v}\in V | T(\vb{v}) = \vb{0}_w\right\}
+ \text{kernel}(T)=\left\{\vb{v}\in V : T(\vb{v}) = \vb{0}_w\right\}
 \end{align*}
+The kernel of $T$ is a subspace of $V$, and every vector in it is mapped to the zero vector in $W$. Defining $A$ as a linear transformation matrix, the kernel is identical to the solution set to $A\vb{x} = \vb{0}$.
+
+\textbf{Definition:} Similarly, the subset of $W$ consisting of all transformed vectors is denoted the range of $T$ and is defined as
+\begin{align*}
+	\text{Rng}(T) = \left\{T(\vb{v}):\vb{v} \in V\right\}
+\end{align*}
+The range of $T$ is instead a subspace of $W$ into which the transformations are mapped.
+
+
+For any matrix transformation $T:\mathbb{R}^n \mapsto \mathbb{R}^n$ given by an $m \times n$ matrix,
+\begin{align*}
+	\text{Ker}(T) = \text{nullspace}(A) \\
+	\text{Rng}(T) = \text{colspace}(A).
+\end{align*}
+
+\textbf{Theorem}: The General Rank-Nullity Theorem
+\begin{align*}
+	\text{dim[Ker($T$)] + dim[Rng($T$)] = dim[$V$]}.
+\end{align*}
+
+Notes:
+
+It is common to want to know the range and kernel of a specific linear transformation $T$. $T$ can be given in many ways, but a general strategy for deducing these properties involves:
+\begin{enumerate}
+	\item Express an arbitrary vector in $V$ as a linear combination of its basis vectors, and set it equal to an arbitrary vector in $W$.
+	\item Use the linear properties of $T$ to make a substitution from known transformations
+	\item Find a restriction or relation given by the constants of the initial linear combination.
+\end{enumerate}
+
+\textbf{Definition:} A linear transformation is said to be
+\begin{enumerate}
+	\item \textbf{one-to-one} if whenever $\vb{v_1} \neq \vb{v_2}, T(\vb{v_1}) \neq T(\vb{v_2})$.
+	\item \textbf{onto} if every $w \in W$ is the image under $T$ of at least one vector in $V$.
+\end{enumerate}
+
+\textbf{Theorem:} A given linear transformation is:
+\begin{enumerate}
+	\item one-to-one $\iff$ Ker$(T) = \left\{0\right\}$
+	\item onto $\iff$ Rng$(T) = W$.
+\end{enumerate}
+
+\textit{Corollary:}
+\begin{enumerate}
+	\item If $T$ is one-to-one, then dim[$V$] $\leq$ dim[$W$].
+	\item If $T$ is onto, then dim[$V$] $\geq$ dim[$W$].
+	\item If $T$ is both, then dim[$V$] = dim[$W$], and a transformation $T^{-1}$ exists, and the two spaces are isomorphic.
+	\item If dim[$V$] = dim[$W$], $T$ is one-to-one $\iff$ $T$ is onto.
+\end{enumerate}
+These are often useful in the contrapositive.
+
+\textbf{Definition: }Inverse Functions. $T_2 = T_1^{-1}$ means that the following relationship holds:
+\begin{align*}
+	(T_1T_2)\vb{v} = (T_2T_1)\vb{v} = \vb{v}
+\end{align*}
+
+
+\textbf{Definition:} A map between vector spaces is said to be an \textit{isomorphism} if it is an invertible, linear map. \\ \\
+
+\textit{Showing a linear transformation is one-to-one: }Simply show that the kernel only contains $\vb{0}$.
+
+\textit{Showing a linear transformation is onto: } Use the generalized rank nullity theorem. If dim[Rng($T$)] = dim[$V$], then Rng($T$) = $V$ and $T$ is onto. Useful fact: If $W$ is a subspace of $V$ with the same dimension, $W$ and $V$ are the same thing.
+
+\textit{Showing an inverse map exists: } Show the map is one-to-one and onto. In other words, that the kernel is empty and the dimension of the range is the dimension of the codomain.
+
+\section{Examples}
+\begin{enumerate}
+	\item Show that if $T_1$ and $T_2$ are both injective, so is the composition ($T_2T_1$).
+
+	\textit{Solution: }
+	Goal: Show the kernel of the composition is the singleton set containing the zero vector.
+	\begin{enumerate}
+		\item Suppose we have $v_1 \in \text{Ker}(T_2T_1).$
+		\item Then $(T_2T_1)(v_1) = 0 \Rightarrow T_2(T_1(v_1)) = 0.$
+		\item Since $T_2$ is onto, $T_1(v_1) = 0$.
+		\item Use assumptions to tracing this back, showing the only vector in the kernel is $\vb{0}$.
+	\end{enumerate}
+
+	\item Show that if the two maps are both surjective, so is the composition.
+
+	\textit{Solution: }
+	Goal: Show for every vector in $V_3$, there has to exist a vector in $V_1$ that can get you there!
+\end{enumerate}
+
+\chapter{Eigenthings}
+$\lbrace$
+
+\chapter{Applications to Differential Equations}
+\section{Linear Equations of Order n}
+The standard form of such equations is
+\begin{align*}
+	y^{(n)} + a_1y^{(n-1)} + a_2y^{(n-2)} + \cdots +a_ny'' + a_{n-1}y' + y = F(x).
+\end{align*}
+
+All solutions will be the sum of the solution to the associated homogeneous equation and a single particular solution.
+
+In the homogeneous case, examine the discriminant of the characteristic polynomial. Three cases arise:
+\begin{enumerate}
+	\item $D>0 \Rightarrow$ 2 Real solutions, $c_1e^{r_1x} + c_2e^{r_2x}$
+	\item $D=0 \Rightarrow$ 1 Real, 1 Complex, $(c_1 +c_2x)e^{r_1x}$
+	\item $D<0 \Rightarrow$ 2 Complex, $e^{ax}(c_1\cos bx + c_2\sin bx)$
+\end{enumerate}
+That is, every real root contributes a term of $ce^{rx}$, while a multiplicity of $m$ multiplies the solution by a polynomial in $x$ of degree $m-1$.
+
+Every pair of complex roots contributes a term $ce^r(a\cos \omega x + b\sin \omega x)$, where $r$ is the real part of the roots and $\omega$ is the complex part.
+
+In the nonhomogeneous case, assume a solution in the most general form of $F(x)$, and substitute it into the equation to solve for constant terms. For example,
+\begin{enumerate}
+	\item $F(x) = P(x^n) \Rightarrow y_p = a+bx+cx^2+\cdots+(n+1)x^n$
+	\item $F(x) = e^x \Rightarrow y_p = Ae^x$
+	\item $F(x) = A\cos (\omega x) \Rightarrow y_p = a\cos(\omega x) + b\sin(\omega x)$
+\end{enumerate}
+
+\subsection{Annihilators}
+Use to reduce a nonhomogeneous equation to a homogeneous one as a polynomial in the operator $D$.
+\begin{enumerate}
+	\item $(D-a) \Rightarrow e^{ax}$
+	\item $(D-a)^{k+1} \Rightarrow x^k e^{ax}, x^{k-1}e^{ax}, \cdots, e^{ax}$
+	\item $D^{k+1} \Rightarrow x^k, x^{k-1}, \cdots,C$
+	\item $D^2-2aD+a^2+b^2 \Rightarrow e^{ax}\cos(bx), e^{ax}\sin(bx)$
+	\item $(D^2-2aD+a^2+b^2)^{k+1} \Rightarrow x^k e^{ax}\cos(bx), x^{k-1} e^{ax}\cos(bx), x^k e^{ax}\sin(bx), x^{k-1}e^{ax}\sin(bx),\cdots$
+\end{enumerate}
+
+\subsection{Complex Solutions}
+$F(x)$ of the form $e^{ax}sin(kx)$ can be rewritten as $e^{(a+ki)x}$
+
+
+
 
 
 \end{document}

@@ -1,0 +1,294 @@
+\documentclass[twocolumn,english]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{calc}
+\newcommand{\vb}[1]{\mathbf{#1}}		%Bold vector
+\newcolumntype{W}{>{\centering\arraybackslash}m{25mm}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{15mm}}
+
+
+\hypersetup{
+ pdftitle=  {Experiment 13: Uses of the Oscilloscope},
+ pdfauthor= {Zack Garza},
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % protect \markboth against an old bug reintroduced in babel >= 3.8g
+ \let\oldforeign@language\foreign@language
+ \DeclareRobustCommand{\foreign@language}[1]{%
+   \lowercase{\oldforeign@language{#1}}}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\makeatother
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\theoremname}{Theorem}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+\usepackage{float}
+
+\begin{document}
+
+\title{Oscilloscope Lab}
+
+
+\author{Zack Garza}
+
+
+\IEEEspecialpapernotice
+{Physics 210L \\
+Effective Date of Report: 23 April, 2014}
+
+
+\markboth{Experiment 13: Uses of the Oscilloscope}{Zack Garza}
+
+\maketitle
+
+%\begin{abstract}
+%Plcaeholder
+%\end{abstract}
+\tableofcontents
+
+\section{Theory}
+\subsection{Part 1 - Mutual Inductance}
+Given a long solenoid surrounded by a coil, the maximum emf $\varepsilon$ induced in the coil can be expressed in terms of measurable circuit variables and physical dimensions.
+
+\begin{proof}
+From Faradays law of induction, the induced emf $\varepsilon$ in a coil of wires with $N_c$ turns is directly proportional to the change in magnetic flux through the plane of the coil. From this, the emf induced in the coil can be expressed as
+\begin{equation}\label{eq:orig}
+	\varepsilon = N_c\frac{d \Phi_b}{dt},
+\end{equation}
+where $\Phi_b$ is the magnetic flux through the coil, and is given by
+\begin{equation}\label{eq:phib}
+		\Phi_b = \oint_S \vec{\vb{B}} \cdot d\vec{\vb{A}},
+\end{equation}
+
+where $d\vec{\vb{A}}$ is a differential vector normal to the plane of the coil.
+
+In order to express $\Phi_b$ in terms of known quantities, we assume that the solenoid is ideal, that the field produced in its interior is uniform and directed along its radial axis, and that the exterior field is nearly zero.
+
+First, note that in this experiment, the solenoid is oriented such that the magnetic field produced by the current is directed along the axis of the solenoid (given by the right-hand rule), and is always parallel to the plane of the coil. This reduces the Equation~\ref{eq:phib} to
+\begin{equation}\label{eq:back1}
+	\Phi_b = \oint B dA = B \oint dA = BA.
+\end{equation}
+
+From Ampere's Law, the general expression relating the magnetic field and the current in a solenoid
+\begin{equation}\label{eq:amp}
+	\oint \vec{\vb{B}}\cdot d\vec{\vb{s}} = \mu_0 N I,
+\end{equation}
+
+where $d\vec{\vb{s}}$ is a differential length along any path, $\mu_0$ is the permeability of free space (equal to $4\pi\times 10^{-7}$ Wb/A$\cdot$m), $N$ is the number of turns over the solenoid, and $I$ is the current.
+
+Consider applying this to a square of length $l$ that lies both inside and outside the solenoid, where one side lies along the radial axis.
+
+Since the field outside the solenoid is taken to be zero, and two sides of such a square will be perpendicular to the magnetic field lines of the current, the only contribution to the integral is along one side. Therefore, Equation~\ref{eq:amp} reduces to
+\begin{align*}
+	\oint \vec{\vb{B}}\cdot d\vec{\vb{s}} = \oint B d\ell = B\ell,
+\end{align*}
+
+and back-substituting this into Equation~\ref{eq:amp} and solving for $B$ yields
+\begin{equation}
+	B = \mu_0 n_s I,
+\end{equation}
+where $n_s = N/\ell$ is the number of turns per unit length over the solenoid.
+
+Back-substituting this expression into Equation~\ref{eq:back1},
+
+\begin{equation}
+	\Phi_b = (\mu_0 n_s I)A,
+\end{equation}
+
+and back-substituting this once more into Equation~\ref{eq:orig} (noting that the current is the only quantity that is a function in $t$ and that) yields
+\begin{align}
+	\varepsilon &= N_c \frac{d}{dt}(\mu_0 n_s IA) \notag \\
+	&= \mu_0 n_s N_c A \frac{dI}{dt}
+\end{align}
+
+Finally, since an oscilloscope will be used to measure the induced voltage, we note that the current through the solenoid is equal to the current through the resistor, and so we write $I$ as $V_R/R$ and obtain the final expression
+\begin{equation}\label{eq:final}
+	\varepsilon = \left(\frac{\mu_0 n_s N_c A}{R}\right) \frac{dV}{dt} = \left( \frac{M_{12}}{R} \right) \frac{dV}{dt},
+\end{equation}
+where $M_{12}$ is simply the mutual inductance between the solenoid and the coils.
+\end{proof}
+
+\subsection{Part 2 - RC Circuit}
+The capacitance in an RC circuit can be approximated from the slope of its voltage.
+\begin{proof}
+	From Kirchoff's Law,
+	\begin{equation*}
+		\sum_{Loop}V_i = 0,
+	\end{equation*}
+	or the sum of voltages in a loop is zero. Substituting in the $v-i$ relationships of the circuit elements gives
+	\begin{align*}
+		iR +\frac{Q}{C} &= \varepsilon \\
+		\Rightarrow \frac{dQ}{dt} + \left(\frac{1}{C}\right)Q &= \varepsilon
+	\end{align*}
+
+	Since the circuit is driven by a square wave and a time interval of less than one period is being examined, the forcing function $\varepsilon$ can be approximated as a constant, $k$. For such a first order differential equation with constant coefficients is guaranteed to be separable, with solutions of the form
+
+	\begin{align*}
+		Q(t) = Q_0(1-e^{-t/\tau}),
+	\end{align*}
+	where $\tau = RC$. From $Q=CV$, this means that voltage across the capacitor is given by
+	\begin{align}\label{eq:voltage}
+		CV_c(t) &= C V_0 (1-e^{-t/\tau})	\notag \\
+		\Rightarrow V_c(t) &= V_0 (1-e^{-t/\tau}) \notag \\
+		&= \varepsilon(1-e^{-t/\tau}).
+	\end{align}
+
+	Differentiating with respect to time gives
+	\begin{align*}
+		\frac{dV_c}{dt} = \varepsilon(1/RC)(e^{-t/RC}).
+	\end{align*}
+
+	Separating variables,
+	\begin{align*}
+		Ce^{t/CR} = \frac{V}{R \frac{dV}{dt}}
+	\end{align*}
+
+	and taking the limit as $t$ approaches zero,
+	\begin{equation}
+		C = \frac{V}{R \frac{dV}{dt}}
+	\end{equation}
+\end{proof}
+
+The capacitance can also be determined in terms of the circuit's half life, $t_{1/2}$, or the time it takes for the circuit to reach 1/2 of its maximum value.
+
+\begin{proof}
+	From (\ref{eq:voltage}),
+	\begin{align*}
+		\frac{1}{2}\varepsilon &= \varepsilon(1-e^{-t/\tau}) \\
+		\frac{1}{2} &= 1 - e^{-t/\tau} \\
+		t_{1/2}&= -\tau\ln(1/2),
+	\end{align*}
+	and observing that $t_{1/2}$ is a measured quantity and $\tau = RC$ gives
+	\begin{align}
+		C = \frac{-\ln(1/2)}{t_{1/2}R}
+	\end{align}
+
+\end{proof}
+
+
+
+\section{Data/Results}
+\subsection{Part 1 - Mutual Inductance}
+A sine wave, driven at 1000 Hz at half amplitude was used to drive the circuit.
+
+\subsubsection{Ch. 2: Capacitor Voltage}
+Peak-to-Peak value of $E$:
+
+\underline{7.2 divisions} $\times$ \underline{.2 V/div}  \hfill = \underline{ $1.44\pm .02$ V}
+
+So, \hfill \underline{$E_{max} =.722 \pm .01$ V}.
+
+Measured Resistance: \hfill \underline{R = $\Omega$} %TODO
+
+\# of turns of the coil, \hfill\underline{$N_c$: } %TODO
+
+\subsubsection{Solenoid}
+Inner diameter, \hfill\underline{$d_1 = 4.11$cm}
+
+Out diameter, \hfill\underline{$d_2 = 5.47$cm}
+
+Mean diameter, \hfill\underline{$\bar{d} = 4.79$cm}
+
+Mean radius, \hfill\underline{$\bar{r} = 2.40$cm}
+
+So, the area of the solenoid, \hfill\underline{$A_s = 1.81 \times 10^{-3}$ m\textsuperscript{2}}\\ \\
+
+\# of turns, \hfill\underline{ $N_s$ = 902 turns}
+
+Length of Solenoid, \hfill \underline{$L = 100.2$cm}
+
+So, turns per unit length \hfill\underline{$n_s = $ 898 1/m}
+
+\subsubsection{Ch.1 Source Voltage}
+
+$\Delta V$ = \underline{4.00 divisions}  $\times$ \underline{1 V/div} \hfill= \underline{4.00 V}
+
+$\Delta t$ = \underline{10 divisions} $\times$ \underline{.2 ms/div}  $\times$ \underline{1/10} magnifier \hfill= \underline{200 $\mu$s}. \\ \\
+
+So, the slope, \hfill$\Delta V/\Delta t = $\underline{$2.0 \times 10^6$ V/s} \\ \\
+
+Predicted maximum EMF: \hfill $E_{max} = $ \underline{} volts
+
+$E_{max} = \mu_0 n_s N_c A_s (\Delta V / \Delta t)/R $\hfill = \underline{V}
+
+Percent error between $E_{max}$ \textit{theory} and \textit{measured}: \hfill\underline{\%} \\ \\
+
+Phase Difference between Resistor and Capacitor Voltage:
+
+\underline{1.25 divs} $\times$ \underline{.2 ms/div} = \hfill\underline{250 $\mu$s}
+
+\hrulefill
+
+Calculated mutual inductance of the system: \underline{}
+
+Geometric mutual inductance: \underline{}
+
+Percent error: \underline{\%}
+
+\hrulefill
+
+
+\subsection{Part 2 - RC Circuits}
+
+$\Delta V$ = 2.20 divs $\times$ 5 V/div $\times$ magnifier 1/10 = \hfill\underline{1.1 V}
+
+$\Delta t$ = 10.0 divs $\times$ .2 ms/div $\times$ magnifier 1/10 = \hfill\underline{200 $\mu$s}
+
+Slope $\Delta V / \Delta t$ = \hfill \underline{$5.5 \times 10^3$ V/s}
+
+\hrulefill
+
+Channel 1 Peak-to-Peak:
+
+1.1 divs $\times$ 5 V/div = \hfill\underline{5.5 V} \\ \\
+
+Time required to reach $\frac{1}{2}V_{max}$:
+
+$t_{1/2} = $ 1.1 divs $\times$ .5 ms/div $\times$ 1/10 = \hfill\underline{55 $\mu$s} \\ \\
+
+External Resistance \hfill\underline{$R = $1.997k$\Omega$}
+
+Measured Capacitance \hfill\underline{$C = $ 50.8 nF}
+
+
+%\section{Derivation}\label{append:deriv}
+
+\appendices{}
+
+%\bibliographystyle{plain}
+%\bibliography{physbib}
+
+\end{document}
