@@ -138,7 +138,11 @@ Finally, since an oscilloscope will be used to measure the induced voltage, we n
 \begin{equation}\label{eq:final}
 	\varepsilon = \left(\frac{\mu_0 n_s N_c A}{R}\right) \frac{dV}{dt} = \left( \frac{M_{12}}{R} \right) \frac{dV}{dt},
 \end{equation}
-where $M_{12}$ is simply the mutual inductance between the solenoid and the coils.
+where $M_{12}$ is simply the mutual inductance between the solenoid and the coils, and is given by
+\begin{equation}
+	M_{12} = \mu_0 N_1 N_2 \pi r^2 \ell.
+\end{equation}
+
 \end{proof}
 
 \subsection{Part 2 - RC Circuit}
@@ -189,11 +193,14 @@ The capacitance can also be determined in terms of the circuit's half life, $t_{
 	\begin{align*}
 		\frac{1}{2}\varepsilon &= \varepsilon(1-e^{-t/\tau}) \\
 		\frac{1}{2} &= 1 - e^{-t/\tau} \\
-		t_{1/2}&= -\tau\ln(1/2),
+		e^{-t/\tau} &= 1/2 \\
+		\frac{-t}{\tau} &= \ln(1/2) \\
+		\tau &= \frac{-t}{\ln(1/2)}
 	\end{align*}
 	and observing that $t_{1/2}$ is a measured quantity and $\tau = RC$ gives
 	\begin{align}
-		C = \frac{-\ln(1/2)}{t_{1/2}R}
+	RC &= \frac{-t}{\ln(1/2)} \notag \\
+	C  &= \frac{-t_{1/2}}{R\ln(1/2)}
 	\end{align}
 
 \end{proof}
@@ -205,58 +212,70 @@ The capacitance can also be determined in terms of the circuit's half life, $t_{
 A sine wave, driven at 1000 Hz at half amplitude was used to drive the circuit.
 
 \subsubsection{Ch. 2: Capacitor Voltage}
-Peak-to-Peak value of $E$:
 
-\underline{7.2 divisions} $\times$ \underline{.2 V/div}  \hfill = \underline{ $1.44\pm .02$ V}
+\begin{itemize}
+\item Peak-to-Peak value of $E$:
+\underline{7.2 divisions} $\times$ \underline{.2 V/div} $\times$ (1/10) \\ \hfill = \underline{ $.144\pm .002$ V}
 
-So, \hfill \underline{$E_{max} =.722 \pm .01$ V}.
+\item So, \hfill \underline{$E_{max} =0.072 \pm .01$ V}.
 
-Measured Resistance: \hfill \underline{R = $\Omega$} %TODO
+\item Measured Resistance: \hfill \underline{R = $105.6\Omega$}
 
-\# of turns of the coil, \hfill\underline{$N_c$: } %TODO
+\item \# of turns of the coil, \hfill\underline{$N_c = 500$ turns}\\
+\end{itemize}
 
 \subsubsection{Solenoid}
-Inner diameter, \hfill\underline{$d_1 = 4.11$cm}
+\begin{itemize}
+\item Inner diameter, \hfill\underline{$d_1 = 4.11$cm}
 
-Out diameter, \hfill\underline{$d_2 = 5.47$cm}
+\item Out diameter, \hfill\underline{$d_2 = 5.47$cm}
 
-Mean diameter, \hfill\underline{$\bar{d} = 4.79$cm}
+\item Mean diameter, \hfill\underline{$\bar{d} = 4.79$cm}
 
-Mean radius, \hfill\underline{$\bar{r} = 2.40$cm}
+\item Mean radius, \hfill\underline{$\bar{r} = 2.40$cm}
 
-So, the area of the solenoid, \hfill\underline{$A_s = 1.81 \times 10^{-3}$ m\textsuperscript{2}}\\ \\
+\item So, the area of the solenoid, \hfill\underline{$A_s = 1.81 \times 10^{-3}$ m\textsuperscript{2}}\\ \\
 
-\# of turns, \hfill\underline{ $N_s$ = 902 turns}
+\item \# of turns, \hfill\underline{ $N_s$ = 900 turns}
 
-Length of Solenoid, \hfill \underline{$L = 100.2$cm}
+\item Length of Solenoid, \hfill \underline{$L = 1.02$m}
 
-So, turns per unit length \hfill\underline{$n_s = $ 898 1/m}
+\item So, turns per unit length \hfill\underline{$n_s = $ 882 $\text{m}^{-1}$} \\
+
+\end{itemize}
 
 \subsubsection{Ch.1 Source Voltage}
+\begin{itemize}
+\item $\Delta V$ = \underline{3.00 divisions}  $\times$ \underline{2 V/div} $\times$ (1/10)
+\\ \hfill= \underline{.600 V}
 
-$\Delta V$ = \underline{4.00 divisions}  $\times$ \underline{1 V/div} \hfill= \underline{4.00 V}
+\item $\Delta t$ = \underline{10 divisions} $\times$ \underline{.2 ms/div}  $\times$ \underline{1/10} magnifier \\ \hfill= \underline{0.200 ms}. \\ \\
 
-$\Delta t$ = \underline{10 divisions} $\times$ \underline{.2 ms/div}  $\times$ \underline{1/10} magnifier \hfill= \underline{200 $\mu$s}. \\ \\
+\item So, the slope, \hfill$\Delta V/\Delta t = $\underline{$3 \times 10^3$ V/s} \\ \\
 
-So, the slope, \hfill$\Delta V/\Delta t = $\underline{$2.0 \times 10^6$ V/s} \\ \\
 
-Predicted maximum EMF: \hfill $E_{max} = $ \underline{} volts
+\noindent\hrulefill
 
-$E_{max} = \mu_0 n_s N_c A_s (\Delta V / \Delta t)/R $\hfill = \underline{V}
+\item Measured maximum EMF: \hfill $E_{max} = $ \underline{.072 V}
 
-Percent error between $E_{max}$ \textit{theory} and \textit{measured}: \hfill\underline{\%} \\ \\
+\item $E_{max} = \mu_0 n_s N_c A_s (\Delta V / \Delta t)/R $\hfill = \underline{.028 V}
 
-Phase Difference between Resistor and Capacitor Voltage:
-
-\underline{1.25 divs} $\times$ \underline{.2 ms/div} = \hfill\underline{250 $\mu$s}
+\item Percent error between $E_{max}$ \textit{theory} and \textit{measured} \\ \hfill\underline{= 157\%}
 
 \hrulefill
 
-Calculated mutual inductance of the system: \underline{}
+\item Phase Difference between Resistor and Capacitor Voltage:
+\underline{1.25 divs} $\times$ \underline{.2 ms/div} \\ \hfill = \underline{250 $\mu$s}
 
-Geometric mutual inductance: \underline{}
+\end{itemize}
 
-Percent error: \underline{\%}
+\hrulefill
+
+Calculated mutual inductance of the system: \hfill\underline{1.01 $\times 10^{-3}$}
+
+Geometric mutual inductance: \hfill\underline{1.05 $\times 10^{-3}$}
+
+Percent error: \underline{ -3.8\%}
 
 \hrulefill
 
@@ -273,7 +292,7 @@ Slope $\Delta V / \Delta t$ = \hfill \underline{$5.5 \times 10^3$ V/s}
 
 Channel 1 Peak-to-Peak:
 
-1.1 divs $\times$ 5 V/div = \hfill\underline{5.5 V} \\ \\
+1.1 divs $\times$ 5 V/div $\times$ (1/10) = \hfill\underline{.55 V} \\ \\
 
 Time required to reach $\frac{1}{2}V_{max}$:
 
@@ -283,6 +302,17 @@ External Resistance \hfill\underline{$R = $1.997k$\Omega$}
 
 Measured Capacitance \hfill\underline{$C = $ 50.8 nF}
 
+\hrulefill
+
+Capacitance from Slope: \hfill\underline{50.1 nF}
+
+Percent Error: \hfill\underline{1.4\%} \\
+
+Capacitance from $t_{1/2}$: \hfill\underline{39.7 nF}
+
+Percent Error: \hfill\underline{21.8\%}
+
+\hrulefill
 
 %\section{Derivation}\label{append:deriv}
 

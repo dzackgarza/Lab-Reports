@@ -1,0 +1,276 @@
+\documentclass[twocolumn,english]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{booktabs}
+
+\newcolumntype{W}{>{\centering\arraybackslash}m{25mm}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{15mm}}
+
+
+\hypersetup{
+ pdftitle=  {Diffraction and Interference},
+ pdfauthor= {Zack Garza},
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % protect \markboth against an old bug reintroduced in babel >= 3.8g
+ \let\oldforeign@language\foreign@language
+ \DeclareRobustCommand{\foreign@language}[1]{%
+   \lowercase{\oldforeign@language{#1}}}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\makeatother
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\theoremname}{Theorem}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+\usepackage{float}
+\begin{document}
+
+\title{Diffraction and Interference}
+
+
+\author{Zack Garza}
+
+
+\IEEEspecialpapernotice
+{Physics 215L \\
+Effective Date of Report: \today }
+
+
+\markboth{Diffraction and Interference}{Zack Garza}
+\maketitle
+
+
+\tableofcontents
+
+\section{Introduction}
+\IEEEPARstart{T}{he} purpose of this experiment is to investigate the patterns produced by single slit diffraction and double slit interference, and to verify that the minima and maxima occur respectively at the locations predicted by theory.
+
+\section{Theory}
+\subsection{Single Slit}
+In the case of a single slit, the angle  between the slit and the minima in the diffraction pattern is given by
+\begin{equation}\label{eq:min}
+	a\sin\theta = m\lambda.
+\end{equation}
+, where $a$ is the slit width and $\lambda$ is the wavelength of the incident light.
+
+Since this angle is small, we make the approximation that
+\begin{equation*}
+	\sin\theta \approx \tan\theta,
+\end{equation*}
+
+and from the geometry of the experimental setup, we find that
+\begin{equation*}
+	\tan\theta = \frac{y}{D},
+\end{equation*}
+where $y$ is the distance from the center to the $m$th minimum, and $D$ is the distance from the slit to the screen.
+
+Substituting this into Equation~\ref{eq:min} gives the following expression for the slit width,
+\begin{align}\label{eq:single_slit_width}
+	a = \frac{m\lambda D}{y}, \qquad  m\in\mathbb{N}.
+\end{align}
+
+\subsection{Double Slit}
+In the case of two slits, the angle to the $m$th maxima in the interference pattern is given by
+\begin{equation}\label{eq:double_slit}
+	d\sin\theta = m\lambda,
+\end{equation}
+where $d$ is the distance between the slits.
+
+The small angle approximation is again used, and trigonometry shows that
+\begin{align*}
+	\tan\theta = \frac{y}{D},
+\end{align*}
+which after substitution yields the following expression for the slit separation,
+\begin{equation}\label{eq:dbl_slit_distance}
+	d = \frac{m\lambda D}{y}, \qquad m\in\mathbb{N}.
+\end{equation}
+
+\hrulefill
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% End Theory %%%%%%%%%%%%%%%%%%
+
+\section{Analysis}
+\subsection{Part 1}
+Wavelength, Green Laser: \hfill\underline{532 nm}
+
+Given Slit Width: \hfill\underline{0.08 mm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Table, Single, Green Laser %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\caption{Data and Results for 0.08 mm Single Slit, Green Laser}
+\label{tb:single_slit_green}
+\begin{tabular}{@{}lll@{}}
+\toprule
+& \multicolumn{1}{c}{\textbf{Order ($m=$)}} & \multicolumn{1}{c}{\textbf{Order($m=$)}} \\
+\midrule
+
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance Between\\ Side Orders\end{tabular}}
+	&	&	\\
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance From Center\\ To Side ($y$)\end{tabular}}
+	&	&	\\
+\textbf{Calculated Slit Width}
+	&	&	\\
+\textbf{\% Error}
+	&	&	\\
+
+\bottomrule
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slit-to-Light Sensor Probe Distance: \hfill\underline{$D$ = n}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Table, Single, Red Laser %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\caption{Data and Results for 0.08 mm Single Slit, Red Laser}
+\label{tb:single_slit_red}
+\begin{tabular}{@{}lll@{}}
+\toprule
+& \multicolumn{1}{c}{\textbf{Order ($m=$)}} & \multicolumn{1}{c}{\textbf{Order($m=$)}} \\
+\midrule
+
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance Between\\ Side Orders\end{tabular}}
+	&	&	\\
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance From Center\\ To Side ($y$)\end{tabular}}
+	&	&	\\
+\textbf{Calculated Slit Width}
+	&	&	\\
+\textbf{\% Error}
+	&	&	\\
+
+\bottomrule
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slit-to-Light Sensor Probe Distance: \hfill\underline{$D$ = n}
+
+
+Calculated Wavelength, Red Laser: \hfill\underline{ nm}
+
+Given Wavelength, Red Laser: \hfill\underline{ nm}
+
+Percent Error: \hfill\underline{ \%}
+
+\subsection{Part 2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Table, Double, Green Laser %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\caption{Data and Results for 0.04 mm/0.25 mm Double Slit, Green Laser}
+\label{tb:double_slit_green}
+\begin{tabular}{@{}lll@{}}
+\toprule
+& \multicolumn{1}{c}{\textbf{Third Order ($m=3$)}} & \multicolumn{1}{c}{\textbf{Fourth Order($m=4$)}} \\
+\midrule
+
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance Between\\ Side Orders\end{tabular}}
+	&	&	\\
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance From Center\\ To Side ($y$)\end{tabular}}
+	&	&	\\
+\textbf{Calculated Slit Separation}
+	&	&	\\
+\textbf{\% Error}
+	&	&	\\
+
+\bottomrule
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slit-to-Light Sensor Probe Distance: \hfill\underline{$D$ = n}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Table, Double, Red Laser %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\caption{Data and Results for 0.04 mm/0.25 mm Double Slit, Red Laser}
+\label{tb:double_slit_red}
+\begin{tabular}{@{}lll@{}}
+\toprule
+& \multicolumn{1}{c}{\textbf{Third Order ($m=3$)}} & \multicolumn{1}{c}{\textbf{Fourth Order($m=4$)}} \\
+\midrule
+
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance Between\\ Side Orders\end{tabular}}
+	&	&	\\
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance From Center\\ To Side ($y$)\end{tabular}}
+	&	&	\\
+\textbf{Calculated Slit Separation}
+	&	&	\\
+\textbf{\% Error}
+	&	&	\\
+
+\bottomrule
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slit-to-Light Sensor Probe Distance: \hfill\underline{$D$ = n}
+
+
+Calculated Wavelength, Red Laser: \hfill\underline{ nm}
+
+Percent Error: \hfill\underline{ \%}
+
+\section{Questions}
+\begin{enumerate}
+	\item \textit{For the single slit, does the distance between minima increase of decrease when the slit width is increased?}
+
+	\item \textit{For the double slit:}
+
+	\begin{enumerate}
+		\item \textit{How does the distance between maxima change when the slit separation is increased?}
+
+		\item \textit{How does the distance between maxima change when the slit width is increased?}
+
+		\item \textit{How does the distance to the first minima in the diffraction envelope change when the slit separation is increased}
+
+		\item \textit{How does the distance to the first minima of the diffraction envelope change when the slit width is increased?}
+	\end{enumerate}
+
+	\item \textit{What are the similarities and difference between the single slit and double slit patterns?}
+\end{enumerate}
+
+%\bibliographystyle{plain}
+%\bibliography{physbib}
+
+\end{document}
