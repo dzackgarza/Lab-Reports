@@ -324,6 +324,44 @@ Use to reduce a nonhomogeneous equation to a homogeneous one as a polynomial in 
 $F(x)$ of the form $e^{ax}sin(kx)$ can be rewritten as $e^{(a+ki)x}$
 
 
+\chapter{Laplace Transforms}
+
+Definition:
+\begin{equation}
+	L[f(t)] = L[f] =\int_0^\infty e^{-st}f(t)dt = F(s).
+\end{equation}
+
+\begin{enumerate}
+	\item $L[e^{at}] = \frac{1}{s-a}$
+	\item $L[t^n] = \frac{n!}{s^{n+1}}$
+	\item $L[1] = \frac{1}{s}$
+	\item $L[\cosh(at)] = \frac{s}{s^2-a^2}$
+	\item $L[\sinh(at)] = \frac{a}{s^2-a^2}$
+	\item $L[\cos(at)]= \frac{s}{s^2+a^2}$
+	\item $L[\sin(at)]= \frac{a}{s^2+a^2}$
+	\item $L[y'] = sL[y] + y(0)$
+	\item $L[y''] = s^2L[y] - sy(0) - y'(0)$
+\end{enumerate}
+
+Theorem: The First Shifting Theorem states
+\begin{equation}
+	L[e^{at} f(t)] = \int_0^\infty e^{(a-s)}f(t)dt = F(s-a),
+\end{equation}
+
+or that a constant shift of $a$ adds a factor of $e^{at}$ under an inverse Laplace transformation.
+
+The general technique for solving differential equations with Laplace Transforms:
+\begin{enumerate}
+	\item Take the Laplace Transform of all terms on both sides.
+	\item Solve for $L[y]$ in terms of $s$.
+	\item Attempt an inverse Laplace Transformations
+	\begin{enumerate}
+		\item This may involve partial fraction decomposition, completing the square, and splitting numerators to match terms with known inverse transformations.
+	\end{enumerate}
+
+\end{enumerate}
+
+
 
 
 
