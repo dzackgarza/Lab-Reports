@@ -1,0 +1,271 @@
+\documentclass[twocolumn,english]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{calc}
+\newcommand{\vb}[1]{\mathbf{#1}}		%Bold vector
+\newcolumntype{W}{>{\centering\arraybackslash}m{25mm}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{15mm}}
+\usepackage{booktabs}
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Variables
+\newcommand{\thetitle}{RLC Circuits}
+\newcommand{\theauthors}{Zack Garza}
+\newcommand{\theclass}{Physics 210L}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{
+ pdftitle=  {\thetitle},
+ pdfauthor= {\theauthors},
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % protect \markboth against an old bug reintroduced in babel >= 3.8g
+ \let\oldforeign@language\foreign@language
+ \DeclareRobustCommand{\foreign@language}[1]{%
+   \lowercase{\oldforeign@language{#1}}}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\makeatother
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\theoremname}{Theorem}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+\usepackage{float}
+\begin{document}
+
+\title{\thetitle}
+\author{\theauthors}
+\IEEEspecialpapernotice
+{\theclass \\ Effective Date of Report: \today }
+\markboth{\thetitle}{\theauthors}
+\maketitle
+
+\begin{abstract}
+\IEEEPARstart{T}{he} purpose of this experiment...
+\end{abstract}
+
+\tableofcontents
+
+\section{Theory}
+
+The following expressions were used in the analysis of this circuit:
+\begin{align*}
+	\omega &= 2\pi f \\
+	\omega_0 &= \sqrt{\frac{1}{LC}} \Rightarrow f_0 = \frac{1}{2\pi\sqrt{LC}}\\
+	X_L &= \frac{V_L}{I} \\
+	X_C &= \frac{V_C}{I} \\
+	Z &= \frac{V_s}{I} \\
+	L &= \frac{X_L}{2\pi f} \\
+	C &= \frac{1}{2\pi f X_C} \\
+	\theta &= 360^{\circ} f\Delta t \\
+	P &= I_{\text{rms}} V_{\text{rms}} \cos\theta \\
+	Q &= \frac{\omega_0 L}{R} \\
+	Q &= \frac{f_0}{\Delta f} = \frac{\omega_0}{\Delta \omega}
+\end{align*}
+
+$\Delta f$ is the width of the resonance peak between the points where $V = \frac{1}{\sqrt{2}}V_{\text{max}}$
+
+\section{Methodology}
+\begin{enumerate}
+	\item A simple RLC series circuit was constructed. DMMs were wired to measure $\Delta V_L$, and $\Delta V_C$, the voltages of the inductor $L$ and the capacitor $C$ respectively.
+	\item An ammeter was wired in series with the previous elements to measure $I$, and an oscilloscope was wired to measure $\Delta V_s$ and $\Delta V_R$, the voltages across the source and the resistor $R$ respectively.
+	\item The resistance of $R$ was measured in order to determine phase difference between the source voltage $V_s$ and the current $I$. $\Delta t$ between these two signals was recorded.
+	\item The potential difference of the supply was set to a constant 2.0 V (rms), and the ammeter was set to the 430 mA scale.
+	\item The expected resonance frequency $f_0$ was calculated, and a range of frequencies symmetric about $f_0$ were chosen for measurement.
+	\item For each frequency $f$, the following quantities were measured:
+	\begin{enumerate}
+		\item $I_{\text{rms}}$
+		\item $V_L$
+		\item $V_C$
+	\end{enumerate}
+	Extra data points were taken at frequencies approaching $f_0$.
+	\item The data was then placed into a spreadsheet to calculate various variables, which were used in the analysis section.
+\end{enumerate}
+
+\section{Results}
+\subsection{Average Inductance/Capacitance Values}
+
+\underline{$\bar L = n\pm d$}
+
+\underline{$\bar C = n\pm d$}
+
+\hrulefill
+
+\subsection{Impedance vs. Frequency}
+
+%Plot of {XL, XC, Z} vs. f
+%Determine Zmin and f resonant
+%
+% \begin{figure}[h!]
+% 	\begin{centering}
+% 	\begin{center}
+% 	\includegraphics[width=\linewidth]{./??????.png}
+% 	\caption{Plot of $X_L, X_C, $ and $Z$ vs. $f$. }
+% 	\label{fig:xf_graph1}
+% 	\end{center}
+% 	\par\end{centering}
+% \end{figure}
+
+\underline{$Z_{\text{min}} = n \Omega$}
+
+\underline{$f_{\text{res,meas}} = n$ Hz} \\ \\
+
+\textit{Why is $R_{\text{meas}}$ not the same as the value of the resistor used in the circuit?}
+
+\hrulefill
+
+\subsection{Current vs. Frequency}
+
+The data was fitted to the function
+\begin{equation}
+	I_{\text{rms}}
+	= \frac
+	{V_{\text{rms}}\omega}
+	{\sqrt{(R\omega)^2 +L^2(\omega^2-\omega_0^2)^2}}
+\end{equation}
+
+% \begin{figure}[h!]
+% 	\begin{centering}
+% 	\begin{center}
+% 	\includegraphics[width=\linewidth]{./IvsFreq.png}
+% 	\caption{Plot of $I_{\text{rms}} vs. $f$}
+% 	\label{fig:IvsFreq}
+% 	\end{center}
+% 	\par\end{centering}
+% \end{figure}
+
+\underline{$R_{\text{fit}} = n \Omega$}
+
+\underline{$f_{\text{res, fit}} = n$ Hz}
+
+\hrulefill
+
+\subsection{Difference between measured and fitted values}
+
+\textit{What is the percent difference between $R$ (measured) and $R$ (fit)? Is $R$ (measured) within the uncertainty of $R$ (fit)?}
+
+\underline{Percent Difference: $x\%$}
+
+\hrulefill
+
+\subsection{Theoretical Resonant Frequency}
+The resonant frequency, calculated from the mean values of $L$ and $C$ from step 1 is given by
+\begin{align}
+	f_{\text{res,theor}} &= \frac{1}{2\pi\sqrt{L_{\text{avg}} C_{\text{avg}}}}. \\
+	\Rightarrow f_{\text{res,theor}} &= n Hz \notag
+\end{align}
+
+Comparing this to the values determined in Steps 2 and 3 above, we have
+
+\underline{\% Difference, Step 2: $x\%$}
+
+\underline{\% Difference, Step 3: $x\%$}
+
+\hrulefill
+
+\subsection{Voltage vs Frequency}
+
+% \begin{figure}[h!]
+% 	\begin{centering}
+% 	\begin{center}
+% 	\includegraphics[width=\linewidth]{./VvsFreq.png}
+% 	\caption{Plot of $V_L$ and $V_C$ vs $f$, extrapolated to zero frequency.}
+% 	\label{fig:VvsFreq}
+% 	\end{center}
+% 	\par\end{centering}
+% \end{figure}
+
+\textit{What does this graph tell you?}
+
+\hrulefill
+
+\subsection{Phase Angle vs. Frequency}
+
+% \begin{figure}[h!]
+% 	\begin{centering}
+% 	\begin{center}
+% 	\includegraphics[width=\linewidth]{./PhasevsFreq.png}
+% 	\caption{Plot of phase angle ($360^{\circ}f\Delta t$) vs. $f$, with $I-V$ relationship denoted.}
+% 	\label{fig:PhasevsFreq}
+% 	\end{center}
+% 	\par\end{centering}
+% \end{figure}
+
+\textit{Does this curve agree with theory? Explain.}
+
+\hrulefill
+
+\subsection{Power vs. Frequency}
+
+% \begin{figure}[h!]
+% 	\begin{centering}
+% 	\begin{center}
+% 	\includegraphics[width=\linewidth]{./PowervsFreq.png}
+% 	\caption{Plot of $P$ vs $f$, used to determine the full-width and half-max in order to calculate $Q$.}
+% 	\label{fig:PowervsFreq}
+% 	\end{center}
+% 	\par\end{centering}
+% \end{figure}
+
+\underline{$\Delta f$ = x Hz}
+
+\hrulefill
+
+\subsection{Quality Factor}
+The calculated quality factor is given by
+\begin{equation}
+	Q_{\text{calc}} = \frac{f_{\text{max, meas}}}{\Delta f}
+\end{equation}
+
+Calculated Quality Factor: \underline{$Q_{\text{calc}} = x\pm d$}
+%1Hz uncertainty in f and delta f
+
+The theoretical Quality factor is given by
+\begin{equation}
+	Q = \frac{\omega_0 L}{R_{\text{meas}}},
+\end{equation}
+where $\omega_0$ is given by $2\pi f_{\text{res,meas}}$ from Step 2 and $L$ is $L_{\text{avg}}$ from Step 1.
+
+Theoretical Quality Factor: \underline{$Q = x\pm d$}
+
+\hrulefill
+
+\section{Analysis and Conclusion}
+
+%\appendices{}
+%\bibliographystyle{plain}
+%\bibliography{physbib}
+
+\end{document}

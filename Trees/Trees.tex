@@ -1,0 +1,357 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\parindent}{0pt}
+
+% Title Page
+\title{Trees}
+\author{Zack Garza}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\tableofcontents
+\end{abstract}
+
+% Definitions, history, statement of the main results, proofs, applications, open questions
+%Why is the problem you are solving worth solving?
+% What is the core difference between your method and all those that came before? This is really a two-part question (which most speakers screw up by answering only the second part).
+% What does your method accomplish that no previous method accomplishes?
+% What algorithmic or methodological idea enables your method to accomplish more?
+% What is the evidence that your method is better in some circumstances? (And what are those circumstances?)
+% What is the one big idea that you want people to leave your talk with? If you try to get across five ideas, you will usually impart none. If you choose one main idea and focus on advertising it, you will usually succeed. “Give them something to take home.”
+\chapter{Background and Definitions}
+
+\subsection{Background}
+A little bit of background: trees were first studied in the late 1800s by Arthur Cayley, made contributions geometry, analysis, and group theory. Cayley's Theorem, for example, showed that every group is isomorphic to a corresponding permutation group. He invented trees while trying to mathematically generate hydrocarbon isomers.
+
+\subsection{The Basics}
+
+A tree is a mathematical object that can be viewed as either a graph or a data structure.
+
+At a bare minimum, it consists of elements that we refer to as \textit{vertices} or \textit{vertices} that are connected in some way. These connections are usually represented as paths or \textit{edges} between the vertices. The edges themselves can have additional structure imparted upon them, such as specifying a direction between vertices, or assigning a numerical value or \textit{weight} to each edge.
+
+\textbf{Definition.} Given a graph $G$, a path $(v_1, v_2, v_2, \cdots v_n)$ is called a \texit{cycle} if $v_1 = v_n$.
+
+\textbf{Definition.} A graph $G$ is called \textit{connected} if for every pair of vertices, $(v,w)$ there exists a path between them.
+
+\noindent\textbf{Definition:}  A tree is a \underline{connected} graph that is \underline{acyclic}. This is equivalent to saying that for every pair of vertices $(v,w)$, there exists a unique path between them.
+
+\textit{Note: Circuits are sometimes called cycles,}
+
+Trees are often given additional structure in the form of \texit{partial ordering}. We define this ordering with the binary relation $v\leqw$ if $v$ is on a path between the root and $w$. We refer to a traversal from a vertex to the root as a \textit{chain}.
+
+%Include discussion of degrees
+%e graph consists of a disjoint union of trees
+%The similar problem of counting all the subtrees regardless of size has been shown to be #P-complete i
+\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./some_trees.png}
+	\caption{Several undirected graphs. $G_1, G_2$ are trees. $G_3$ contains a simple circuit, $G_4$ is not connected.}
+	\label{fig:some_trees}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+\textit{Note that $G_4$ does in fact contain two separate trees -- appropriately enough, $G_4$ is referred to as a forest.} \\ \\
+
+Notice that our definition of what constitutes a tree imparts a few guarantees about its structure. This is codified in our first theorem:
+
+\hrulefill
+
+\noindent\textbf{Theorem: }An undirected graph is a tree $\iff$ there is a unique, simple path between any two vertices.
+
+\textit{Proof:} For the theorem to hold, it must be shown that
+\begin{itemize}
+	\item If $T$ is a tree, then there is a unique simple path between every two vertices.
+	\item If $G$ is an undirected graph with a unique, simple path between every two vertices, it is a tree.
+\end{itemize}
+
+\textbf{(1)} Assume we have a tree $T$.
+Then by definition, it is a graph, and it must be connected and contain no simple circuits.
+
+Pick two vertices, $x$ and $y$.
+Because $T$ is connected, there will always exist a simple path $P_1$ between $x$ and $y$.
+But since $T$ is a tree, there can be no simple circuits. \\
+
+This means that the path between $x$ and $y$ must be unique.
+
+\textit{Proof by contradiction:}
+Assume there was another path, $P_2$ -- if this path existed, it could be combined with $P_1$ and create a simple circuit, which contradicts the assumption that $T$ was a tree.
+
+\textit{So, If $T$ is a tree, then there is a unique simple path between every two vertices.} \\
+
+\textbf{(2)} Assume we have a graph $G$ such that $G$ has a unique simple path between any two vertices.
+
+Then $G$ must be connected, because there exists some path between every vertex and every other vertex, and the first part of our definition of a tree is satisfied. \\
+
+It follows that $G$ must also contain no simple circuits.
+
+\textit{Proof by contradiction:}
+Suppose $G$ did have a simple circuit containing vertices $x$ and $y$. This implies that there are at least two simple paths between $x$ and $y$. But this contradicts our assumption that $G$ has only unique simple paths between any two vertices.
+
+\textit{So, $G$ is connected and contains no simple circuits, meaning $G$ is a tree.}
+
+\hrulefill
+
+A useful consequence of this theorem is that the number of edges and vertices in a tree are always related:
+
+\textbf{Theorem:} A tree with $n$ vertices has $n-1$ edges, where $n\in\mathbb{N}$.
+
+\textit{Proof: }We utilize choice in this proof to distinguish vertices and pick an arbitrary root for the tree, and then proceed by induction. \\
+
+Let $P_n$ be the statement of the theorem.
+
+\textit{Basis: }
+When $n=1$, $P_1$ states that a tree with 1 vertex has 0 edges, which is trivially true. \\
+
+\textit{Induction: }
+Assume $P_n$. Then, $P_{n+1}$ states that a tree with $n+1$ vertices has $n$ edges.
+
+Consider such a tree, $T$. Since $T$ is finite, it must have a leaf. Remove this leaf to produce a tree $T'$, which must still be a tree because it remains connected and contains no simple circuits.
+
+Since $T'$ now has $n$ vertices, by the inductive hypothesis, it then has $n-1$ vertices.
+
+Adding one vertex requires adding one edge, which acts on $T'$ to transform it back to $T$, which must have $n+1$ vertices and $n$ edges.
+
+\centering
+Thus, $P_n \rightarrow P_{n+1}$. $\qquad$
+
+\hrulefill
+
+\subsection{Examples of Trees}
+
+\begin{figure}[H]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\textwidth]{./tree.png}
+	\caption{Tree representation of a directory structure, corresponding to an undirected graph.}
+	\label{fig:directory}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./topology-tree.png}
+	\caption{Tree with weighted edges, again undirected.}
+	\label{fig:??????}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./chemistry.png}
+	\caption{Cis-polyisoprene, the main constituent of natural rubber, and many other hyrdocarbons can be represented as connected graphs, and thus trees as well. Nonisomorphic trees with the same number of vertices correspond to isomers.}
+	\label{fig:??????}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+\subsection{Motivation}
+What are trees useful for?
+
+Used widely in computer science (which explains the abundance of arboreal puns.)
+\begin{enumerate}
+	\item Game state trees (checkers, chess, etc.) - vertices represent states, and edges represent valid moves.
+	\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./game_states.png}
+	\caption{Portion of a game state tree from Tic-Tac-Toe}
+	\label{fig:game_state}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+	\item Huffman encoding - Given a large amount of text, it can be compressed into a tree based on symbol frequency. Used in jpeg and mp3 compression.
+	\item Decision trees
+	\item Efficient, structured storage - certain types of trees are guaranteed to be bounded by $O(\log n)$ (as long as they are balanced, as in certain B-trees or Red-Black trees.)
+	\item Form the basis of heaps, which are used to implement priority queues. These are used for operating system scheduling processes, quality-of-service in routers, AI path-finding algorithms, etc.
+\end{enumerate}
+Most things that can be represented in a hierarchy can be modeled as trees. From a practical perspective, they are also very easy to implement. They can be defined recursively, and have no theoretical upper limit to the amount of vertices. They are also amenable to proofs by induction.
+
+What are trees not so good for?
+
+Generally, any graph that contains loops. For example, a circuit that could be represented as a tree would have no current.
+
+\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./parse_tree.png}
+	\caption{A tree that parses mathematical operators that preserves their ordering.}
+	\label{fig:parse}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+
+
+
+
+\chapter{Rooted Trees}
+\textbf{Definition:} A \textit{rooted tree} is a tree in which one vertex is designated as the root, and every edge is directed away from the root.
+
+This means that there is no predefined notion of what the root is, as long as there is consistency in direction.
+\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./changing_roots.png}
+	\caption{Changing the root of $T$ from $a$ to $c$. Notice that the direction between $a$ and $c$ is reversed when the roots are changed.}
+	\label{fig:changing_roots}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+Terminology to know:
+\begin{enumerate}
+	\item Parent - If $v$ is a vertex, the parent $p$ is the unique vertex such that $p\Rightarrow v$.
+	\item Child - If $p$ is the parent of $v$, $v$ is the child of $p$
+	\item Sibling - Vertices with the same parent.
+	\item Ancestor - Any vertex on a path between $v$ and the root.
+	\item Descendant - Vertices for which $v$ is an ancestor.
+	\item Leaf - Vertex with no children
+	\item Internal Vertex - Any vertex with children.
+	\item Subtree - Subgraph consisting of $a$ as its root, including all of its descendants.
+	\item Level (\textit{or height}) - Number of edges along the longest path between a vertex and a leaf.
+	i.e., a local measure of how far a vertex is from a leaf.
+
+	Leaves are defined to have a level of 0.
+
+	\item Depth - Number of edges between a vertex and the root vertex,
+	i.e. a measure of distance to the root vertex.
+
+	Root vertices are defined to have a depth of 0
+
+		\begin{figure}[h!]
+		\begin{centering}
+		\begin{center}
+		\includegraphics[width=.5\linewidth]{./height-depth.png}
+		\caption{Root vertices always have a \underline{depth} of 0, and leaf vertices will always have a \underline{height} of zero. }
+		\label{fig:??????}
+		\end{center}
+		\par\end{centering}
+		\end{figure}
+\end{enumerate}
+
+\subsection{m-ary Trees}
+\textbf{Definition: } A rooted tree is called an \textit{m-ary tree} is every \underline{internal} vertex has at most $m$ children, and is said to be \textit{full} if every internal vertex has exactly $m$ children.
+
+Note that the definition of full only applies to \textit{internal} vertices! If we counted leaves, no finite tree would ever fit this definition.
+
+\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./m_ary_exercise.png}
+	\caption{Are these trees full $m$-ary trees from some $m\in\mathbb{N}$?}
+	%If not, how can they be fixed? T4 just needs a third vertex added.
+	\label{fig:??????}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+\subsection{Special Case: Ordered Binary Trees}
+Defined as an $m$-ary tree with $m=2$, i.e. that every vertex has two children. There is also an additional restriction that
+Commonly used as a data structure, and yields several nice properties.
+\textbf{Definition: }An $m$-ary tree  is \textit{complete} if every level (but not necessarily the last) is full, and all vertices on the bottom are on the left.
+\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./full_complete.png}
+	\caption{Distinction between full and complete m-ary trees (in this case, binary).}
+	\label{fig:??????}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./binary_tree_search.png}
+	\caption{Binary trees provide $O(\log n)$ access to arbitrary elements.}
+	\label{fig:??????}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+How do we know that lookup in $O(\log n)$? Well, suppose we have a binary tree $B$, with a maximum depth of $d$, and $n$ vertices.
+
+To find an arbitrary vertex in $B$, we need to make at most $d$ comparisons -- one at each level of the tree.
+
+But how is this related to the number of vertices in the tree?
+Well, we count the vertices and see that
+\begin{align*}
+	n \leq 1 + 2 + 4 + 8 + \cdots + 2^d = \sum_{k=0}^d (1)2^k =(1)\frac{1-2^{d-1}}{1-2} = 2^{d-1} -1 \\
+	\Rightarrow n \leq 2^{d-1} -1.
+\end{align*}
+
+That is, that the maximum number of vertices in a tree is bounded by the depth in a particular way. Solving for $d$, which the maximum number of comparisons needed, we see that
+
+\begin{align*}
+	n+1 \leq 2^{d-1}  \\
+	\Rightarrow \ln(n+1) \leq (d-1)\ln 2  \\
+	\Rightarrow \frac{\ln(n+1)}{\ln 2} \geq d-1 \qquad (\text{where }\ln 2 < 0) \\
+	\Rightarrow \log_2(n+1)+1 \geq d \\
+	\Rightarrow d \leq \log_2(n+1) +1 \leq \log_2(n+1) \leq \log_2(n) \\
+	\Rightarrow d \in O(\log_2 n). \qquad \square
+\end{align*}
+
+\chapter{Applications}
+\subsection{Binary Search Trees}
+Left subtree < root, right subtree > root.
+-- Enumerate types of graphs
+	-- Digraphs?
+ -- Spanning trees
+	-- Minimum spanning trees
+ -- Depth/Breadth Search
+	-- Sums of subsets
+	-- Web spiders
+ -- Traversals (Easy to define recursively with subtrees)
+	-- Preorder
+		Root, left, right
+		Polish notation
+	-- Postorder
+		Left, right, root
+		Reverse-Polish/Postfix notation
+	-- Inorder (Only for Binary trees)
+		Left, root, right
+		Infix notation (ambiguous, parentheses needed)
+			Compare to pre/post - only one way to parse
+-- Arithmetic Parsing
+	-- Infix
+	-- Prefix
+	-- Postfix
+--Matrix representation
+http://www.geeksforgeeks.org/graph-and-its-representations/
+
+%Why is logn good? There are roughly a billion websites on the internet -- if we could search them in logn time, it would take at most 30 steps to find an arbitray site.
+
+%Strongly typed languages impose restrictions on what the data associated with a vertex must be.
+
+%Traversals impose total order on the tree structure.
+
+%Weighting edges on an undirected graph gives it a metric, or a fundamental notion of distance between points.
+
+%Travelling salesman - NP Hard
+
+%Structure - bijections between different choices of roots. Invariance of degree sequence between isomorphic graphs (isomorphisms preserve degree and edge structure). Invariance of distance between nodes.
+
+%Trees are minimal connected subgraphs
+
+%Laplace matrix Q of G
+% qii = degree of vertex i
+% qij = -1 if adjacent, 0 if not
+% Delete any row and colum, det(Q) = number of distinct spanning trees
+%
+%
+
+
+
+\end{document}
