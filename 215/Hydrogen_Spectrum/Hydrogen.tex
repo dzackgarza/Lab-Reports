@@ -215,7 +215,7 @@ c&=2.998\times10^8 m/s.
 \noindent\hrulefill
 
 \section{Data and Results}
-\subsection{Part 1}
+\subsection{Part 1: Grating Calibration}
 
 Wavelength of Laser \hfill\underline{632.8 nm}
 
@@ -235,11 +235,18 @@ Slit Spacing $d$, given by
 	\Rightarrow d &= m\lambda\csc\theta \\
 	\Rightarrow d &= m\lambda\frac{\sqrt{D^2 + x^2}}{x^2},
 \end{align*}
-yields: \hfill\underline{$d$ = 1.146 $\mu$m}
+yields: \hfill\underline{$d$ = 1.146 $\mu$m} \\
 
 
+Actual Slit Spacing: \hfill\underline{$d =$ 1.016 $\mu$m/div}
 
-\subsection{Part 2}
+Slit Spacing Percent Error: \hfill\underline{12.8\%}
+
+
+\noindent\hrulefill
+
+
+\subsection{Part 2: Hydrogen Gas Spectrum}
 Distance from Grating to Meter Stick: \hfill\underline{29.85 cm}
 
 \begin{table}[!htpb]
@@ -248,8 +255,8 @@ Distance from Grating to Meter Stick: \hfill\underline{29.85 cm}
 \toprule
 				& Red		& Cyan 		& Violet 		\\ \midrule
 Distance(cm)   	& 23.60		& 15.75 	& 13.75    		\\
-Wavelength(nm) 	& 711.0     & 267.5 	& 159.9     	\\
-\% Error   		& 8.33\%    & -45.0\% 	& -63.2     	\\ \bottomrule
+Wavelength(nm) 	& 710.7     & 534.8 	& 479.5     	\\
+\% Error   		& 8.33\%    & 10.0\% 	& 10.5\%     	\\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -259,12 +266,42 @@ Wavelength is given by
 	\Rightarrow\lambda &= \frac{d}{m}\sin\theta \\
 			&= \frac{d}{m}\sin\left(\tan^{-1}\left(\frac{x}{D}\right)\right)
 \end{align*}
+where $m=1$ for all observed spectral lines.
 
-\section{Results}
+\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./Ryberg_graph.png}
+	\caption{Plotting the inverse relationships between the wavelength and the corresponding principal quantum number recovers Ryberg's constant as the slope of the linear fit.}
+	\label{fig:Ryberg_graph}
+	\end{center}
+	\par\end{centering}
+\end{figure}
 
-% Please add the following required packages to your document preamble:
+Ryberg's Constant, from Graph: \hfill\underline{$.95\pm.02\times 10^7$}
+
+Ryberg's Constant, Theoretical: \hfill\underline{$1.097\times10^7$}
+
+Percent Error: \hfill\underline{13\%}
+
+Bohr radius, experimental, given by
+\begin{align*}
+	m &= \frac{k_e e^2}{2 a_o h c} \\
+	\Rightarrow a_o &= \frac{k_e e^2}{2 m h c}
+\end{align*}
+
+\hfill\underline{$a_0 =$ 61.2 $\times 10^{-12}$m}
+
+Bohr Radius, Theoretical: \hfill\underline{$a_{0\text(th)}$ = 52.9 $\times 10^{-12}$m}
+
+Percent Error: \hfill\underline{16\%}
+
+\noindent\hrulefill
+
+\subsection{Part 3: Spectral Emission Lines for H, He, and Hg}
 \begin{table}[H]
 \centering
+\caption{Hydrogen Spectrum}
 \begin{tabular}{@{}llccl@{}}
 \toprule
 \multicolumn{1}{c}{\textbf{Color}} & \multicolumn{1}{c}{\textbf{Intensity}} & \textbf{\begin{tabular}[c]{@{}c@{}}Wavelength(Theory)\\ (nm)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Wavelength(Meas)\\ (nm)\end{tabular}} & \multicolumn{1}{c}{\textbf{\%Error}} \\
@@ -278,9 +315,10 @@ Red                                & 300                                    & 65
 \end{table}
 
 
-% Please add the following required packages to your document preamble:
+
 \begin{table}[H]
 \centering
+\caption{Helium Spectrum}
 \begin{tabular}{@{}llccl@{}}
 \toprule
 \multicolumn{1}{c}{\textbf{Color}} & \multicolumn{1}{c}{\textbf{Intensity}} & \textbf{\begin{tabular}[c]{@{}c@{}}Wavelength(Theory)\\ (nm)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Wavelength(Meas)\\ (nm)\end{tabular}} & \multicolumn{1}{c}{\textbf{\%Error}} \\
@@ -295,9 +333,10 @@ IR                                 & 200                                    & 70
 \end{tabular}
 \end{table}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
+
 \begin{table}[h]
+\centering
+\caption{Mercury Spectrum}
 \begin{tabular}{@{}llccl@{}}
 \toprule
 \multicolumn{1}{c}{\textbf{Color}}                       & \multicolumn{1}{c}{\textbf{Intensity}} & \textbf{\begin{tabular}[c]{@{}c@{}}Wavelength(Theory)\\ (nm)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Wavelength(Meas)\\ (nm)\end{tabular}} & \multicolumn{1}{c}{\textbf{\%Error}} \\ \midrule
