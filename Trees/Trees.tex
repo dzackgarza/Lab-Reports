@@ -28,23 +28,68 @@
 \chapter{Background and Definitions}
 
 \subsection{Background}
-A little bit of background: trees were first studied in the late 1800s by Arthur Cayley, made contributions geometry, analysis, and group theory. Cayley's Theorem, for example, showed that every group is isomorphic to a corresponding permutation group. He invented trees while trying to mathematically generate hydrocarbon isomers.
+So, today I'm going to talk to you guys about trees, and hopefully give you guys some insight into why they're a particularly nice object to work with.
+
+\begin{itemize}
+
+\item To start off, we won't actually define a tree at first, but we'll talk a bit about why they were ``invented'' in order to address the question of why we would even need something like a tree in the first place.
+
+\item Then, we'll talk about what a tree really is, plus when and where they might be useful.
+
+\item Then we'll go over a few of the interesting properties that trees have, as well as a few different variants of them.
+
+\item And lastly, we'll cover some of the ways trees can be applied to problems.\\
+\end{itemize}
+
+So first, for a little bit of background -- trees were first studied in the late 1800s by Arthur Cayley, who made contributions to geometry and analysis. For those of you that might go on to take further courses in math, you'll very likely come across Cayley's Theorem in a class that covers groups (which is a topic in abstract algebra). You'll spend a lot of time studying things called ``permutation groups'', and Cayley's Theorem showed that theorems which were true for permutation groups could be extended to be true for all groups in general.\\
+
+Much of Cayley's work revolved around studying which properties of objects were invariant under some condition -- that is, after applying some kind of transformation to the object, the property remained the same and was in a somehow fundamental to that object's structure.\\
+
+For example, consider rotating a circle in the plane -- this does not change the set of points contained within the circle. Or consider switching rows and columns of a matrix -- the set of elements inside of the matrix is the same.\\
+
+So where do trees come into this? Well, Cayley invented trees while working with chemical structures -- in particular, he was trying to find a way to mathematically generate the structure of hydrocarbons. (See Figure).\\
+
+\begin{figure}[h!]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./alkanes.png}
+	\caption{A series of Alkanes -  one $C$ always bonds to 4 other atoms, and the structure always conforms to the relationship $H_n-C_{2n+2}$}
+	\label{fig:alkanes}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{centering}
+	\begin{center}
+	\includegraphics[width=\linewidth]{./hydrocarbons.png}
+	\caption{Applying a transformation (in this case, relocating a bond to create an isomer) does not affect the number of $H$ and $C$ atoms, nor their relationships.}
+	\label{fig:hydrocarbons}
+	\end{center}
+	\par\end{centering}
+\end{figure}
+
+One thing to notice about the alkane series above is that for $n\leq 3$, no matter how we many ways we ``swap'' the atoms, we can always find a way to make our 'swapped`` version look like one of the given versions. But for $n \geq 4$, something interesting happens -- now, we have a way of swapping atoms that really has changed the structure. And if you're doing chemistry with these compounds, this is something you might worry about -- although the number of $H$ and $C$ atoms is the same, we know that these kinds of structural changes can cause the chemical to react in an entirely different way!\\
+
+In chemistry, we might call these two forms ''isomers``, but Cayley's observation was that something more general was going on. If these could be formulate as mathematical objects, then it might be said that isobutane was a permutation that wasn't \textit{isomorphic} to the rest of the permutations on 4 atoms. And hydrocarbon chains can easily extend into 100s of atoms - then what could we say about an an arbitrary set of $n$ atoms? And so these were the kinds of problems that ''trees`` were invented to address, but we'll see in a moment that their use has spread far beyond that.\\
 
 \subsection{The Basics}
+So now we need to define what exactly we mean when we talk about trees. We'll have to go through a bunch of definitions first, so let's get to it!\\
 
-A tree is a mathematical object that can be viewed as either a graph or a data structure.
+A tree is a mathematical object that can be viewed as a graph, or in computer science we might consider it an ''abstract data structure``.\\
 
-At a bare minimum, it consists of elements that we refer to as \textit{vertices} or \textit{vertices} that are connected in some way. These connections are usually represented as paths or \textit{edges} between the vertices. The edges themselves can have additional structure imparted upon them, such as specifying a direction between vertices, or assigning a numerical value or \textit{weight} to each edge.
+At a bare minimum, it consists of elements that we refer to as \textit{vertices} that are connected, and these connections are usually represented as paths or \textit{edges} between the vertices. The edges themselves can have additional structure, such as specifying a direction between vertices, or assigning a numerical value or \textit{weight} to each edge.\\
 
-\textbf{Definition.} Given a graph $G$, a path $(v_1, v_2, v_2, \cdots v_n)$ is called a \texit{cycle} if $v_1 = v_n$.
+We also impose two other conditions, but we'll need a few definitions from graph theory to do so:\\
 
-\textbf{Definition.} A graph $G$ is called \textit{connected} if for every pair of vertices, $(v,w)$ there exists a path between them.
+\textbf{Definition.} Define a graph $G$ to be a set of nodes and vertices.
 
-\noindent\textbf{Definition:}  A tree is a \underline{connected} graph that is \underline{acyclic}. This is equivalent to saying that for every pair of vertices $(v,w)$, there exists a unique path between them.
+\textbf{Definition.} Given a graph $G$, a path $(v_1, v_2, v_2, \cdot v_n)$ is called a \textit{cycle} if $v_1 = v_n$. A graph that does not contain a cycle is said to be \textit{acyclic}.
 
-\textit{Note: Circuits are sometimes called cycles,}
+\textbf{Definition.} A graph $G$ is called \textit{connected} if \underline{for every pair of vertices, $(v,w)$} there exists a path between them.
 
-Trees are often given additional structure in the form of \texit{partial ordering}. We define this ordering with the binary relation $v\leqw$ if $v$ is on a path between the root and $w$. We refer to a traversal from a vertex to the root as a \textit{chain}.
+\textbf{Definition:}  A graph $G$ is a tree if $G$ is \underline{connected} and \underline{acyclic}. This is equivalent to saying that for every pair of vertices $(v,w)$, there exists a unique path between them (which we will prove in a few minutes).
+
 
 %Include discussion of degrees
 %e graph consists of a disjoint union of trees
@@ -53,77 +98,13 @@ Trees are often given additional structure in the form of \texit{partial orderin
 	\begin{centering}
 	\begin{center}
 	\includegraphics[width=\linewidth]{./some_trees.png}
-	\caption{Several undirected graphs. $G_1, G_2$ are trees. $G_3$ contains a simple circuit, $G_4$ is not connected.}
+	\caption{A few undirected graphs: which are trees? $G_1, G_2$ are, but $G_3$ contains a simple circuit and $G_4$ is not connected.}
 	\label{fig:some_trees}
 	\end{center}
 	\par\end{centering}
 \end{figure}
 
-\textit{Note that $G_4$ does in fact contain two separate trees -- appropriately enough, $G_4$ is referred to as a forest.} \\ \\
-
-Notice that our definition of what constitutes a tree imparts a few guarantees about its structure. This is codified in our first theorem:
-
-\hrulefill
-
-\noindent\textbf{Theorem: }An undirected graph is a tree $\iff$ there is a unique, simple path between any two vertices.
-
-\textit{Proof:} For the theorem to hold, it must be shown that
-\begin{itemize}
-	\item If $T$ is a tree, then there is a unique simple path between every two vertices.
-	\item If $G$ is an undirected graph with a unique, simple path between every two vertices, it is a tree.
-\end{itemize}
-
-\textbf{(1)} Assume we have a tree $T$.
-Then by definition, it is a graph, and it must be connected and contain no simple circuits.
-
-Pick two vertices, $x$ and $y$.
-Because $T$ is connected, there will always exist a simple path $P_1$ between $x$ and $y$.
-But since $T$ is a tree, there can be no simple circuits. \\
-
-This means that the path between $x$ and $y$ must be unique.
-
-\textit{Proof by contradiction:}
-Assume there was another path, $P_2$ -- if this path existed, it could be combined with $P_1$ and create a simple circuit, which contradicts the assumption that $T$ was a tree.
-
-\textit{So, If $T$ is a tree, then there is a unique simple path between every two vertices.} \\
-
-\textbf{(2)} Assume we have a graph $G$ such that $G$ has a unique simple path between any two vertices.
-
-Then $G$ must be connected, because there exists some path between every vertex and every other vertex, and the first part of our definition of a tree is satisfied. \\
-
-It follows that $G$ must also contain no simple circuits.
-
-\textit{Proof by contradiction:}
-Suppose $G$ did have a simple circuit containing vertices $x$ and $y$. This implies that there are at least two simple paths between $x$ and $y$. But this contradicts our assumption that $G$ has only unique simple paths between any two vertices.
-
-\textit{So, $G$ is connected and contains no simple circuits, meaning $G$ is a tree.}
-
-\hrulefill
-
-A useful consequence of this theorem is that the number of edges and vertices in a tree are always related:
-
-\textbf{Theorem:} A tree with $n$ vertices has $n-1$ edges, where $n\in\mathbb{N}$.
-
-\textit{Proof: }We utilize choice in this proof to distinguish vertices and pick an arbitrary root for the tree, and then proceed by induction. \\
-
-Let $P_n$ be the statement of the theorem.
-
-\textit{Basis: }
-When $n=1$, $P_1$ states that a tree with 1 vertex has 0 edges, which is trivially true. \\
-
-\textit{Induction: }
-Assume $P_n$. Then, $P_{n+1}$ states that a tree with $n+1$ vertices has $n$ edges.
-
-Consider such a tree, $T$. Since $T$ is finite, it must have a leaf. Remove this leaf to produce a tree $T'$, which must still be a tree because it remains connected and contains no simple circuits.
-
-Since $T'$ now has $n$ vertices, by the inductive hypothesis, it then has $n-1$ vertices.
-
-Adding one vertex requires adding one edge, which acts on $T'$ to transform it back to $T$, which must have $n+1$ vertices and $n$ edges.
-
-\centering
-Thus, $P_n \rightarrow P_{n+1}$. $\qquad$
-
-\hrulefill
+\textit{Note that $G_4$ does in fact contain two separate trees -- appropriately enough, $G_4$ is referred to as a forest.} \\
 
 \subsection{Examples of Trees}
 
@@ -195,6 +176,71 @@ Generally, any graph that contains loops. For example, a circuit that could be r
 
 
 
+Notice that our definition of what constitutes a tree imparts a few guarantees about its structure. This is codified in our first theorem:
+
+\hrulefill
+
+\noindent\textbf{Theorem: }An undirected graph is a tree $\iff$ there is a unique, simple path between any two vertices.
+
+\textit{Proof:} For the theorem to hold, it must be shown that
+\begin{itemize}
+	\item If $T$ is a tree, then there is a unique simple path between every two vertices.
+	\item If $G$ is an undirected graph with a unique, simple path between every two vertices, it is a tree.
+\end{itemize}
+
+\textbf{(1)} Assume we have a tree $T$.
+Then by definition, it is a graph, and it must be connected and contain no simple circuits.
+
+Pick two vertices, $x$ and $y$.
+Because $T$ is connected, there will always exist a simple path $P_1$ between $x$ and $y$.
+But since $T$ is a tree, there can be no simple circuits. \\
+
+This means that the path between $x$ and $y$ must be unique.
+
+\textit{Proof by contradiction:}
+Assume there was another path, $P_2$ -- if this path existed, it could be combined with $P_1$ and create a simple circuit, which contradicts the assumption that $T$ was a tree.
+
+\textit{So, If $T$ is a tree, then there is a unique simple path between every two vertices.} \\
+
+\textbf{(2)} Assume we have a graph $G$ such that $G$ has a unique simple path between any two vertices.
+
+Then $G$ must be connected, because there exists some path between every vertex and every other vertex, and the first part of our definition of a tree is satisfied. \\
+
+It follows that $G$ must also contain no simple circuits.
+
+\textit{Proof by contradiction:}
+Suppose $G$ did have a simple circuit containing vertices $x$ and $y$. This implies that there are at least two simple paths between $x$ and $y$. But this contradicts our assumption that $G$ has only unique simple paths between any two vertices.
+
+\textit{So, $G$ is connected and contains no simple circuits, meaning $G$ is a tree.}
+
+\hrulefill
+
+A useful consequence of this theorem is that the number of edges and vertices in a tree are always related:
+
+\textbf{Theorem:} A tree with $n$ vertices has $n-1$ edges, where $n\in\mathbb{N}$.
+
+\textit{Proof: }We utilize choice in this proof to distinguish vertices and pick an arbitrary root for the tree, and then proceed by induction. \\
+
+Let $P_n$ be the statement of the theorem.
+
+\textit{Basis: }
+When $n=1$, $P_1$ states that a tree with 1 vertex has 0 edges, which is trivially true. \\
+
+\textit{Induction: }
+Assume $P_n$. Then, $P_{n+1}$ states that a tree with $n+1$ vertices has $n$ edges.
+
+Consider such a tree, $T$. Since $T$ is finite, it must have a leaf. Remove this leaf to produce a tree $T'$, which must still be a tree because it remains connected and contains no simple circuits.
+
+Since $T'$ now has $n$ vertices, by the inductive hypothesis, it then has $n-1$ vertices.
+
+Adding one vertex requires adding one edge, which acts on $T'$ to transform it back to $T$, which must have $n+1$ vertices and $n$ edges.
+
+\centering
+Thus, $P_n \rightarrow P_{n+1}$. $\qquad$
+
+\hrulefill
+
+In practice, when we talk about and use trees, we give them a little more structure. We usually define a \textit{partial ordering}. We define this with the binary relation $v\leq w$ if $v$ is on a path between the root and $w$.
 
 
 \chapter{Rooted Trees}
