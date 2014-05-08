@@ -117,11 +117,6 @@ $\Delta f$ is the width of the resonance peak between the points where $V = \fra
 \noindent\hrulefill
 
 \section{Results}
-Resistance: \hfill\underline{$R = .96 \Omega$}
-
-Inductance: \hfill\underline{$L = 9.20 \mu$F}
-
-Capacitance: \hfill\underline{$C = 2.64$ mH}
 \subsection{Average Inductance/Capacitance Values}
 
 \underline{$L_{\text{avg}} = 2.532\pm .002$ mH}
@@ -146,7 +141,7 @@ Capacitance: \hfill\underline{$C = 2.64$ mH}
 \end{figure}
 
 From the plotted data, we have
-\hfill\underline{$Z_{\text{min}} = R_{\text{meas}} = 5.72 \Omega$}
+\hfill\underline{$Z_{\text{min}} = 5.72 \Omega$}
 
 \hfill\underline{$f_{\text{res,meas}} = 1044$ Hz} \\
 
@@ -156,35 +151,29 @@ From the plotted data, we have
 
 \subsection{Current vs. Frequency}
 
-%$(V*2*pi*x) * ((R*2*pi*x)^2 + L^2*((2*pi*x)^2 - O^2)^2)^(-1/2)$
+$(V*2*pi*x) * ((R*2*pi*x)^2 + L^2*((2*pi*x)^2 - O^2)^2)^(-1/2)$
 
-The data points were fitted to the function
+The data was fitted to the function
 \begin{equation}
-	I_{\text{rms}}(\omega)
+	I_{\text{rms}}
 	= \frac
 	{V_{\text{rms}}\omega}
 	{\sqrt{(R\omega)^2 +L^2(\omega^2-\omega_0^2)^2}}
 \end{equation}
 
-\begin{figure}[H]
-	\begin{centering}
-	\begin{center}
-	\includegraphics[width=\linewidth]{./Part3.png}
-	\caption{Plot of $I_{\text{rms}}$ vs. $f$. $V_{\text{rms}}$ and $L_{\text{avg}}$ were used as constants, while $R$ and $\omega_0$ were left as fitting parameters.}
-	\label{fig:IvsFreq}
-	\end{center}
-	\par\end{centering}
-\end{figure}
+% \begin{figure}[h!]
+% 	\begin{centering}
+% 	\begin{center}
+% 	\includegraphics[width=\linewidth]{./IvsFreq.png}
+% 	\caption{Plot of $I_{\text{rms}} vs. $f$}
+% 	\label{fig:IvsFreq}
+% 	\end{center}
+% 	\par\end{centering}
+% \end{figure}
 
-From the custom fit described above, the values obtained from the fitting parameters were:
+\underline{$R_{\text{fit}} = n \Omega$}
 
-\hfill\underline{$R_{\text{fit}} = 5.80 \pm .06 \Omega$}
-
-\hfill\underline{$f_{\text{res, fit}} = 1059 \pm 5$ Hz}
-
-\textit{Why is $R$ (meas) not the same value of the resistor used in the circuit?}
-
-This indicates that there was resistance in the circuit that was unaccounted for. This could arise from resistance in the inductor coils, but is very likely to be largely attributed to the internal resistance of the power supply.
+\underline{$f_{\text{res, fit}} = n$ Hz}
 
 \hrulefill
 
@@ -192,51 +181,38 @@ This indicates that there was resistance in the circuit that was unaccounted for
 
 \textit{What is the percent difference between $R$ (measured) and $R$ (fit)? Is $R$ (measured) within the uncertainty of $R$ (fit)?}
 
-\hfill\underline{Percent Difference: $0.87\%$}
-
-The uncertainty in $R$ (fit) was $.06\Omega$ -- however, the values differed by $.08\Omega$. While the two values are generally in good agreement, there are slight errors introduced in the interpolation used to find $Z$ (min) on the graph, as well as a certain amount of random error introduced by transient voltage fluctuations when the circuit is near resonance.
+\underline{Percent Difference: $x\%$}
 
 \hrulefill
 
 \subsection{Theoretical Resonant Frequency}
 The resonant frequency, calculated from the mean values of $L$ and $C$ from step 1 is given by
 \begin{align}
-	f_{\text{res,theor}} &= \frac{1}{2\pi\sqrt{L_{\text{avg}} C_{\text{avg}}}}.
+	f_{\text{res,theor}} &= \frac{1}{2\pi\sqrt{L_{\text{avg}} C_{\text{avg}}}}. \\
+	\Rightarrow f_{\text{res,theor}} &= n Hz \notag
 \end{align}
-
-So the theoretical resonant frequency is:
-
-\hfill\underline{$f_{0(\text{theor})} = 1064$ Hz} \\
 
 Comparing this to the values determined in Steps 2 and 3 above, we have
 
-\hfill\underline{\% Difference, Step 2: $1.9\%$}
+\underline{\% Difference, Step 2: $x\%$}
 
-\hfill\underline{\% Difference, Step 3: $0.47\%$}
+\underline{\% Difference, Step 3: $x\%$}
 
 \hrulefill
 
 \subsection{Voltage vs Frequency}
 
-\begin{figure}[h!]
-	\begin{centering}
-	\begin{center}
-	\includegraphics[width=\linewidth]{./Part6.png}
-	\caption{Plot of $V_L$ and $V_C$ vs $f$, extrapolated to zero frequency.}
-	\label{fig:VvsFreq}
-	\end{center}
-	\par\end{centering}
-\end{figure}
+% \begin{figure}[h!]
+% 	\begin{centering}
+% 	\begin{center}
+% 	\includegraphics[width=\linewidth]{./VvsFreq.png}
+% 	\caption{Plot of $V_L$ and $V_C$ vs $f$, extrapolated to zero frequency.}
+% 	\label{fig:VvsFreq}
+% 	\end{center}
+% 	\par\end{centering}
+% \end{figure}
 
 \textit{What does this graph tell you?}
-
-Several things are apparent from the graph -- the most immediate characteristic of the series RLC circuit is that in the limit of low frequencies, the voltage on the capacitor $V_C$ approaches the source voltage. This agrees with our theoretical understanding of the behavior of a capacitor, which would tend to act as a short circuit at low frequencies. This effect can also be recovered by considering the equation for the impedance of the capacitor, $X_C = 1/2\pi f C$, which predicts that the impedance approaches infinity as the frequency approaches zero. An infinite impedance is effectively a short, necessarily implying that no current will flow and the capacitor will be forced to remain at the potential difference of the source. This is reflected in the graph, as the low-frequency limit of the capacitor voltage approaches the source voltage.
-
-A symmetric but opposite is observed in the inductor, for which the voltage $V_L$ approaches zero in the low-frequency limit. From the impedance equation $X_L = 2\pi f L$, we see that in this limit, the impedance approaches zero -- effectively creating an shunt in the circuit. This causes the inductor to behave like a wire, which agrees with our theoretical model of inductance.
-
-In the limit of high frequencies, the behavior of the inductor and the capacitor switch roles. Both voltages peak symmetrically about the resonant frequency, and the capacitor voltage then approaches zero while the inductor voltage approaches the source voltage. These effects can be seen by considering the limit as $f$ approaches infinity in the previously mentioned inductance equations, and noting that the capacitor's impedance tends to zero while the inductor's impedance tends to infinity. This leads to the capacitor now behaving like a wire, and the inductor like a shunt, which again agrees with our theoretical model of impedance.
-
-The last important characteristic of this graph shows that the maximum voltage is delivered at the resonant frequency. This occurs midway between the maximums the two individual curves, and represents the point at which maximum power is delivered.
 
 \hrulefill
 
