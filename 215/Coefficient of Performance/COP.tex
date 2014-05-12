@@ -1,0 +1,129 @@
+\documentclass[twocolumn,english]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{calc}
+\newcommand{\vb}[1]{\mathbf{#1}}		%Bold vector
+\newcolumntype{W}{>{\centering\arraybackslash}m{25mm}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{15mm}}
+\usepackage{booktabs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Variables
+\newcommand{\thetitle}{Coefficient of Performance of a Refrigerator}
+\newcommand{\theauthors}{Zack Garza}
+\newcommand{\theclass}{Physics 215L}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{
+ pdftitle=  {\thetitle},
+ pdfauthor= {\theauthors},
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % protect \markboth against an old bug reintroduced in babel >= 3.8g
+ \let\oldforeign@language\foreign@language
+ \DeclareRobustCommand{\foreign@language}[1]{%
+   \lowercase{\oldforeign@language{#1}}}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\makeatother
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\theoremname}{Theorem}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+\usepackage{float}
+\begin{document}
+\onecolumn
+\title{\thetitle}
+\author{\theauthors}
+\IEEEspecialpapernotice
+{\theclass \\ Effective Date of Report: \today }
+\markboth{\thetitle}{\theauthors}
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+\IEEEPARstart{T}{he} purpose of this experiment is to measure the coefficient of performance of a system as both a heat pump and a refrigerator. Using this data, we will then be able to determine in which mode the system is more efficient.
+
+\section{Theory}
+\begin{enumerate}
+	\item \textit{Briefly explain how this system works. Be sure to discuss the function of the compressor, condenser, expansion valve, and the evaporator.}
+
+	\item \textit{Explain how a heat pump works. Why does your text describe a heat pump and a refrigerator as the same system, each operating in the reverse direction of a heat engine?}
+
+	\item \textit{Derive an equation for the coefficient of performance for a refrigerator in terms of the specific heat of water, the flow rate, the temperature change, and the electrical power. Carry out the derivation with the definition of the COP given in the text.}
+\end{enumerate}
+
+\section{Data}
+
+% Please add the following required packages to your document preamble:
+\begin{table}[h]
+\centering
+\caption{Table 1 Data}
+\label{tb:data}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Resistance of Tap Water  & 28.7k$\Omega$               & Tap Temperature           & 26.0 C                      \\
+Resistance of Cold Water & 44.4 k$\Omega$              & Cold Temperature          & 16.1 C                      \\
+Resistance of Hot Water  & 16.15 k$\Omega$             & Hot Temperature           & 40.0 C                      \\
+Current                  & 7.0 $\pm$ .25 A             & Potential                 & 116.4 $\pm$ .1 V            \\ \midrule
+Mass of Dry Beaker 1     & 212.73 g                    & Mass of Dry Beaker 2      & 212.69 g                    \\
+Mass, Beaker + Hot Water & 1610.07 g                   & Mass, Beaker + Cold Water & 1808.22                     \\ \midrule
+Time to Fill, Hot Water  & 35.03 s                     & Time to Fill, Cold Water  & 46.83 s                     \\
+Flow Rate, Hot Water     & 45.96 $\times 10^{-3}$ kg/s & Flow Rate, Cold Water     & 38.61 $\times 10^{-3}$ kg/s \\ \bottomrule
+\end{tabular}
+\end{table}
+
+Power Supplied ($IV$ rms): \underline{$P = $814.8 W}
+
+Specific Heat of Water : \underline{$C_w = $4186 J/kg$^{\circ}$C}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[h]
+\centering
+\caption{Results}
+\label{tb:results}
+\begin{tabular}{@{}ll@{}}
+\toprule
+COP, Refrigerator & 2.338 \\
+COP, Heat Pump    & 2.777\\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+%\appendices{}
+%\bibliographystyle{plain}
+%\bibliography{physbib}
+
+\end{document}
