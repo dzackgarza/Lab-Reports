@@ -3,7 +3,7 @@ QtiPlot 0.9.8 project file
 <windows>	33
 <table>
 Table1	35	3	5/7/14 7:27 PM
-geometry	588	521	-1	-1	minimized	
+geometry	588	522	-1	-1	minimized	
 header	Frequency[X]	VL[Y]	VC[Y]
 ColWidth	100	100	100	
 <com>
@@ -253,7 +253,7 @@ WindowLabel	Forward FFT of Table1_VC	2
 </table>
 <table>
 Table2	35	2	5/7/14 9:07 PM
-geometry	392	521	-1	-1	minimized	
+geometry	392	522	-1	-1	minimized	
 header	Frequency[X]	Phase Angle[Y]
 ColWidth	100	100	
 <com>
@@ -9576,413 +9576,6 @@ WindowLabel	Linear Interpolation of Table3_Power	2
 4999	2040	0.007286
 </data>
 </table>
-<multiLayer>
-Graph1	1	1	5/7/14 7:28 PM
-geometry	196	521	764	500	minimized	
-WindowLabel		2
-Margins	5	5	5	5
-Spacing	5	5
-LayerCanvasSize	400	300
-Alignement	0	0
-<AlignPolicy>0</AlignPolicy>
-<CommonAxes>0</CommonAxes>
-<graph>
-ggeometry	5	3	744	448
-<PageGeometry>0.00992063	0.0078329	1.47619	1.16971</PageGeometry>
-PlotTitle	Capacitor and Inductor Voltage as<br>a Function of Frequency	#000000	4
-<Antialiasing>1</Antialiasing>
-<Autoscaling>1</Autoscaling>
-<ScaleFonts>1</ScaleFonts>
-<GridOnTop>0</GridOnTop>
-<MissingDataGap>1</MissingDataGap>
-Background	#ffffff	0
-Margin	0
-Border	0	#000000
-grid	1	1	1	1	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	1	1	2	0	1
-EnabledAxes	1	1	1	1	
-AxesTitles	Frequency (Hz)	Voltage (V)			
-AxesTitleColors	#000000	#000000	#000000	#000000	
-AxesTitleAlignment	5124	5124	5124	5124
-AxesTitleDistance	2	2	2	2
-InvertedTitle	0	0	0	0
-TitleFont	Liberation Sans	11	75	0	0	0
-ScaleFont0	Liberation Sans	9	75	0	0	0
-ScaleFont1	Liberation Sans	9	75	0	0	0
-ScaleFont2	Liberation Sans	9	75	0	0	0
-ScaleFont3	Liberation Sans	9	75	0	0	0
-AxisFont0	Liberation Sans	9	50	0	0	0
-AxisFont1	Liberation Sans	9	50	0	0	0
-AxisFont2	Liberation Sans	9	50	0	0	0
-AxisFont3	Liberation Sans	9	50	0	0	0
-AxesColors	#000000	#000000	#000000	#000000
-AxesNumberColors	#000000	#d4d2cf	#000000	#d4d2cf
-AxesBaseline	0	0	0	0	
-CanvasFrame	1	#000000
-CanvasBackground	#ffffff	0
-curve	Table1_Frequency	Table1_VC	1	0	#000000	0	1	7	2	#0000ff	#0000ff	0	#000000	14	1	2	0	0	34	1
-curve	Table1_Frequency	Table1_VL	1	0	#ff0000	0	1	7	1	#00ff00	#00ff00	0	#000000	14	1	2	0	0	34	1
-<Function>
-<Type>1</Type>
-<Title>F3</Title>
-<Expression>m	2.06843</Expression>
-<Variable>m</Variable>
-<Range>0	2400</Range>
-<Points>100</Points>
-<Style>0</Style>
-<LineStyle>1</LineStyle>
-<Pen>
-	<Color>#000000</Color>
-	<Style>0</Style>
-	<Width>1.9</Width>
-</Pen>
-<xAxis>2</xAxis>
-<yAxis>0</yAxis>
-<CurveType>0</CurveType>
-<Visible>1</Visible>
-</Function>
-scale	0	0	7	0	8	5	0	0
-scale	1	0	7	0	8	5	0	0
-scale	2	-100	2200	0	6	5	0	0
-scale	3	-100	2200	0	6	5	0	0
-LabelsFormat	0	6	0	6	0	6	0	6
-AxisType	0	0	0	0	
-MajorTicks	1	1	1	1
-MinorTicks	1	1	1	1
-TicksLength	5	9
-DrawAxesBackbone	1	1	1	1	1
-AxesLineWidth	1
-LabelsRotation	0	0	0	0
-LabelsPrefix				
-LabelsSuffix				
-TickLabelsSpace	4	4	4	4
-ShowTicksPolicy	0	0	0	0
-EnabledTickLabels	1	0	1	0
-<Legend>
-<Frame>1</Frame>
-<Color>#000000</Color>
-<FrameWidth>1</FrameWidth>
-<LineStyle>0</LineStyle>
-<x>1897.3684210526</x>
-<y>6.8168604651163</y>
-<right>304.8</right>
-<bottom>6.16614420062696</bottom>
-<attachTo>1</attachTo>
-<onTop>1</onTop>
-<visible>1</visible>
-<Text>
-\l(1)V<sub>C</sub>
-\l(2)V<sub>L</sub>
-\l(3)V<sub>s</sub>
-</Text>
-<Font>Liberation Sans	10	50	0	0	0</Font>
-<TextColor>#000000</TextColor>
-<Background>#ffffff</Background>
-<Alpha>0</Alpha>
-<Angle>0</Angle>
-<AutoUpdate>1</AutoUpdate>
-<TeXOutput>0</TeXOutput>
-</Legend>
-</graph>
-<LinkXAxes>0</LinkXAxes>
-<ScaleLayers>1</ScaleLayers>
-</multiLayer>
-<multiLayer>
-Graph2	1	1	5/7/14 9:07 PM
-geometry	0	521	525	456	minimized	
-WindowLabel		2
-Margins	5	5	5	5
-Spacing	5	5
-LayerCanvasSize	400	300
-Alignement	0	0
-<AlignPolicy>0</AlignPolicy>
-<CommonAxes>0</CommonAxes>
-<graph>
-ggeometry	6	5	509	394
-<PageGeometry>0.0119048	0.0130548	1.00992	1.02872</PageGeometry>
-PlotTitle	Phase Angle vs. Frequency	#000000	4
-<Antialiasing>1</Antialiasing>
-<Autoscaling>1</Autoscaling>
-<ScaleFonts>1</ScaleFonts>
-<GridOnTop>0</GridOnTop>
-<MissingDataGap>1</MissingDataGap>
-Background	#ffffff	0
-Margin	0
-Border	0	#000000
-grid	1	1	1	1	#0000ff	0	0.3	#a0a0a4	2	0.2	#0000ff	0	0.3	#a0a0a4	2	0.2	1	1	2	0	1
-EnabledAxes	1	1	1	1	
-AxesTitles	Frequency (Hz)	Phase Angle (∘)			
-AxesTitleColors	#000000	#000000	#000000	#000000	
-AxesTitleAlignment	5124	5124	5124	5124
-AxesTitleDistance	2	2	2	2
-InvertedTitle	0	0	0	0
-TitleFont	Liberation Sans	10	75	0	0	0
-ScaleFont0	Liberation Sans	8	75	0	0	0
-ScaleFont1	Liberation Sans	8	75	0	0	0
-ScaleFont2	Liberation Sans	8	75	0	0	0
-ScaleFont3	Liberation Sans	8	75	0	0	0
-AxisFont0	Liberation Sans	8	50	0	0	0
-AxisFont1	Liberation Sans	8	50	0	0	0
-AxisFont2	Liberation Sans	8	50	0	0	0
-AxisFont3	Liberation Sans	8	50	0	0	0
-AxesColors	#000000	#000000	#000000	#000000
-AxesNumberColors	#000000	#d4d2cf	#000000	#d4d2cf
-AxesBaseline	0	0	0	0	
-CanvasFrame	1	#000000
-CanvasBackground	#ffffff	0
-curve	Table2_Frequency	Table2_Phase Angle	1	0	#000000	0	1	5	1	#000000	#000000	0	#000000	14	1	2	0	0	34	1
-curve	CubicInt1_1	CubicInt1_2	0	1	#0000ff	0	1.4	0	0	#000000	#a0a0a4	0	#000000	14	0	2	0	0	999	1
-scale	0	-112.579055654794	109.643166567428	0	6	5	0	0
-scale	1	-112.579055654794	109.643166567428	0	6	5	0	0
-scale	2	-100.719298701278	2232.61403463209	0	6	5	0	0
-scale	3	-100.719298701278	2232.61403463209	0	6	5	0	0
-LabelsFormat	0	6	0	6	0	6	0	6
-AxisType	0	0	0	0	
-MajorTicks	1	1	1	1
-MinorTicks	1	1	1	1
-TicksLength	5	9
-DrawAxesBackbone	1	1	1	1	1
-AxesLineWidth	1
-LabelsRotation	0	0	0	0
-LabelsPrefix				
-LabelsSuffix				
-TickLabelsSpace	4	4	4	4
-ShowTicksPolicy	0	0	0	0
-EnabledTickLabels	1	0	1	0
-<line>	1189.0360529807	-63.4337565094952	1065.94736796541	-2.89244596818456	1	#000000	SolidLine	1	0	4	45	1	1</line>
-<Legend>
-<Frame>1</Frame>
-<Color>#000000</Color>
-<FrameWidth>1</FrameWidth>
-<LineStyle>0</LineStyle>
-<x>50.632911392405</x>
-<y>94.576271186441</y>
-<right>471.910670717691</right>
-<bottom>83.2898902141517</bottom>
-<attachTo>1</attachTo>
-<onTop>1</onTop>
-<visible>1</visible>
-<Text>
-\l(1)%(1)
-\l(2)Cubic Interpolation
-</Text>
-<Font>Liberation Sans	9	50	0	0	0</Font>
-<TextColor>#000000</TextColor>
-<Background>#ffffff</Background>
-<Alpha>0</Alpha>
-<Angle>0</Angle>
-<AutoUpdate>1</AutoUpdate>
-<TeXOutput>0</TeXOutput>
-</Legend>
-<Legend>
-<Frame>1</Frame>
-<Color>#000000</Color>
-<FrameWidth>1</FrameWidth>
-<LineStyle>0</LineStyle>
-<x>1178.3326890663</x>
-<y>-63.433756509495</y>
-<right>471.910670717691</right>
-<bottom>83.2898902141517</bottom>
-<attachTo>1</attachTo>
-<onTop>1</onTop>
-<visible>1</visible>
-<Text>
-Resonant Frequency: 1044 Hz
-</Text>
-<Font>Liberation Sans	9	50	0	0	0</Font>
-<TextColor>#000000</TextColor>
-<Background>#ffffff</Background>
-<Alpha>0</Alpha>
-<Angle>0</Angle>
-<AutoUpdate>0</AutoUpdate>
-<TeXOutput>0</TeXOutput>
-</Legend>
-</graph>
-<LinkXAxes>0</LinkXAxes>
-<ScaleLayers>1</ScaleLayers>
-</multiLayer>
-<multiLayer>
-Graph4	1	1	5/8/14 1:04 PM
-geometry	531	-5	521	456	active
-WindowLabel		2
-Margins	5	5	5	5
-Spacing	5	5
-LayerCanvasSize	400	300
-Alignement	0	0
-<AlignPolicy>0</AlignPolicy>
-<CommonAxes>0</CommonAxes>
-<graph>
-ggeometry	5	5	505	394
-<PageGeometry>0.00970874	0.0122249	0.980583	0.963325</PageGeometry>
-PlotTitle	Power vs. Frequency	#000000	4
-<Antialiasing>1</Antialiasing>
-<Autoscaling>1</Autoscaling>
-<ScaleFonts>1</ScaleFonts>
-<GridOnTop>0</GridOnTop>
-<MissingDataGap>1</MissingDataGap>
-Background	#ffffff	0
-Margin	0
-Border	0	#000000
-grid	1	1	1	1	#0000ff	0	0.3	#a0a0a4	2	0.2	#0000ff	0	0.3	#a0a0a4	2	0.2	0	1	2	0	1
-EnabledAxes	1	1	1	1	
-AxesTitles	Frequency (Hz)	Power (W)		%(?Y)	
-AxesTitleColors	#000000	#000000	#000000	#000000	
-AxesTitleAlignment	5124	5124	5124	5124
-AxesTitleDistance	2	2	2	2
-InvertedTitle	0	0	0	0
-TitleFont	Liberation Sans	10	75	0	0	0
-ScaleFont0	Liberation Sans	8	75	0	0	0
-ScaleFont1	Liberation Sans	8	75	0	0	0
-ScaleFont2	Liberation Sans	8	75	0	0	0
-ScaleFont3	Liberation Sans	8	75	0	0	0
-AxisFont0	Liberation Sans	8	50	0	0	0
-AxisFont1	Liberation Sans	8	50	0	0	0
-AxisFont2	Liberation Sans	8	50	0	0	0
-AxisFont3	Liberation Sans	8	50	0	0	0
-AxesColors	#000000	#000000	#000000	#000000
-AxesNumberColors	#000000	#d4d2cf	#000000	#d4d2cf
-AxesBaseline	0	0	0	0	
-CanvasFrame	1	#000000
-CanvasBackground	#ffffff	0
-curve	Table3_Frequency	Table3_Power	1	0	#000000	0	1	7	1	#000000	#000000	0	#000000	14	1	2	0	0	34	1
-curve	LinearInt8_1	LinearInt8_2	0	1	#ff0000	0	1	0	0	#000000	#a0a0a4	0	#000000	14	0	2	0	0	999	1
-<Function>
-<Type>1</Type>
-<Title>F1</Title>
-<Expression>m	.3648</Expression>
-<Variable>m</Variable>
-<Range>0	2500</Range>
-<Points>100</Points>
-<Style>0</Style>
-<LineStyle>1</LineStyle>
-<Pen>
-	<Color>#00ff00</Color>
-	<Style>0</Style>
-	<Width>1</Width>
-</Pen>
-<xAxis>2</xAxis>
-<yAxis>0</yAxis>
-<CurveType>0</CurveType>
-<Visible>1</Visible>
-</Function>
-scale	0	0	0.9	0	10	5	0	0
-scale	1	0	0.9	0	10	5	0	0
-scale	2	0	2500	0	6	5	0	0
-scale	3	0	2500	0	6	5	0	0
-LabelsFormat	0	6	0	6	0	6	0	6
-AxisType	0	0	0	0	
-MajorTicks	1	1	1	1
-MinorTicks	1	1	1	1
-TicksLength	5	9
-DrawAxesBackbone	1	1	1	1	1
-AxesLineWidth	1
-LabelsRotation	0	0	0	0
-LabelsPrefix				
-LabelsSuffix				
-TickLabelsSpace	4	4	4	4
-ShowTicksPolicy	0	0	0	0
-EnabledTickLabels	1	0	1	0
-<line>	669.014084507042	0.4125	886.150234741784	0.377884615384615	1	#000000	SolidLine	1	0	4	45	1	1</line>
-<line>	1508.21596244131	0.415384615384615	1285.21126760563	0.369230769230769	1	#000000	SolidLine	1	0	4	45	1	1</line>
-<line>	1314.55399061033	0.747115384615385	1062.20657276995	0.747115384615385	1	#000000	SolidLine	1	0	4	45	1	1</line>
-<Legend>
-<Frame>1</Frame>
-<Color>#000000</Color>
-<FrameWidth>1</FrameWidth>
-<LineStyle>0</LineStyle>
-<x>-5.868544600939</x>
-<y>0.90288461538462</y>
-<right>997.652582159624</right>
-<bottom>0.758653846153846</bottom>
-<attachTo>1</attachTo>
-<onTop>1</onTop>
-<visible>1</visible>
-<Text>
-\l(1)%(1)
-\l(2)Linear Interpolation
-\l(3)Half Maximum Power
-</Text>
-<Font>Liberation Sans	8	50	0	0	0</Font>
-<TextColor>#000000</TextColor>
-<Background>#ffffff</Background>
-<Alpha>0</Alpha>
-<Angle>0</Angle>
-<AutoUpdate>1</AutoUpdate>
-<TeXOutput>0</TeXOutput>
-</Legend>
-<Legend>
-<Frame>1</Frame>
-<Color>#000000</Color>
-<FrameWidth>1</FrameWidth>
-<LineStyle>0</LineStyle>
-<x>164.31924882629</x>
-<y>0.48173076923077</y>
-<right>669.014084507042</right>
-<bottom>0.403846153846154</bottom>
-<attachTo>1</attachTo>
-<onTop>1</onTop>
-<visible>1</visible>
-<Text>
-f<sub>1</sub> = 919 Hz
-</Text>
-<Font>Liberation Sans	10	50	0	0	0</Font>
-<TextColor>#000000</TextColor>
-<Background>#ffffff</Background>
-<Alpha>0</Alpha>
-<Angle>0</Angle>
-<AutoUpdate>0</AutoUpdate>
-<TeXOutput>0</TeXOutput>
-</Legend>
-<Legend>
-<Frame>1</Frame>
-<Color>#000000</Color>
-<FrameWidth>1</FrameWidth>
-<LineStyle>0</LineStyle>
-<x>1508.2159624413</x>
-<y>0.48173076923077</y>
-<right>1983.56807511737</right>
-<bottom>0.409615384615385</bottom>
-<attachTo>1</attachTo>
-<onTop>1</onTop>
-<visible>1</visible>
-<Text>
-f<sub>2</sub> = 919 Hz
-</Text>
-<Font>Liberation Sans	9	50	0	0	0</Font>
-<TextColor>#000000</TextColor>
-<Background>#ffffff</Background>
-<Alpha>0</Alpha>
-<Angle>0</Angle>
-<AutoUpdate>0</AutoUpdate>
-<TeXOutput>0</TeXOutput>
-</Legend>
-<Legend>
-<Frame>1</Frame>
-<Color>#000000</Color>
-<FrameWidth>1</FrameWidth>
-<LineStyle>0</LineStyle>
-<x>1314.5539906103</x>
-<y>0.81923076923077</y>
-<right>1901.40845070423</right>
-<bottom>0.706730769230769</bottom>
-<attachTo>1</attachTo>
-<onTop>1</onTop>
-<visible>1</visible>
-<Text>
-f<sub>0</sub> = 1039 Hz
-P<sub>max</sub> = .7296 W
-</Text>
-<Font>Liberation Sans	9	50	0	0	0</Font>
-<TextColor>#000000</TextColor>
-<Background>#ffffff</Background>
-<Alpha>0</Alpha>
-<Angle>0</Angle>
-<AutoUpdate>0</AutoUpdate>
-<TeXOutput>0</TeXOutput>
-</Legend>
-</graph>
-<LinkXAxes>0</LinkXAxes>
-<ScaleLayers>1</ScaleLayers>
-</multiLayer>
 <table>
 LinearInt3	1000	2	5/8/14 1:05 PM
 geometry	0	226	445	220	hidden
@@ -28573,6 +28166,436 @@ WindowLabel	5 points FFT smoothing of Table3_Power	2
 34	2040	0.04408921484906
 </data>
 </table>
+<multiLayer>
+Graph1	1	1	5/7/14 7:28 PM
+geometry	196	522	764	500	minimized	
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	3	744	448
+<PageGeometry>0.00992063	0.0078329	1.47619	1.16971</PageGeometry>
+PlotTitle	Capacitor and Inductor Voltage as<br>a Function of Frequency	#000000	4
+<Antialiasing>1</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	1	1	1	1	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	1	1	2	0	1
+EnabledAxes	1	1	1	1	
+AxesTitles	Frequency (Hz)	Voltage (V)			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Liberation Sans	11	75	0	0	0
+ScaleFont0	Liberation Sans	9	75	0	0	0
+ScaleFont1	Liberation Sans	9	75	0	0	0
+ScaleFont2	Liberation Sans	9	75	0	0	0
+ScaleFont3	Liberation Sans	9	75	0	0	0
+AxisFont0	Liberation Sans	9	50	0	0	0
+AxisFont1	Liberation Sans	9	50	0	0	0
+AxisFont2	Liberation Sans	9	50	0	0	0
+AxisFont3	Liberation Sans	9	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#d4d2cf	#000000	#d4d2cf
+AxesBaseline	0	0	0	0	
+CanvasFrame	1	#000000
+CanvasBackground	#ffffff	0
+curve	Table1_Frequency	Table1_VC	1	0	#000000	0	1	7	2	#0000ff	#0000ff	0	#000000	14	1	2	0	0	34	1
+curve	Table1_Frequency	Table1_VL	1	0	#ff0000	0	1	7	1	#00ff00	#00ff00	0	#000000	14	1	2	0	0	34	1
+<Function>
+<Type>1</Type>
+<Title>F3</Title>
+<Expression>m	2.06843</Expression>
+<Variable>m</Variable>
+<Range>0	2400</Range>
+<Points>100</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#000000</Color>
+	<Style>0</Style>
+	<Width>1.9</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+scale	0	0	7	0	8	5	0	0
+scale	1	0	7	0	8	5	0	0
+scale	2	-100	2200	0	6	5	0	0
+scale	3	-100	2200	0	6	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>1897.3684210526</x>
+<y>6.8168604651163</y>
+<right>304.8</right>
+<bottom>6.16614420062696</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)V<sub>C</sub>
+\l(2)V<sub>L</sub>
+\l(3)V<sub>s</sub>
+</Text>
+<Font>Liberation Sans	10	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<multiLayer>
+Graph2	1	1	5/7/14 9:07 PM
+geometry	0	522	525	456	minimized	
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	6	5	509	394
+<PageGeometry>0.0119048	0.0130548	1.00992	1.02872</PageGeometry>
+PlotTitle	Phase Angle vs. Frequency	#000000	4
+<Antialiasing>1</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	1	1	1	1	#0000ff	0	0.3	#a0a0a4	2	0.2	#0000ff	0	0.3	#a0a0a4	2	0.2	1	1	2	0	1
+EnabledAxes	1	1	1	1	
+AxesTitles	Frequency (Hz)	Phase Angle (∘)			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Liberation Sans	10	75	0	0	0
+ScaleFont0	Liberation Sans	8	75	0	0	0
+ScaleFont1	Liberation Sans	8	75	0	0	0
+ScaleFont2	Liberation Sans	8	75	0	0	0
+ScaleFont3	Liberation Sans	8	75	0	0	0
+AxisFont0	Liberation Sans	8	50	0	0	0
+AxisFont1	Liberation Sans	8	50	0	0	0
+AxisFont2	Liberation Sans	8	50	0	0	0
+AxisFont3	Liberation Sans	8	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#d4d2cf	#000000	#d4d2cf
+AxesBaseline	0	0	0	0	
+CanvasFrame	1	#000000
+CanvasBackground	#ffffff	0
+curve	Table2_Frequency	Table2_Phase Angle	1	0	#000000	0	1	5	1	#000000	#000000	0	#000000	14	1	2	0	0	34	1
+curve	CubicInt1_1	CubicInt1_2	0	1	#0000ff	0	1.4	0	0	#000000	#a0a0a4	0	#000000	14	0	2	0	0	999	1
+scale	0	-112.579055654794	109.643166567428	0	6	5	0	0
+scale	1	-112.579055654794	109.643166567428	0	6	5	0	0
+scale	2	-100.719298701278	2232.61403463209	0	6	5	0	0
+scale	3	-100.719298701278	2232.61403463209	0	6	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<line>	1189.0360529807	-63.4337565094952	1065.94736796541	-2.89244596818456	1	#000000	SolidLine	1	0	4	45	1	1</line>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>50.632911392405</x>
+<y>94.576271186441</y>
+<right>471.910670717691</right>
+<bottom>83.2898902141517</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)%(1)
+\l(2)Cubic Interpolation
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>1178.3326890663</x>
+<y>-63.433756509495</y>
+<right>471.910670717691</right>
+<bottom>83.2898902141517</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+Resonant Frequency: 1044 Hz
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<multiLayer>
+Graph4	1	1	5/8/14 1:04 PM
+geometry	531	-5	521	456	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	505	394
+<PageGeometry>0.00970874	0.0122249	0.980583	0.963325</PageGeometry>
+PlotTitle	Power vs. Frequency	#000000	4
+<Antialiasing>1</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	1	1	1	1	#0000ff	0	0.3	#a0a0a4	2	0.2	#0000ff	0	0.3	#a0a0a4	2	0.2	0	1	2	0	1
+EnabledAxes	1	1	1	1	
+AxesTitles	Frequency (Hz)	Power (W)		%(?Y)	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Liberation Sans	10	75	0	0	0
+ScaleFont0	Liberation Sans	8	75	0	0	0
+ScaleFont1	Liberation Sans	8	75	0	0	0
+ScaleFont2	Liberation Sans	8	75	0	0	0
+ScaleFont3	Liberation Sans	8	75	0	0	0
+AxisFont0	Liberation Sans	8	50	0	0	0
+AxisFont1	Liberation Sans	8	50	0	0	0
+AxisFont2	Liberation Sans	8	50	0	0	0
+AxisFont3	Liberation Sans	8	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#d4d2cf	#000000	#d4d2cf
+AxesBaseline	0	0	0	0	
+CanvasFrame	1	#000000
+CanvasBackground	#ffffff	0
+curve	Table3_Frequency	Table3_Power	1	0	#000000	0	1	7	1	#000000	#000000	0	#000000	14	1	2	0	0	34	1
+curve	LinearInt8_1	LinearInt8_2	0	1	#ff0000	0	1	0	0	#000000	#a0a0a4	0	#000000	14	0	2	0	0	999	1
+<Function>
+<Type>1</Type>
+<Title>F1</Title>
+<Expression>m	.3648</Expression>
+<Variable>m</Variable>
+<Range>0	2500</Range>
+<Points>100</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#00ff00</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+scale	0	0	1	0	6	5	0	0
+scale	1	0	1	0	6	5	0	0
+scale	2	0	3000	0	7	5	0	0
+scale	3	0	3000	0	7	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<line>	669.014084507042	0.4125	886.150234741784	0.377884615384615	1	#000000	SolidLine	1	0	4	45	1	1</line>
+<line>	1508.21596244131	0.415384615384615	1285.21126760563	0.369230769230769	1	#000000	SolidLine	1	0	4	45	1	1</line>
+<line>	1314.55399061033	0.747115384615385	1062.20657276995	0.747115384615385	1	#000000	SolidLine	1	0	4	45	1	1</line>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>7.0422535211268</x>
+<y>0.98397435897436</y>
+<right>1211.2676056338</right>
+<bottom>0.823717948717949</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)%(1)
+\l(2)Linear Interpolation
+\l(3)Half Maximum Power
+</Text>
+<Font>Liberation Sans	8	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>77.464788732394</x>
+<y>0.5</y>
+<right>683.098591549296</right>
+<bottom>0.413461538461538</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+f<sub>1</sub> = 919 Hz
+</Text>
+<Font>Liberation Sans	10	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>1508.2159624413</x>
+<y>0.48173076923077</y>
+<right>627.93427230047</right>
+<bottom>0.793269230769231</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+f<sub>2</sub> = 1275 Hz
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>1314.5539906103</x>
+<y>0.81923076923077</y>
+<right>627.93427230047</right>
+<bottom>0.793269230769231</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+f<sub>0</sub> = 1039 Hz
+P<sub>max</sub> = .7296 W
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>2309.8591549296</x>
+<y>0.13782051282051</y>
+<right>2901.40845070423</right>
+<bottom>0.0544871794871795</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+Δf = 356 Hz
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
 <open>1</open>
 <log>
 [5/7/14 8:17 PM	Plot: ''Graph1'']
@@ -28742,5 +28765,6 @@ Adjusted R^2 = 0.3040997985857
 RMSE (Root Mean Squared Error) = 204.5689051711
 RSS (Residual Sum of Squares) = 1,339,149.982813
 ---------------------------------------------------------------------------------------
+
 
 </log>

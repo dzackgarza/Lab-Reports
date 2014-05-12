@@ -73,14 +73,14 @@
 \maketitle
 
 \begin{abstract}
-\IEEEPARstart{T}{he} purpose of this experiment...
+\IEEEPARstart{T}{he} purpose of this experiment is to analyze an RLC current driven by alternating current in order to discover the relationships between the frequency at which it is driven, the voltages and currents through its elements, and the power delivered to a resistive load. We examine the phenomenon of resonance, at which the inductive and capacitive impedance are equal to each other, causing the voltage and current in the circuit to be in phase and maximizing the power delivered. At this point, the overall impedance of the circuit is minimized, and purely resistive. We will find the difference between the measured resistance in the circuit and the actual resistance present by analyzing the circuit's response over a range of frequencies, and we will also use this data to compare our theoretical calculation of resonant frequency to a value we can measure. This will allow us to better understand the relationship between a capacitor and an inductor in a series RLC circuit, and observe the ways in which their behavior is frequency-dependent.
 \end{abstract}
 
 \tableofcontents
 
 \section{Theory}
 
-The following expressions were used in the analysis of this circuit:
+The following relationships were used in the analysis of this circuit:
 \begin{align*}
 	\omega &= 2\pi f \\
 	\omega_0 &= \sqrt{\frac{1}{LC}} \Rightarrow f_0 = \frac{1}{2\pi\sqrt{LC}}\\
@@ -99,7 +99,7 @@ $\Delta f$ is the width of the resonance peak between the points where $V = \fra
 
 \section{Methodology}
 \begin{enumerate}
-	\item A simple RLC series circuit was constructed. DMMs were wired to measure $\Delta V_L$, and $\Delta V_C$, the voltages of the inductor $L$ and the capacitor $C$ respectively.
+	\item A simple RLC series circuit was constructed. DMMs were wired to measure $\Delta V_L$, and $\Delta V_C$, the voltages of the inductor $L$ and the capacitor $C$ respectively. In order to measure $V_R$, the resistor was repositioned so one terminal was grounded.
 	\item An ammeter was wired in series with the previous elements to measure $I$, and an oscilloscope was wired to measure $\Delta V_s$ and $\Delta V_R$, the voltages across the source and the resistor $R$ respectively.
 	\item The resistance of $R$ was measured in order to determine phase difference between the source voltage $V_s$ and the current $I$. $\Delta t$ between these two signals was recorded.
 	\item The potential difference of the supply was set to a constant 2.0 V (rms), and the ammeter was set to the 430 mA scale.
@@ -110,8 +110,7 @@ $\Delta f$ is the width of the resonance peak between the points where $V = \fra
 		\item $V_L$
 		\item $V_C$
 	\end{enumerate}
-	Extra data points were taken at frequencies approaching $f_0$.
-	\item The data was then placed into a spreadsheet to calculate various variables, which were used in the analysis section.
+	\textit{Note:} Extra data points were taken at frequencies approaching $f_0$.
 \end{enumerate}
 
 \noindent\hrulefill
@@ -150,8 +149,9 @@ From the plotted data, we have
 
 \hfill\underline{$f_{\text{res,meas}} = 1044$ Hz} \\
 
-\textit{Why is $R_{\text{meas}}$ not the same as the value of the resistor used in the circuit?}
+\textit{Why is $R$ (meas) not the same value of the resistor used in the circuit?}
 
+This indicates that there was resistance in the circuit that was unaccounted for. Possible sources for this resistance are the inductor coils, the internal resistance of the power supply, and erosion or damage to the terminal contacts.
 \hrulefill
 
 \subsection{Current vs. Frequency}
@@ -182,9 +182,6 @@ From the custom fit described above, the values obtained from the fitting parame
 
 \hfill\underline{$f_{\text{res, fit}} = 1059 \pm 5$ Hz}
 
-\textit{Why is $R$ (meas) not the same value of the resistor used in the circuit?}
-
-This indicates that there was resistance in the circuit that was unaccounted for. This could arise from resistance in the inductor coils, but is very likely to be largely attributed to the internal resistance of the power supply.
 
 \hrulefill
 
@@ -194,7 +191,7 @@ This indicates that there was resistance in the circuit that was unaccounted for
 
 \hfill\underline{Percent Difference: $0.87\%$}
 
-The uncertainty in $R$ (fit) was $.06\Omega$ -- however, the values differed by $.08\Omega$. While the two values are generally in good agreement, there are slight errors introduced in the interpolation used to find $Z$ (min) on the graph, as well as a certain amount of random error introduced by transient voltage fluctuations when the circuit is near resonance.
+The uncertainty in $R$ (fit) was $.06\Omega$ -- however, the values differed by $.08\Omega$. While the two values are generally in good agreement, there are slight errors introduced in the interpolation used to find $Z$ (min) on the graph, as well as a certain amount of random error introduced by transient voltage fluctuations when the circuit is near resonance. However, both values are relatively consistent with each other, so we deduce that this value more accurately represents the actual resistance present in the circuit than the value measured with the ohmmeter.
 
 \hrulefill
 
@@ -254,11 +251,19 @@ The last important characteristic of this graph shows that the maximum voltage i
 
 \textit{Does this curve agree with theory? Explain.}
 
+The curve agrees with theory in several ways. The most noticeable factor is that the phase angle is equal to zero at exactly the same value found in previous fits. This agrees with the notion that having the current and voltage in phase results in circuit resonance. The graph also shows that the phase angle is negative below resonance, and positive above resonance, approaching $\pm 90^{\circ}$ as $f$ approaches $\infty$ and $0$ respectively. From the expression
+\begin{align}
+	\phi = \frac{X_L-X_C}{R} = \frac{\omega L - \frac{1}{\omega C}}{R},
+\end{align}
+we see that as the frequency approaches infinity, $X_C$ goes to zero and we expect the circuit to be primarily inductive. In this case, we would expect the voltage to lead the current, which is reflected in the positive phase angle above resonance.
+
+As the frequency approaches zero, $X_L$ goes to zero, and we would expect the circuit to be more capacitive. This would lead to the current leading the voltage -- or in other words, the voltage lagging the current. This is also reflected in the negative phase angles below resonance.
+
 \hrulefill
 
 \subsection{Power vs. Frequency}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{centering}
 	\begin{center}
 	\includegraphics[width=\linewidth]{./Part8.png}
@@ -278,20 +283,27 @@ The calculated quality factor is given by
 	Q_{\text{calc}} = \frac{f_{\text{max, meas}}}{\Delta f}
 \end{equation}
 
-Calculated Quality Factor: \underline{$Q_{\text{calc}} = 8.966\pm d$}
-%1Hz uncertainty in f and delta f
-
 The theoretical Quality factor is given by
 \begin{equation}
 	Q = \frac{\omega_0 L}{R_{\text{meas}}},
 \end{equation}
 where $\omega_0$ is given by $2\pi f_{\text{res,meas}}$ from Step 2 and $L$ is $L_{\text{avg}}$ from Step 1.
 
-Theoretical Quality Factor: \underline{$Q = 2.904$}
+And the uncertainty in $Q$ is given by
+\begin{equation}
+	\sqrt{(\frac{\partial Q}{\partial f})^2(\delta f)^2 + (\frac{\partial Q}{\partial \Delta f})^2(\delta \Delta f)^2}
+\end{equation}
+
+Assuming an uncertainty of 1 Hz in both $f$ and $\Delta f$, we have: \\
+
+
+\hfill Calculated Quality Factor: \underline{$Q_{\text{calc}} = 2.919\pm .009$}
+
+\hfill Theoretical Quality Factor: \underline{$Q = 2.904$}
+
+\hfill Percent Difference: \underline{0.52\%}
 
 \hrulefill
-
-\section{Analysis and Conclusion}
 
 %\appendices{}
 %\bibliographystyle{plain}
