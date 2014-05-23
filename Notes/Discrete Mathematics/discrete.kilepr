@@ -1,0 +1,50 @@
+[General]
+def_graphic_ext=eps
+img_extIsRegExp=false
+img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
+kileprversion=2
+kileversion=2.1.3
+lastDocument=Discrete.tex
+masterDocument=
+name=Discrete
+pkg_extIsRegExp=false
+pkg_extensions=.cls .sty .bbx .cbx .lbx
+src_extIsRegExp=false
+src_extensions=.tex .ltx .latex .dtx .ins
+
+[Tools]
+MakeIndex=
+QuickBuild=
+
+[document-settings,item:Discrete.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
+[item:Discrete.tex]
+archive=true
+column=126
+encoding=UTF-8
+highlight=LaTeX
+line=255
+mode=LaTeX
+open=true
+order=0
+
+[item:discrete.kilepr]
+archive=true
+column=181377776
+encoding=
+highlight=
+line=0
+mode=
+open=false
+order=-1
+
+[view-settings,view=0,item:Discrete.tex]
+CursorColumn=126
+CursorLine=255
+JumpList=
+ViMarks=

@@ -1,0 +1,43 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\title{Examples: Modern Physics - Waves, Optics}
+\author{Zack Garza}
+\maketitle
+\tableofcontents
+
+\chapter{Light as Waves}
+\begin{enumerate}
+	\item
+		A thin film of oil ($n$ = 1.28) is located on smooth, wet pavement. When viewed perpendicularly, the film reflects most strongly red light at 640 nm and reflects no green light at 512 nm.
+
+		What is the minimum thickness of the film?
+
+		\textit{Hints:}
+
+		There is a bottom interface!
+
+		Be careful with the algebra on this one.
+
+		\hrulefill
+
+		\textit{Solution:}
+
+		\begin{align*}
+			2t &= \frac{m\lambda_{\text{const}}}{n} \\
+			2t &= \frac{(m+\frac{1}{2})\lambda_{\text{dest}}}{n} \\
+			\frac{\lambda_1}{\lambda_2} &= 1 + \frac{1}{2m} \\
+			m &= 2 \\
+			t &= 500 \times 10^{-9} \text{m}
+		\end{align*}
+
+		\hrulefill
+\end{enumerate}
+\end{document}

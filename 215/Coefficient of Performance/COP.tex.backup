@@ -191,8 +191,8 @@ For the cooled water:
 \label{tb:results}
 \begin{tabular}{@{}ll@{}}
 \toprule
-COP, Refrigerator & 1.733  \hfill $\pm .007$\\
-COP, Heat Pump    & 2.9 \hfill $\pm .1$\\ \bottomrule
+COP, Refrigerator & 1.7 \\
+COP, Heat Pump    & 2.9 $\pm .1$\\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -244,12 +244,11 @@ Carrying out the calculation for the propagation of error, we find the error in 
 	(-.40986)^2(.1)^2} \\
 	\Rightarrow \delta COP_H &= .110 \\
 	\delta COP_C &= \sqrt{
-	(1.0861)^2 (.00002)^2+
-	(.15330)^2 (.5)^2+
-	(-.01304)^2(.25)^2+
-	(-.03241)^2(.02)^2+
-	(.21681)^2(.1)^2 } \\
-	&= .0064
+	(2.0532)^2 (.00002)^2+
+	(.20493)^2 (.5)^2+
+	(-.02465)^2(.25)^2+
+	(-.08190)^2(.02)^2+
+	(-.40986)^2(.1)^2 }
 \end{align*}
 
 
