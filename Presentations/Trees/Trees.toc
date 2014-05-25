@@ -1,9 +1,0 @@
-\contentsline {chapter}{\numberline {1}Background and Definitions}{1}
-\contentsline {subsection}{\numberline {1.0.1}Background}{1}
-\contentsline {subsection}{\numberline {1.0.2}Motivation}{3}
-\contentsline {subsection}{\numberline {1.0.3}The Basics}{4}
-\contentsline {chapter}{\numberline {2}Rooted Trees}{10}
-\contentsline {subsection}{\numberline {2.0.4}m-ary Trees}{11}
-\contentsline {subsection}{\numberline {2.0.5}Special Case: Ordered Binary Trees}{11}
-\contentsline {chapter}{\numberline {3}Applications}{15}
-\contentsline {subsection}{\numberline {3.0.6}Binary Search Trees}{15}
