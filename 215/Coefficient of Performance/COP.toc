@@ -1,6 +1,0 @@
-\select@language {english}
-\contentsline {section}{\numberline {I}Introduction}{1}{section.1}
-\contentsline {section}{\numberline {II}Theory}{1}{section.2}
-\contentsline {section}{\numberline {III}Data}{2}{section.3}
-\contentsline {section}{\numberline {IV}Results}{2}{section.4}
-\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Uncertainty}{3}{subsection.4.1}

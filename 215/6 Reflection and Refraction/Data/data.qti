@@ -1,0 +1,228 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	3
+<table>
+Table1	30	4	4/1/14 7:13 PM
+geometry	0	0	639	306	
+header	1[X]	2[Y]	x err[xEr]	3[yEr]
+ColWidth	100	100	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13	0;0/13	0;0/13
+ReadOnlyColumn	0	0	0	0
+HiddenColumn	0	0	0	0
+Comments					
+WindowLabel		2
+<data>
+0	0.08716	0.12187	0.06905190524422	0.06905190524422
+1	0.17365	0.25882	0.06905190524422	0.06905190524422
+2	0.25882	0.39073	0.06905190524422	0.06905190524422
+3	0.34202	0.51504	0.06905190524422	0.06905190524422
+4	0.42262	0.64945	0.06905190524422	0.06905190524422
+5	0.5	0.77162	0.06905190524422	0.06905190524422
+6	0.57358	0.88295	0.06905190524422	0.06905190524422
+7	0.64279	0.99144	0.06905190524422	0.06905190524422
+</data>
+</table>
+<multiLayer>
+Graph1	1	1	4/1/14 7:14 PM
+geometry	445	0	509	456	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	493	394
+<PageGeometry>0.00994036	0.0122249	0.980119	0.963325</PageGeometry>
+PlotTitle	Sine of Incident and Refracted Laser Angles	#000000	4
+<Antialiasing>1</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	1	1	1	1	#0000ff	0	0.3	#a0a0a4	2	0.2	#0000ff	0	0.3	#a0a0a4	2	0.2	1	1	2	0	0
+EnabledAxes	1	0	1	0	
+AxesTitles	sin (Θ<sub>2</sub>)	sin (Θ<sub>2</sub>)		%(?Y)	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	4	4	4	4
+AxesTitleDistance	2	-1	2	-1
+InvertedTitle	0	0	0	0
+TitleFont	Liberation Sans	10	75	0	0	0
+ScaleFont0	Liberation Sans	8	75	0	0	0
+ScaleFont1	Liberation Sans	8	75	0	0	0
+ScaleFont2	Liberation Sans	8	75	0	0	0
+ScaleFont3	Liberation Sans	8	75	0	0	0
+AxisFont0	Liberation Sans	8	50	0	0	0
+AxisFont1	Liberation Sans	8	50	0	0	0
+AxisFont2	Liberation Sans	8	50	0	0	0
+AxisFont3	Liberation Sans	8	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#d4d2cf	#000000	#d4d2cf
+AxesBaseline	0	0	0	0	
+CanvasFrame	1	#000000
+CanvasBackground	#ffffff	0
+curve	Table1_1	Table1_2	1	0	#000000	0	1	7	1	#000000	#000000	0	#000000	14	1	2	0	0	29	1
+ErrorBars	0	Table1_1	Table1_2	Table1_x err	1	8	#000000	1	1	1	0
+ErrorBars	1	Table1_1	Table1_2	Table1_3	1	8	#000000	1	1	1	0
+<Function>
+<Type>0</Type>
+<Title>LinearFit1</Title>
+<Expression>A*x+B</Expression>
+<Variable>x</Variable>
+<Range>0.08716	0.64279</Range>
+<Points>2</Points>
+<Constant>A	1.56646488968396</Constant>
+<Constant>B	-0.0148096508226588</Constant>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#ff0000</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+scale	0	0	1.2	0	7	5	0	0
+scale	1	0	1.2	0	7	5	0	0
+scale	2	0	0.8	0	9	5	0	0
+scale	3	0	0.8	0	9	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	1	1	1
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.0055299539170507</x>
+<y>1.1962264150943</y>
+<right>0.285714285714286</right>
+<bottom>0.875471698113208</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)Collected Data
+\l(4) Linear Fit
+R<sup>2</sup>: 0.999917
+RMSE: 0.043367
+RSS: 0.011284
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<TexFormula>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.3889400921659</x>
+<y>0.13962264150943</y>
+<right>0.792626728110599</right>
+<bottom>0.0188679245283019</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<tex>n = 1.566 \pm 0.133</tex>
+<xpm>
+/* XPM */
+static char *dummy[]={
+"208 21 16 1",
+"k c #000000",
+"m c #101010",
+"n c #222222",
+"b c #323232",
+"h c #444444",
+"i c #545454",
+"a c #666666",
+"g c #767676",
+"j c #888888",
+"c c #989898",
+"l c #aaaaaa",
+"# c #bababa",
+"f c #cccccc",
+"d c #dcdcdc",
+"e c #eeeeee",
+". c #ffffff",
+"...........................................................#a...............#bcd.efgg.......#hhiif.......#hhiif.........................................jajgg..................#a........eaiihad......eaiihad...",
+".........................................................dgki...............lkkkkkka.......ahe...ae.....ahe...ae..................#j...................hj...lb...............dgki.......fid...gk#....fid...gk#..",
+".......................................................cbafki...............laahhaf.......gb....lkc....gb....lkc..................jh..................jb.....ia............cbafki.......i......mm....i......mm..",
+"...........................................................ki...............l#...........fkd....lkl...fkd....lkl..................jh..................mc.....#ke...............ki......dka.....hk#..dka.....hk#.",
+"...........................................................ki...............l#...........bb...........bb..........................jh.................#kf.....ekj...............ki......fkb.....akl..fkb.....akl.",
+"...........................................................ki...............l#..........dkj..........dkj..........................jh.................gke......ki...............ki.......fe.....hkd...fe.....hkd.",
+"...........................................................ki...............l#..........jk#..........jk#..........................jh.................hk.......nn...............ki..............mn...........mn..",
+"..cabf..jaahj..............................................ki...............l#fccgie....ikddjjgae....ikddjjgae....................jh.................bk.......nm...............ki.............ckf..........ckf..",
+".#j.ameif..fkc.............................................ki...............li#...fnd...bkfg...fnf...bkfg...fnf...................jh.................nk.......nk...............ki............#m#..........#m#...",
+".i..akbd....kh.............................................ki...............f#.....in...nkj.....jn...nkj.....jn...................jh.................mm.......bk...............ki.........labbd........labbd....",
+".i..bkl....ekh...........jmmmmmmmmmmmmmmmmmd...............ki......................#kl..mkj.....dkc..mkj.....dkc.........#kkkkkkkkkkkkkkkkkkj........mm.......nk...............ki............eiie.........eiie..",
+"e#..kn.....#ka............eeeeeeeeeeeeeeeee................ki......................dki..nkf......kh..nkf......kh..........ddddddddgbdddddddd.........nk.......nk...............ki..............bme..........bme.",
+"...fka.....gkl.............................................ki.......................kb..bkd......km..bkd......km..................jh.................bk.......nm...............ki..............lki..........lki.",
+"...jkl.....bke.............................................ki...............d.......km..ike......mk..ike......mk..................jh.................hk.......mn...............ki..............dkk..........dkk.",
+"...hke....dkh..............................................ki..............ikf......kn..jkf......kk..jkf......kk..................jh.................akd......ki...............ki......hmd......kkd.hmd......kkd",
+"...kn.....jkl..l.........jmmmmmmmmmmmmmmmmmd...............ki..............hmd.....eki..fkl......kb..fkl......kb..................jh.................lkf.....dkc...............ki......kk#.....dkk..kk#.....dkk.",
+"..fka.....bke.ea..........eeeeeeeeeeeeeeeee................ki..............je......ckf...ma.....#kl...ma.....#kl..................jh..................kj.....cke...............ki......hl......#kb..hl......#kb.",
+"..jkl.....kh..jd...........................................ki.......eha....eg......na....lme....ab....lme....ab...................jh..................jn.....hg....eha.........ki......#j......hkf..#j......hkf.",
+"..ike.....ma.fj...........................................ekh.......ckkd....lae..ehi......ih...cnd.....ih...cnd...................jh...................hg...cb.....ckkd.......ekh.......jae...gkc....jae...gkc..",
+"..hi......#bag.........................................#hbkkkmbh....dnb......daiiic........chhig........chhig............#kkkkkkkkkkkkkkkkkkj...........jajag......dnb.....#hbkkkmbh.....daihhad......daihhad...",
+"..........................................................................................................................dddddddddddddddddd...................................................................."};
+</xpm>
+</TexFormula>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<TableStatistics>
+Table3	Table1	col	4/1/14 7:17 PM
+Targets	0
+ColStatType	2	3	5	6	7	8	9	10	11	12	13	14	15
+geometry	35	430	1200	83	
+header	Col[X]	Rows[Y]	Mean[Y]	StandardDev[Y]	StandardError[yEr]	Variance[Y]	Sum[Y]	iMax[Y]	Max[Y]	iMin[Y]	Min[Y]	N[Y]	Median[Y]
+ColWidth	100	100	100	100	100	100	100	100	100	100	100	100	100	
+<com>
+</com>
+ColType	0;0/13	1;0/13	0;0/13	0;0/13	0;0/13	0;0/13	0;0/13	0;0/13	0;0/13	0;0/13	0;0/13	0;0/13	0;0/13
+ReadOnlyColumn	0	0	0	0	0	0	0	0	0	0	0	0	0
+HiddenColumn	0	0	0	0	0	0	0	0	0	0	0	0	0
+Comments	Column Name	Rows Included	Mean	Standard Deviation	Standard Error	Variance	Sum	Index of Maximum Value	Maximum Value	Index of Minimum Value	Minimum Value	Number of Points	Median	
+WindowLabel	Column Statistics of Table1	2
+</TableStatistics>
+<open>1</open>
+<log>
+[4/1/14 7:23 PM	Plot: ''Graph1'']
+Linear Regression of dataset: Table1_2, using function: A*x+B
+Weighting Method: Instrumental, using error bars dataset: Table1_3
+From x = 8.7160000000000e-02 to x = 6.4279000000000e-01
+B (y-intercept) = -1.4809650822659e-02 +/- 5.5751708129659e-02
+A (slope) = 1.5664648896840e+00 +/- 1.3363062095621e-01
+--------------------------------------------------------------------------------------
+Chi^2/doF = 1.8807533704014e-03
+R^2 = 0.9999178858355
+Adjusted R^2 = 0.9998850401696
+RMSE (Root Mean Squared Error) = 0.04336765350352
+RSS (Residual Sum of Squares) = 0.01128452022241
+---------------------------------------------------------------------------------------
+</log>
