@@ -1,0 +1,263 @@
+\documentclass[twocolumn,english]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{calc}
+\newcommand{\vb}[1]{\mathbf{#1}}		%Bold vector
+\newcolumntype{W}{>{\centering\arraybackslash}m{25mm}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{15mm}}
+\usepackage{booktabs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Variables
+\newcommand{\thetitle}{Coefficient of Performance of a Refrigerator}
+\newcommand{\theauthors}{Zack Garza}
+\newcommand{\theclass}{Physics 215L}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{
+ pdftitle=  {\thetitle},
+ pdfauthor= {\theauthors},
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % protect \markboth against an old bug reintroduced in babel >= 3.8g
+ \let\oldforeign@language\foreign@language
+ \DeclareRobustCommand{\foreign@language}[1]{%
+   \lowercase{\oldforeign@language{#1}}}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\makeatother
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\theoremname}{Theorem}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+\usepackage{float}
+\begin{document}
+\onecolumn
+\title{\thetitle}
+\author{\theauthors}
+\IEEEspecialpapernotice
+{\theclass \\ Effective Date of Report: \today }
+\markboth{\thetitle}{\theauthors}
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+\IEEEPARstart{T}{he} purpose of this experiment is to measure the coefficient of performance of a system as both a heat pump and a refrigerator. Using this data, we will then be able to determine in which mode the system is more efficient.
+
+\section{Theory}
+\begin{enumerate}
+	\item \textit{Briefly explain how this system works. Be sure to discuss the function of the compressor, condenser, expansion valve, and the evaporator.}
+
+	Generally, the refrigeration system functions by pumping liquid refrigerant through a carnot cycle in order to exchange energy between cold and hot reservoirs. The process can be broken down into the following four parts:
+	\begin{enumerate}
+		\item Compressor.
+
+		The purpose of the compressor is raise the pressure of the refrigerant, as well as to regulate its flow through the system. This is commonly accomplished via a piston system inside the compressor. On its downstroke, refrigerant vapor is taken in from the evaporator, and its pressure is increased. On its upstroke, the heated, high pressure vapor is then pushed into the condenser.
+
+		\item Condenser.
+
+		When the vapor reaches the condenser, where the vapor is condensed to liquid form, which releases heat. The condenser is in contact with a water bath, which correspondingly heats up, and the warm water is expelled via a discharge valve. The refrigerant then approaches room temperature and a low pressure, and continue through the system. This is the portion of the system that functions as a heat pump.
+
+		\item Expansion valve.
+
+		As the liquid refrigerant passes through the expansion valve, which controls the flow rate and abruptly drops the liquid's pressure. This removes energy from the liquid, which drastically decreases its temperature before it reaches the evaporator.
+
+		\item Evaporator.
+
+		This portion of the system functions as the refrigerator. The evaporator is placed in contact with a water bath, and as the refrigerant flows through, it vaporizes and draws energy from its surroundings. The cooled water is then released via a second discharge valve, and the vaporized refrigerant is sent back to the compressor to repeat the cycle.
+	\end{enumerate}
+
+
+	\item \textit{Explain how a heat pump works. Why does your text describe a heat pump and a refrigerator as the same system, each operating in the reverse direction of a heat engine?}
+
+	The textbook defines a heat engine as ``a device that takes in energy by heat and, operating in a cyclic process, expels a fraction of that energy by means of work.'' In essence, this describes a process in which heat is put into the engine, and work is extracted as the heat flows from a hot system to a cold system.
+
+	The refrigerator accomplishes the exact opposite task -- given work as an input to the engine, it serve to move heat from a cold system to a hot system. Instead of taking advantage of the natural tendency of the hot and cold systems to approach the same temperature, running the system in reverse corresponds to increasing the temperature gradient between the two. However, according to the laws of thermodynamics, this requires work to be input. This corresponds to simply reversing all of the arrows in a carnot heat engine diagram.
+
+	\item \textit{Derive an equation for the coefficient of performance for a refrigerator in terms of the specific heat of water, the flow rate, the temperature change, and the electrical power. Carry out the derivation with the definition of the COP given in the text.}
+
+	We begin with the expression for the efficiency of an engine, which is given by
+	\begin{equation}
+		e = \frac{W}{Q},
+	\end{equation}
+	where $W$ is the work done by a heat engine and $Q$ is the energy extracted from it. Because this system can be modeled as a heat engine running in reverse, we are instead interested the ratio of energy transferred to the work put in, so we define the coefficient of performance ($COP$) as
+	\begin{equation}
+		COP = \frac{Q}{W}.
+	\end{equation}
+
+	Note that in this process, $Q$ represents a change in the energy of the water bath that is to be measured. Using calorimetry, we can express this quantity as $Q = mc_w \Delta T$, where $m$ is the mass of water, and $c_w$ is the specific heat of water ($4186 J/Kg^{\circ}C$).
+
+	Since we are measuring a change in energy over time, we introduce a variable $f$ to represent the rate at which the water is flowing from the discharge valves. This gives the following expression:
+	\begin{equation}
+		Qt = fmc_w\Delta T.
+	\end{equation}
+
+
+	Similarly, the work being put into the system is related function of the power supplied. The measurable quantities in this system are the current $I$ and the voltage $V$, so the power $P$ can be obtained from $P=IV$. Since power is equal to work over a time interval, we then have
+	\begin{equation}
+		Wt = IV.
+	\end{equation}
+
+	Combining the above expressions, we obtain the $COP$ in terms of measurable quantities,
+	\begin{equation}\label{eq:cop}
+		COP = \frac{fmc_w\Delta T}{IV}.
+	\end{equation}
+\end{enumerate}
+
+\hrulefill
+
+\section{Data}
+
+% Please add the following required packages to your document preamble:
+\begin{table}[h]
+\centering
+\caption{Table 1 Data}
+\label{tb:data}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Resistance of Tap Water  & 28.7k$\Omega$               & Tap Temperature           & 26.0 C                      \\
+Resistance of Cold Water & 44.4 k$\Omega$              & Cold Temperature          & 16.1 C                      \\
+Resistance of Hot Water  & 16.15 k$\Omega$             & Hot Temperature           & 40.0 C                      \\
+Current                  & 7.0 $\pm$ .25 A             & Potential                 & 116.4 $\pm$ .1 V            \\ \midrule
+Mass of Dry Beaker 1     & 212.73 g                    & Mass of Dry Beaker 2      & 212.69 g                    \\
+Mass, Beaker + Hot Water & 1610.07 g                   & Mass, Beaker + Cold Water & 1808.22                     \\ \midrule
+Time to Fill, Hot Water  & 35.03 s                     & Time to Fill, Cold Water  & 46.83 s                     \\
+Flow Rate, Hot Water     & 45.96 $\times 10^{-3}$ kg/s & Flow Rate, Cold Water     & 38.61 $\times 10^{-3}$ kg/s \\ \bottomrule
+\end{tabular}
+\end{table}
+\begin{center}
+Power Supplied ($IV$ rms): \underline{$P = $814.8 W}
+
+Specific Heat of Water : \underline{$C_w = $4186 J/kg$^{\circ}$C}
+\end{center}
+
+\hrulefill
+
+\section{Results}
+
+The coefficients of performance for each mode can be calculated from Equation~\ref{eq:cop} as follows. For the heated water:
+
+\begin{align*}
+	IV 				&= (7.0 A)(116.4 V) = 814.8 J/s \\
+	fm_c\Delta T	&= ((1.61007 kg - .21271 kg)  / 35.03 s)(4186 J/kg^{\circ}C)(40.0-26.0)^{\circ}C = 2338 J/s \\
+	COP 			&= \frac{fmc_w\Delta T}{IV} \\
+	&= \frac{2693.6 J/s}{814.8 J/s}
+	&= 2.9
+\end{align*}
+
+For the cooled water:
+
+\begin{align*}
+	fm_c\Delta T &= ((1.80822 kg - .21271 kg) / 46.83 s)(4186 J/kg^{\circ}C)(26.0-16.1) = 1412 J/s \\
+	COP &= \frac{1412 J/s}{814.8 J/s} \\
+		&= 1.7
+\end{align*}
+
+
+\begin{table}[h]
+\centering
+\caption{Results}
+\label{tb:results}
+\begin{tabular}{@{}ll@{}}
+\toprule
+COP, Refrigerator & 1.733  \hfill $\pm .007$\\
+COP, Heat Pump    & 2.9 \hfill $\pm .1$\\ \bottomrule
+\end{tabular}
+\end{table}
+
+From these calculations, it appears that the unit is much more efficient as a \textbf{heat pump}.
+
+\subsection{Uncertainty}
+
+In order to find an uncertainty in the calculated values for the coefficient of performance, we examine the error associated with each measurement and use the propagation of error equation.
+
+To begin with, we rewrite the expressions for the $COP$ in terms of the measured quantities. This gives
+\begin{equation*}
+	COP = \frac{mc_w\Delta T}{tVi},
+\end{equation*}
+where the only difference between this and Equation~\ref{eq:cop} is that $f$ has been rewritten in terms of $kg/s$, or mass per unit time.
+
+We will then need the partial derivatives with respect to each variable, which are:
+\begin{align*}
+	C_m &= \frac{c_w\Delta T}{tVi}\\
+	C_T &= \frac{mc_w}{tVi}\\
+	C_V &= -\frac{mc_w\Delta T}{tV^2 i}\\
+	C_t &= -\frac{mc_w\Delta T}{t^2 Vi}\\
+	C_i &= -\frac{mc_w\Delta T}{tVi^2}\\
+\end{align*}
+
+We also estimate the following uncertainties in measurement:
+\begin{align*}
+	\delta m &= \pm .00002 kg\\
+	\delta T &= \pm .5^{\circ}C\\
+	\delta V &= \pm .25 V\\
+	\delta t &= \pm .02 s\\
+	\delta i &= \pm .1 A\\
+\end{align*}
+
+For the above uncertainties, $\delta m$ is given by the precision of the scale. $\delta T$ is estimated as the error in interpolation between discrete data points on the thermistor's resistance vs. temperature graph. $\delta V$ is given from the approximate fluctuation of the unit while under a load. $\delta t$ is associated with the precision of the stopwatch, in addition to a small contribution from the observer's reaction time. $\delta i$ is given by the resolution of the current meter on the unit.
+
+Carrying out the calculation for the propagation of error, we find the error in $COP_H$ and $COP_C$ for the unit in heating and cooling modes respectively:
+\begin{align*}
+	\delta COP &= \sqrt{
+	(C_m)^2(\delta m)^2+
+	(C_T)^2(\delta T)^2+
+	(C_V)^2(\delta V)^2+
+	(C_t)^2(\delta t)^2+
+	(C_i)^2(\delta i)^2} \\
+	\delta COP_H &= \sqrt{
+	(2.0532)^2 (.00002)^2+
+	(.20493)^2 (.5)^2+
+	(-.02465)^2(.25)^2+
+	(-.08190)^2(.02)^2+
+	(-.40986)^2(.1)^2} \\
+	\Rightarrow \delta COP_H &= .110 \\
+	\delta COP_C &= \sqrt{
+	(1.0861)^2 (.00002)^2+
+	(.15330)^2 (.5)^2+
+	(-.01304)^2(.25)^2+
+	(-.03241)^2(.02)^2+
+	(.21681)^2(.1)^2 } \\
+	&= .0064
+\end{align*}
+
+
+
+
+
+%\appendices{}
+%\bibliographystyle{plain}
+%\bibliography{physbib}
+
+\end{document}
