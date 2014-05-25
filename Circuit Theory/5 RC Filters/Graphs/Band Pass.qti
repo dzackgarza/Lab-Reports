@@ -1,0 +1,276 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	2
+<table>
+Table1	43	2	4/22/14 9:16 AM
+geometry	0	0	445	220	
+header	1[X]	2[Y]
+ColWidth	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13
+ReadOnlyColumn	0	0
+HiddenColumn	0	0
+Comments			
+WindowLabel		2
+<data>
+0	3.5	0.0005
+1	4.72	0.001
+2	3.5	0.0005
+3	4.72	0.001
+4	5.24	0.0014
+5	16.14	0.0087
+6	27.99	0.015
+7	39.5	0.0218
+8	48	0.0264
+9	95.67	0.052
+10	137	0.0736
+11	210	0.11
+12	281	0.142
+13	345	0.168
+14	470	0.211
+15	535	0.23
+16	642	0.259
+17	779	0.285
+18	942	0.307
+19	1087	0.321
+20	1468	0.342
+21	1644	0.346
+22	1893	0.349
+23	2224	0.349
+24	2414	0.348
+25	2577	0.346
+26	3085	0.339
+27	3453	0.333
+28	4048	0.32
+29	4590	0.308
+30	5133	0.296
+31	5339	0.292
+32	6948	0.26
+33	11063	0.193
+34	14767	0.153
+35	20291	0.115
+36	25036	0.0928
+37	30763	0.074
+38	34300	0.065
+39	53753	0.035
+40	100000	0.0054
+41	200000	0.001
+42	416000	0.0004
+</data>
+</table>
+<multiLayer>
+Graph1	1	1	4/22/14 9:17 AM
+geometry	445	0	531	456	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	515	394
+<PageGeometry>0.00952381	0.0122249	0.980952	0.963325</PageGeometry>
+PlotTitle	Band Pass Filter Output Voltage	#000000	4
+<Antialiasing>1</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	1	1	1	1	#0000ff	0	0.3	#a0a0a4	2	0.2	#0000ff	0	0.3	#a0a0a4	2	0.2	0	0	2	0	1
+EnabledAxes	1	1	1	1	
+AxesTitles	 Frequency (log<sub>10</sub>Hz)	Voltage (V)		 	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	4	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Liberation Sans	10	75	0	0	0
+ScaleFont0	Liberation Sans	8	75	0	0	0
+ScaleFont1	Liberation Sans	8	75	0	0	0
+ScaleFont2	Liberation Sans	8	75	0	0	0
+ScaleFont3	Liberation Sans	8	75	0	0	0
+AxisFont0	Liberation Sans	8	50	0	0	0
+AxisFont1	Liberation Sans	8	50	0	0	0
+AxisFont2	Liberation Sans	8	50	0	0	0
+AxisFont3	Liberation Sans	8	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#000000	#d4d2cf	#000000	#d4d2cf
+AxesBaseline	0	0	0	0	
+CanvasFrame	1	#000000
+CanvasBackground	#ffffff	0
+curve	Table1_1	Table1_2	0	1	#000000	0	1	7	0	#000000	#000000	0	#000000	14	1	2	0	0	42	1
+<Function>
+<Type>1</Type>
+<Title>F1</Title>
+<Expression>11634	m</Expression>
+<Variable>m</Variable>
+<Range>0	0.4</Range>
+<Points>100</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#ff0000</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>1</Type>
+<Title>F2</Title>
+<Expression>11634	m</Expression>
+<Variable>m</Variable>
+<Range>0	0.4</Range>
+<Points>100</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#00ff00</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>1</Type>
+<Title>F3</Title>
+<Expression>1942	m</Expression>
+<Variable>m</Variable>
+<Range>0	0.4</Range>
+<Points>100</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#0000ff</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+<Function>
+<Type>1</Type>
+<Title>F4</Title>
+<Expression>1942	m</Expression>
+<Variable>m</Variable>
+<Range>0	0.4</Range>
+<Points>100</Points>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#00ffff</Color>
+	<Style>0</Style>
+	<Width>1</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+scale	0	0	0.4	0	9	5	0	0
+scale	1	0	0.4	0	9	5	0	0
+scale	2	3.5	100000	0	5	5	1	0
+scale	3	3.5	100000	0	5	5	1	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>3.3372663228</x>
+<y>0.38717948717949</y>
+<right>143.511916222169</right>
+<bottom>0.315384615384615</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)Measured Values
+\l(3)High Pass Cutoff
+\l(5)Low Pass Cutoff
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>12308.47217666</x>
+<y>0.39871794871795</y>
+<right>100000</right>
+<bottom>0.347435897435897</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+ω<sub>c</sub> 
+(High-Pass)
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>225.59068272748</x>
+<y>0.40128205128205</y>
+<right>1706.48015699479</right>
+<bottom>0.35</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+ω<sub>c</sub>
+(Low-Pass)
+</Text>
+<Font>Liberation Sans	9	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<open>1</open>

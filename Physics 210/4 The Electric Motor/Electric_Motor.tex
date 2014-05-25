@@ -1,0 +1,51 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\newcommand{\vb}[1]{\mathbf{#1}}		%Bold vector
+
+
+% Title Page
+\title{The Electric Motor}
+\author{Zack Garza}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+	\item
+		\textit{How is the magnetic field produced in the armature? Why use nails containing iron instead of aluminum nails?}
+
+		It can be shown that the magnetic field produced by a current-carrying wire looped $N$ times is equal to
+		\begin{align*}
+			\frac{\mu_0 NI}{2\pi r},
+		\end{align*}
+		where $I$ is the magnitude of the current flowing through the wire and $r$ is the radial distance from the wire. Along the axis of the wire, these values are additive, and a net magnetic field is directed along the same axis. Wrapping the wires around a ferromagnetic substance increase the magnetic permeability of the space within the coiled wires, which in turn increases the strength of the magnetic field produced as the magnetic domains within the iron align with the field that is produced. Using a material such as aluminum, which is a less magnetically permeable substance, would produce a weaker magnetic field.
+
+	\item
+		\textit{What is the orientation of the armature relative to the magnetic field produced by the the external field when the torque on it is a maximum? When is it zero?}
+
+		The torque on the armature can be expressed as
+		\begin{align*}
+			\tau = \mu \times \vb{B},
+		\end{align*}
+		where $\mu$ is the magnetic moment, which is equal to the product of the current and the area of the loop ($IA$) and is directed normal to the plane of the looped wire. Since this value depends on $\sin\theta$, where $\theta$ is the angle between $\mu$ and $\vb{B}$, the torque is minimized when $\sin\theta=0$, or when the normal to the plane of the loops points in the same direction as the magnetic field. This corresponds to all times when the armature is horizontal.
+
+	\item
+		\textit{Why does the armature keep rotating even if the torque on it is zero?}
+
+		The armature rotates according to Newton's First Law, and continues to rotate when the torque is zero. This momentum allows the motor to continue rotating past the horizontal position, at which point the commutator switches the direction of the current in the armature, producing a torque that coincides with the motor's motion and keeps it spinning.
+
+	\item
+		\textit{What is the purpose of the split ring commutator?}
+
+		This allows the direction of the current to be reversed at the point where $\tau = 0$, which keeps the armature from settling into the horizontal position. Without the commutator, if the armature were to rotate beyond the horizontal position, the torque would be reversed. This would tend to cause it to oscillate slightly and ultimately stall out.
+
+	\item
+		\textit{When is the potential energy stored ($U=-m\cdot\vb{B}$) maximized?}
+
+		The system has its lowest energy when $\mu$ points in the same direction as $\vb{B}$, at which point it is equal to $-\mu\vb{B}$. This corresponds to the armature being oriented horizontally, so the plane of the loop and the magnetic field are aligned. It is maximized in the exact opposite case, when $\mu$ points in the opposite direction as $\vb{B}$. This corresponds to the opposite horizontal orientation. Consequently, every time the current switches, the potential energy is increased to its maximum value, and moves to approach its minimum value.
+\end{enumerate}
+
+\end{document}
