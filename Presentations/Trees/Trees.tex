@@ -415,28 +415,30 @@ This can also be extended to general $m$-ary trees wlog by a similar proof, givi
 
 \chapter{Applications}
 \subsection{Binary Search Trees}
-Left subtree < root, right subtree > root.
-Compilers and automata
-
- -- Spanning trees
-	-- Minimum spanning trees
-
- -- Traversals (Easy to define recursively with subtrees)
-	-- Preorder
-		Root, left, right
-		Polish notation
-	-- Postorder
-		Left, right, root
-		Reverse-Polish/Postfix notation
-	-- Inorder (Only for Binary trees)
-		Left, root, right
-		Infix notation (ambiguous, parentheses needed)
-			Compare to pre/post - only one way to parse
--- Arithmetic Parsing
-	-- Infix
-	-- Prefix
-	-- Postfix
---Matrix representation
+\begin{enumerate}
+	\item Left subtree < root, right subtree > root.
+	\item Compilers and automata
+	\item Spanning trees
+	\item Minimum spanning trees
+	\item Traversals - Easy to define recursively with subtrees.
+	\begin{enumerate}
+		\item Preorder
+		\item Root, left, right
+		\item Polish notation
+	\end{enumerate}
+	\begin{enumerate}
+		\item Postorder
+		\item Left, right, root
+		\item Reverse-Polish/Postfix notation
+	\end{enumerate}
+	\begin{enumerate}
+		\item Inorder (Only for Binary trees)
+		\item Left, root, right
+		\item Infix notation (ambiguous, parentheses needed) (Compare to pre/post - only one way to parse)
+	\end{enumerate}
+	\item Arithmetic Parsing: Infix, Prefix, Postfix
+	\item Matrix representation
+\end{enumerate}
 
 \begin{figure}[h!]
 	\begin{centering}

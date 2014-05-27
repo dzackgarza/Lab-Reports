@@ -1,0 +1,307 @@
+\documentclass[twocolumn,english]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{booktabs}
+
+\newcolumntype{W}{>{\centering\arraybackslash}m{25mm}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{15mm}}
+
+
+\hypersetup{
+ pdftitle=  {Diffraction and Interference},
+ pdfauthor= {Zack Garza},
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % protect \markboth against an old bug reintroduced in babel >= 3.8g
+ \let\oldforeign@language\foreign@language
+ \DeclareRobustCommand{\foreign@language}[1]{%
+   \lowercase{\oldforeign@language{#1}}}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% for subfigures/subtables
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\makeatother
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\theoremname}{Theorem}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+\usepackage{float}
+\begin{document}
+
+\title{Diffraction and Interference}
+
+
+\author{Zack Garza}
+
+
+\IEEEspecialpapernotice
+{Physics 215L \\
+Effective Date of Report: \today }
+
+
+\markboth{Diffraction and Interference}{Zack Garza}
+\maketitle
+
+
+\tableofcontents
+
+\section{Introduction}
+\IEEEPARstart{T}{he} purpose of this experiment is to investigate the patterns produced by single slit diffraction and double slit interference, and to verify that the minima and maxima occur respectively at the locations predicted by theory.
+
+\section{Theory}
+\subsection{Single Slit}
+In the case of a single slit, the angle  between the slit and the minima in the diffraction pattern is given by
+\begin{equation}\label{eq:min}
+	a\sin\theta = m\lambda.
+\end{equation}
+, where $a$ is the slit width and $\lambda$ is the wavelength of the incident light.
+
+Since this angle is small, we make the approximation that
+\begin{equation*}
+	\sin\theta \approx \tan\theta,
+\end{equation*}
+
+and from the geometry of the experimental setup, we find that
+\begin{equation*}
+	\tan\theta = \frac{y}{D},
+\end{equation*}
+where $y$ is the distance from the center to the $m$th minimum, and $D$ is the distance from the slit to the screen.
+
+Substituting this into Equation~\ref{eq:min} gives the following expression for the slit width,
+\begin{align}\label{eq:single_slit_width}
+	a = \frac{m\lambda D}{y}, \qquad  m\in\mathbb{N}.
+\end{align}
+
+\subsection{Double Slit}
+In the case of two slits, the angle to the $m$th maxima in the interference pattern is given by
+\begin{equation}\label{eq:double_slit}
+	d\sin\theta = m\lambda,
+\end{equation}
+where $d$ is the distance between the slits.
+
+The small angle approximation is again used, and trigonometry shows that
+\begin{align*}
+	\tan\theta = \frac{y}{D},
+\end{align*}
+which after substitution yields the following expression for the slit separation,
+\begin{equation}\label{eq:dbl_slit_distance}
+	d = \frac{m\lambda D}{y}, \qquad m\in\mathbb{N}.
+\end{equation}
+
+\hrulefill
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% End Theory %%%%%%%%%%%%%%%%%%
+
+\section{Analysis}
+\subsection{Part 1}
+Given Wavelength, Green Laser: \hfill\underline{532 nm}
+
+Given Wavelength, Red Laser: \hfill\underline{ 650 nm}
+
+Slit Width, Single Slit: \hfill\underline{0.08 mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Table, Single, Green Laser %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\caption{Data and Results for 0.08 mm Single Slit, Green Laser}
+\label{tb:single_slit_green}
+\begin{tabular}{@{}lll@{}}
+\toprule
+& \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}l@{}}Order\\ ($m=1$)\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}l@{}}Order\\ ($m=2$)\end{tabular}}} \\
+\midrule
+
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance Between\\ Side Orders (m)\end{tabular}}
+& .020	& .040	\\
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance From Center\\ To Side ($y$, m)\end{tabular}}
+& .010	& .020	\\
+\textbf{Calculated Slit Width (mm)}
+&.054	& .054	\\
+\textbf{\% Error}
+& -33\%	& -33\%	\\
+
+\bottomrule
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slit-to-Light Sensor Probe Distance: \hfill\underline{$D$ = 1.03 m}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Table, Single, Red Laser %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\caption{Data and Results for 0.08 mm Single Slit, Red Laser}
+\label{tb:single_slit_red}
+\begin{tabular}{@{}lll@{}}
+\toprule
+& \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}l@{}}Order\\ ($m=1$)\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}l@{}}Order\\ ($m=2$)\end{tabular}}} \\
+\midrule
+
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance Between\\ Side Orders (m)\end{tabular}}
+& .0199	& .0361	\\
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance From Center\\ To Side ($y$, m)\end{tabular}}
+& .00993	& .0180	\\
+\textbf{Calculated Slit Width (mm)}
+& .0670	& .0744	\\
+\textbf{\% Error}
+& -16\%	& -7.0\%	\\
+
+\bottomrule
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slit-to-Light Sensor Probe Distance: \hfill\underline{$D$ = 1.03 m}
+
+Average Slit Width:\hfill\underline{$\bar a =$ .062 mm}
+
+Average Percent Error: \hfill\underline{ -22.5\%}
+
+Calculated Wavelength, Red Laser: \hfill\underline{ 681 nm}
+
+\textit{Note: Calculated from $m=1$ data and average slit width, $\bar a$. Wavelength is given by the expression}
+\begin{equation}
+	\lambda = \frac{\bar a y_1}{mD}
+\end{equation}
+
+
+Percent Error: \hfill\underline{ 4.8\%}
+
+
+\noindent\hrulefill
+
+\subsection{Part 2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Table, Double, Green Laser %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\caption{Data and Results for 0.04 mm/0.25 mm Double Slit, Green Laser}
+\label{tb:double_slit_green}
+\begin{tabular}{@{}lll@{}}
+\toprule
+& \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}l@{}}First Order\\ ($m=1$)\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}l@{}}Second Order\\ ($m=2$)\end{tabular}}} \\
+\midrule
+
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance Between\\ Side Orders (m)\end{tabular}}
+&.0218	& .0261	\\
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance From Center\\ To Side ($y$, m)\end{tabular}}
+& .0109	& .0130	\\
+\textbf{Calculated Slit Separation (mm)}
+& .050	& .084	\\
+\textbf{\% Error}
+& -79\%	& -66\%	\\
+
+\bottomrule
+\end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slit-to-Light Sensor Probe Distance: \hfill\underline{$D$ = 1.03 m}
+\textit{Note: First and second order maximums were used due to the inability to distinguish third/fourth order maximums in the collected sensor data.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Table, Double, Red Laser %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\caption{Data and Results for 0.04 mm/0.25 mm Double Slit, Red Laser}
+\label{tb:double_slit_red}
+\begin{tabular*}{\linewidth}{@{}lll@{}}
+\toprule
+& \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}l@{}}Third Order\\ ($m=3$)\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}l@{}}Fourth Order\\ ($m=4$)\end{tabular}}} \\
+\midrule
+
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance Between\\ Side Orders (m)\end{tabular}}
+& .0161	& .0201	\\
+\textbf{\begin{tabular}[c]{@{}l@{}}Distance From Center\\ To Side ($y$, m)\end{tabular}}
+& .00805	& .0100	\\
+\textbf{Calculated Slit Separation (mm)}
+& .172	& .249	\\
+\textbf{\% Error}
+& -30\%	& -0.40\%	\\
+
+\bottomrule
+\end{tabular*}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Slit-to-Light Sensor Probe Distance: \hfill\underline{$D$ = 1.03 m}
+
+Average Slit Width: \hfill\underline{$\bar d =$ .138 mm}
+
+Average Error: \hfill\underline{10.4 \%}
+
+Calculated Wavelength, Red Laser: \hfill\underline{ 447 nm}
+
+Percent Error: \hfill\underline{ -33\%}
+
+\noindent\hrulefill
+
+
+\section{Questions}
+\begin{enumerate}
+	\item \textit{For the single slit, does the distance between minima increase of decrease when the slit width is increased?}
+
+	As the slit width increases, the diffraction patterns gets narrower and the center maximum at $m=0$ grows brighter. If the slit width is decreased, the pattern is stretched out, and the symmetric minimums and maximums grow further apart. Alternatively, Equation~\ref{eq:single_slit_width} shows that $a$ and $y$ are inversely proportional to each other. Therefore, increasing $a$ tends to decrease $y$, which says that wider slits produce narrower distances between minima.
+
+	\item \textit{For the double slit:}
+
+	\begin{enumerate}
+		\item \textit{How does the distance between maxima change when the slit separation is increased?}
+
+		Similar to the argument for a single slit, Equation~\ref{eq:dbl_slit_distance} shows that $d$ and $y$ are inversely proportional, and thus increasing the slit separation $d$ lowers the distance ($2y$) between maxima.
+
+		\item \textit{How does the distance between maxima change when the slit width is increased?}
+
+		Changing the slit width only affects the shape of the envelope, and does not effectively change the distance between maxima at all. Increasing the width causes the envelope to drop off more sharply, lowering the intensity of the maxima of order 1 and above.
+
+		\item \textit{How does the distance to the first minima in the diffraction envelope change when the slit separation is increased?}
+
+		The slit separation has no effect on the diffraction envelope. The effect of increasing the slit separation is to create more closely spaced maxima within each envelope, without changing the distance between the envelope peaks.
+
+		\item \textit{How does the distance to the first minima of the diffraction envelope change when the slit width is increased?}
+
+		As the slit width is increased, the minima of the diffraction envelope move closer to the center, while the number of minima within each envelope are unchanged.
+	\end{enumerate}
+
+	\item \textit{What are the similarities and difference between the single slit and double slit patterns?}
+	In both situations, the single slit effect is present, and is effected by the same variables. In the case of a single slit, the diffraction pattern and intensity exactly match up at all points. For the double slit, the intensity is instead \textit{limited} (i.e, enveloped) by the diffraction pattern, with multiple maximums occurring within each curve of the pattern.
+
+	In both instances, this effect is entirely governed by only the width of the slits, which is inversely proportional to the distance between maxima or minima. For the single slit, the intensity is governed by this relationship, and for the double slit, it is the instead the envelope of the pattern that responds to slit width changes.
+
+	Considering only the pattern that occurs within the $0$th maximum curve of the double slit, the pattern that is locally observed is extremely similar to the single slit pattern. In this case, however, the spacing of this pattern and distance between maxima/minima is governed by slit separation instead of width. Interestingly, the double slit shows that the pattern observed is a superposition characteristic the effects of a single slit's width and the effects of the separation of multiple slits. Further, these effects are independent of one another, and changing one variable, such as the width, has no effect on the patterns governed by the second variable, such as the separation.
+\end{enumerate}
+
+%\bibliographystyle{plain}
+%\bibliography{physbib}
+
+\end{document}
